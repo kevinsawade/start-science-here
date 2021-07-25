@@ -1,0 +1,75 @@
+Python topics:
+
+Ideas for structuring the extended tutorial.
+
+Ayan Bag says on Quora:
+Basics ( It is all about how to install Python in your system, difference between Python 2.7 and Python 3, the extension of Python program raw files, Hello world program and various things )
+Variables
+Operators
+Control Flow
+Functions
+Modules in Python
+Object Oriented Concepts
+Exception Handling
+Libraries and Functions
+Data Types
+
+Sakina Mirza says on Quora (https://www.quora.com/What-are-the-most-important-topics-to-learn-in-Python)
+Python Syntax
+Python Statement, Indentation, and Comments
+Python Variables and Data Types
+Python Operators
+Python Numbers
+Python Strings
+Python Data Structures
+Python Lists
+Python Tuples
+If you shift a level up you can learn:
+
+Python Module
+Python Classes
+Python Methods
+Python Iterables
+Python Iterators
+Python Decorators
+Python Generators
+
+S K Srivastava writes on Quora (https://www.quora.com/What-are-the-list-of-topics-in-python)
+Python Fundamentals and Programming
+
+Introduction to Python
+Strings, Lists and Tuples
+Dictionaries and Sets
+Conditional Execution & Loops
+Comprehensions
+Functions
+Modules
+Scopes and Namespaces
+Intermediate Python
+
+File Handling
+Object Oriented Programming
+Iterator, Generator, Decorators
+Lambda Expressions
+Advanced Python
+
+Writing Library
+Building Framework
+Python C Extensions (C code in Python)
+Closure, Function Factory, Method Chaining
+Exception Handling, Context Manager
+Metaclasses, Introspection
+
+Python progression path (https://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru)
+wheaties writes on stack overflow
+Discover list comprehensions
+Discover generators
+Incorporate map, reduce, filter, iter, range, xrange often into your code
+Discover Decorators
+Write recursive functions, a lot
+Discover itertools and functools
+Read Real World Haskell (read free online)
+Rewrite all your old Python code with tons of higher order functions, recursion, and whatnot.
+Annoy your cubicle mates every time they present you with a Python class. Claim it could be "better" implemented as a dictionary plus some functions. Embrace functional programming.
+Rediscover the Strategy pattern and then all those things from imperative code you tried so hard to forget after Haskell.
+Find a balance.
