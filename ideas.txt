@@ -73,3 +73,8 @@ Rewrite all your old Python code with tons of higher order functions, recursion,
 Annoy your cubicle mates every time they present you with a Python class. Claim it could be "better" implemented as a dictionary plus some functions. Embrace functional programming.
 Rediscover the Strategy pattern and then all those things from imperative code you tried so hard to forget after Haskell.
 Find a balance.
+
+
+Linting and Code Smells
+https://towardsdatascience.com/5-python-code-smells-you-should-be-wary-of-c48cc0eb9d8b
+https://rules.sonarsource.com/python/type/Code%20Smell/RSPEC-3516
