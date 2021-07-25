@@ -75,6 +75,18 @@ Rediscover the Strategy pattern and then all those things from imperative code y
 Find a balance.
 
 
+Git Tutorial
+start
+.gitignore
+push/pull
+revert changes
+merge/rebase
+2way and 3way merge
+git-filter-repo
+large file storage
+workflows
+
+
 Linting and Code Smells
 https://towardsdatascience.com/5-python-code-smells-you-should-be-wary-of-c48cc0eb9d8b
 https://rules.sonarsource.com/python/type/Code%20Smell/RSPEC-3516
