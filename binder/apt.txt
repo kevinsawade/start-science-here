@@ -6,7 +6,7 @@ coreutils
 gromacs
 dssp
 imagemagick
-htop[
+htop
 rsync
 build-essential
 python3-dev
