@@ -17,7 +17,7 @@ The easiest way to start your first terminal is to head over to binder and selec
 
 https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD
 
-![open_terminal](../pics/linux_tutorial/open_terminal.png)
+![open_terminal](../_static/pics/linux_tutorial/open_terminal.png)
 
 ## The prompt
 
@@ -36,7 +36,7 @@ The *prompt* contains useful information, such as your username, the name of the
 
 The other command prompts are listed below:
 
-- `$`: Linux shells in general, `bash` in particual.
+- `$`: Linux shells in general, `bash` in particular.
 - `>>>`: Python
 - `>`: Windows command prompt or windows power shell
 - `%`: Tcl
@@ -48,7 +48,7 @@ $ pwd
 /home/jovyan
 ```
 
-Success! You are in your home directory.
+Success! You are in your home directory. We can continue with our Linux Tutorial.
 
 
 
