@@ -1,3 +1,4 @@
 vim
 man
 manpages
+man-db
