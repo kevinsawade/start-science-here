@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
   
@@ -45,6 +46,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial zero" href="linux_tutorial_00.html" />
     <link rel="prev" title="Start Science Here!" href="index.html" /> 
 </head>
 
@@ -90,15 +92,24 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+              <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Linux tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#background-info-shell-terminal-console">Background info: Shell, Terminal, Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#credit">Credit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typographical-conventions">Typographical conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-linux-unix-operating-system">The linux (UNIX) operating system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-kernel">The kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-shell">The shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files-and-processes">Files and processes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-directory-structure">The directory structure</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#opening-a-terminal-on-binder">Opening a terminal on binder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-prompt">The prompt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#check-if-git-is-installed">Check if git is installed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#download-the-files">Download the files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#working-with-jupyter-notebooks">Working with jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-directories">Changing directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_00.html">Tutorial zero</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -194,11 +205,40 @@
     text-align: unset;
 }
 </style>
+<blockquote>
+<div></div></blockquote>
 <div class="section" id="linux-tutorial">
-<h1>Linux tutorial<a class="headerlink" href="#linux-tutorial" title="Permalink to this headline">¶</a></h1>
+<span id="linux-tutorial-label"></span><h1>Linux tutorial<a class="headerlink" href="#linux-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>Linux is an open-source operating system, first released in 1991. Linux is what’s running on virtually all supercomputers and cluster all over the world. Linux is very modular and comes often as the underlying software of so-called distributions. Such distributions are the popular Ubuntu/Debian Family, of the commercial Red Hat Enterprise Linux distribution. The most significant difference between Windows and Linux for new users is the usage text-only commands. Instead of opening applications or settings pages and working your way through it with a mouse, you just open a terminal and type away.</p>
-<div class="section" id="background-info-shell-terminal-console">
-<h2>Background info: Shell, Terminal, Console<a class="headerlink" href="#background-info-shell-terminal-console" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="credit">
+<h2>Credit<a class="headerlink" href="#credit" title="Permalink to this headline">¶</a></h2>
+<p>Credit for this tutorial goes out to Michael Stonebank (<a class="reference external" href="http://www.ee.surrey.ac.uk/Teaching/Unix/">http://www.ee.surrey.ac.uk/Teaching/Unix/</a>).</p>
+<p>I took his tutorial and added exercises with automated resolve scripts.</p>
+</div>
+<div class="section" id="typographical-conventions">
+<h2>Typographical conventions<a class="headerlink" href="#typographical-conventions" title="Permalink to this headline">¶</a></h2>
+<p>We will use the following typographical conventions:</p>
+<ul class="simple">
+<li><p>Characters written in <code class="docutils literal notranslate"><span class="pre">typewriter</span> <span class="pre">font</span></code> are commands that can be typed into the computer.</p></li>
+<li><p>Characters written in <span class="italiccode">italic typewriter font</span> indicate non-specific file or directory (i.e. folder names).</p></li>
+<li><p>Words inserted within square brackets indicate <span class="boldcode">[Ctrl]</span> indicate keys to be pressed.</p></li>
+</ul>
+<p>Don’t forget to press the enter key. Commands are not sent to the computer until this is done.</p>
+</div>
+<div class="section" id="the-linux-unix-operating-system">
+<h2>The linux (UNIX) operating system<a class="headerlink" href="#the-linux-unix-operating-system" title="Permalink to this headline">¶</a></h2>
+<p>An operating system is a piece of software that manages a computer’s hardware and software resources and provides services to other computer programs.</p>
+<a class="reference external image-reference" href="_static/pics/linux_tutorial/unix_like_os_tree.png"><img alt="Inheritance of Unix-like operating systems." src="_images/unix_like_os_tree.png" /></a>
+<p>As you can see on this graphic (visit the documentation page under <a class="reference external" href="https://kevinsawade.github.io/start-science-here/linux_tutorial.html">https://kevinsawade.github.io/start-science-here/linux_tutorial.html</a>, if the image does not render). The UNIX operating system dates back all the way to 1970. You can also see, that Apple’s current Mac OS X inherits parts from early UNIX. The listed operating systems are called UNIX-like OSes and share a lot of common features. In general, a UNIX system is made up of three parts: kernel, shell and programs.</p>
+<div class="section" id="the-kernel">
+<h3>The kernel<a class="headerlink" href="#the-kernel" title="Permalink to this headline">¶</a></h3>
+<p>The kernel of UNIX is the hub of the operating system: it allocates time and memory to programs and handles the filestore and communications in response to system calls.</p>
+<p>As an illustration of the way that the shell and the kernel work together, suppose a user types <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">myfile</span></code> (which has the effect of removing the file myfile). The shell searches the filestore for the file containing the program <code class="docutils literal notranslate"><span class="pre">rm</span></code>, and then requests the kernel, through system calls, to execute the program <code class="docutils literal notranslate"><span class="pre">rm</span></code> on myfile. When the process <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">myfile</span></code> has finished running, the shell then returns the UNIX prompt $ to the user, indicating that it is waiting for further commands.</p>
+</div>
+<div class="section" id="the-shell">
+<h3>The shell<a class="headerlink" href="#the-shell" title="Permalink to this headline">¶</a></h3>
+<p>The shell acts as an interface between the user and the kernel. When a user logs in, the login program checks the username and password, and then starts another program called the shell. The shell is a command line interpreter (CLI). It interprets the commands the user types in and arranges for them to be carried out. The commands are themselves programs: when they terminate, the shell gives the user another prompt.</p>
+<p><strong>Background info: shell, terminal, console</strong></p>
 <p>Skip this part if you don’t care for the terminology of these words.</p>
 <ul class="simple">
 <li><p><strong>Terminal</strong>: A device file, that allows command execution beyond read and write. Terminals are provided by the kernal on behalf of a hardware device (keyboard key presses are presented on screen and output can also be printed). Often Terminal emulators are provided through an extra layer to the kernel. Such emulators are: ssh, screen, tmux and the graphical applications that allow you to type into a window and execute commands.</p></li>
@@ -207,11 +247,48 @@
 <li><p><strong>Shell</strong>: A shell is the interface that users see, when they log in. The shell is what starts other programs and defines the syntax with which programs are started. Because these <em>commands</em> are entered to the shell in Linux, the command-line can also be referred to as a command-line-shell.</p></li>
 </ul>
 </div>
+<div class="section" id="files-and-processes">
+<h3>Files and processes<a class="headerlink" href="#files-and-processes" title="Permalink to this headline">¶</a></h3>
+<p>Everything in Linux is either a file or a process.</p>
+<p>A process is an executing program identified by a unique PID (process identifier).</p>
+<p>A file is a collection of data. They are created by users using text editors, running compilers etc.</p>
+<p>Examples of files:</p>
+<ul class="simple">
+<li><p>a document (report, essay etc.)</p></li>
+<li><p>the text of a program written in some high-level programming language</p></li>
+<li><p>instructions comprehensible directly to the machine and incomprehensible to a casual user, for example, a collection of binary digits (an executable or binary file);</p></li>
+<li><p>a directory, containing information about its contents, which may be a mixture of other directories (subdirectories) and ordinary files.</p></li>
+</ul>
+</div>
+<div class="section" id="the-directory-structure">
+<h3>The directory structure<a class="headerlink" href="#the-directory-structure" title="Permalink to this headline">¶</a></h3>
+<p>All the files are grouped together in the directory structure. The file-system is arranged in a hierarchical structure, like an inverted tree. The top of the hierarchy is traditionally called <strong>root</strong>. A directory is nothing more than a special file that tells us what’s inside that directory (other files or directories). These “directory files” get a slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) added to them to keep them separate from regular files. By combining multiple directories with slashes we can create paths, that point to files. Consider this example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── binder/
+├── docs/
+├── linux_tutorial/
+│   ├── README.md
+│   ├── tutorial_00/
+│   │   ├── get_results.py
+│   │   └── ....
+│   ├── tutorial_01/
+│   │   └── get_results.py
+│   └── ...
+├── python_tutorial/
+├── README.md
+└── requirements.txt
+</pre></div>
+</div>
+<p>You can easily tell the directory <code class="docutils literal notranslate"><span class="pre">docs/</span></code> from the file <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. If you want to refer the the <code class="docutils literal notranslate"><span class="pre">get_results.py</span></code> file in the <code class="docutils literal notranslate"><span class="pre">tutorial_00</span></code> directory, you can create a path like so: <code class="docutils literal notranslate"><span class="pre">linux_tutorial/tutorial_00/get_results.py</span></code>.</p>
+<p>More on the root filesystem here: <a class="reference external" href="https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/">https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/</a></p>
+<p>In the diagram above, we see that the directory ee51ab contains the subdirectory unixstuff and a file proj.txt</p>
+</div>
+</div>
 <div class="section" id="opening-a-terminal-on-binder">
 <h2>Opening a terminal on binder<a class="headerlink" href="#opening-a-terminal-on-binder" title="Permalink to this headline">¶</a></h2>
-<p>The easiest way to start your first terminal is to head over to binder and select New and the Terminal.</p>
+<p>The easiest way to start your first terminal is to head over to binder and select New and then Terminal.</p>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD">https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD</a></p>
-<a class="reference external image-reference" href="../_static/pics/linux_tutorial/open_terminal.png"><img alt="open_terminal" src="_images/open_terminal.png" /></a>
+<a class="reference external image-reference" href="_static/pics/linux_tutorial/open_terminal.png"><img alt="Open a Terminal on binder." src="_images/open_terminal.png" /></a>
 </div>
 <div class="section" id="the-prompt">
 <h2>The prompt<a class="headerlink" href="#the-prompt" title="Permalink to this headline">¶</a></h2>
@@ -237,54 +314,25 @@
 </pre></div>
 </div>
 <p>Success! You are in your home directory. We can continue with our Linux Tutorial.</p>
-<p>Try and change the directory to your Downloads directory with the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command. Commands which are to be entered into the console are often prepended with a dollar sign ($):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> Downloads
+</div>
+<div class="section" id="changing-directories">
+<h2>Changing directories<a class="headerlink" href="#changing-directories" title="Permalink to this headline">¶</a></h2>
+<p>We will now start with the first exercise. Please use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command/program to change your current directory to the <code class="docutils literal notranslate"><span class="pre">linux_tutorial/tutorial_00/</span></code> directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> linux_tutorial/tutorial_00
 </pre></div>
 </div>
-<p>The <em>prompt</em> will change and display the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>username@computername:~/Downloads$
-</pre></div>
-</div>
-<p>To change back to your home directory you can “climb up” the directory tree once with the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command. Enter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
-</pre></div>
-</div>
-<p>You can do more awesome stuff in the terminal. If you want to learn more you can visit the linux tutorial <strong>AFTER</strong> completing the step “working with jupyter notebooks”</p>
-</div>
-<div class="section" id="check-if-git-is-installed">
-<h2>Check if git is installed<a class="headerlink" href="#check-if-git-is-installed" title="Permalink to this headline">¶</a></h2>
-<p>The files are hosted on github. Github is a service by Microsoft which allows to collaborate on through the internet on software development. We use the program <em>git</em> to track changes, control versions of programs, and upload these changes to github.com. To download projects from github.com the program <em>git</em> needs to be installed on your computer. Let us check if the program is installed. Open a terminal and enter the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ whereis git
-</pre></div>
-</div>
-<p>If this returns something like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git: /usr/bin/git /usr/share/man/man1/git.1.gz
-</pre></div>
-</div>
-<p>You are all set and can continue. If this command returns something like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git:
-</pre></div>
-</div>
-<p><em>git</em> is not installed on your computer. Please ask someone to help you installing <em>git</em></p>
-</div>
-<div class="section" id="download-the-files">
-<h2>Download the files<a class="headerlink" href="#download-the-files" title="Permalink to this headline">¶</a></h2>
-<p>To avoid clutter it is advised to download this tutorial into a directory that is not the home directory (~). Let’s create a new directory four all our <em>git</em> downloads.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir git
-$ <span class="nb">cd</span> git
-</pre></div>
-</div>
-<p>In this directory we can donwload the tutorial files with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone THIS NEEDS TO BE CHANGED WHEN THE TUTORIAL HAS BEEN PUSHED TO GITHUB.COM
+<p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> should now return a different working directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/home/jovyan/linux_tutorial/tutorial_00
 </pre></div>
 </div>
 </div>
-<div class="section" id="working-with-jupyter-notebooks">
-<h2>Working with jupyter notebooks<a class="headerlink" href="#working-with-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
-<p>The next part of this tutorial can be found in a html file. To open it enter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/git/tutorial_new_members
-$ firefox 00_introduction_notebooks.html <span class="p">&amp;</span>
-</pre></div>
+<div class="section" id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linux_tutorial_00.html">Tutorial zero</a></li>
+</ul>
 </div>
 </div>
 </div>
@@ -295,6 +343,7 @@ $ firefox 00_introduction_notebooks.html <span class="p">&amp;</span>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="linux_tutorial_00.html" class="btn btn-neutral float-right" title="Tutorial zero" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="index.html" class="btn btn-neutral float-left" title="Start Science Here!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
