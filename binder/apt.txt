@@ -2,3 +2,4 @@ vim
 man
 manpages
 man-db
+coreutils
