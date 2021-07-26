@@ -10,7 +10,7 @@
    :maxdepth: 2
    :caption: Contents:
 
-   Linux tutorial
+   linux_tutorial
 
 
 
