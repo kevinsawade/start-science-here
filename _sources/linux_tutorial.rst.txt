@@ -179,6 +179,8 @@ Tutorials
 =========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    linux_tutorial_00
+   linux_tutorial_01
+   linux_tutorial_02

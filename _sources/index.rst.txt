@@ -41,11 +41,17 @@ Linux Tutorial
 
 The recommended route starts with the linux tutorial: :ref:`linux-tutorial-label`.
 
+Windows subsystem for Linux
+===========================
+
+You now have a pretty solid understanding about unix-like operating systems and how to work with a command-line interface. Binder makes it very easy to learn because all you need is a working browser and internet connection. However, we can't use binder forever, at some point we want to switch to our onw compters. The caveat is, that there are three prevalent OSes. Mac OS X and our favorite Linux distribution (ubuntu) are very similar, but Windows 10 is very different. Luckily, there is the Windows subsystem for linux, which gives you a working ubuntu machine for your Windows 10 PC. Here's a summary of how to install the latest version of ubuntu: :ref:`wsl-label`.
+
 .. toctree::
    :maxdepth: 1
    :hidden:
 
    linux_tutorial
+   windows_susbsystem_for_linux
 
 
 Indices and tables

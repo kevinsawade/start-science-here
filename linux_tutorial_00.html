@@ -49,6 +49,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial one" href="linux_tutorial_01.html" />
     <link rel="prev" title="Linux tutorial" href="linux_tutorial.html" /> 
 </head>
 
@@ -106,18 +107,23 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial zero</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#listing-files-and-directories">Listing files and directories</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#changing-into-a-different-directory">Changing into a different directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#autocomplete">Autocomplete</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#making-directories">Making directories</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pathnames">Pathnames</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#understanding-pathnames">Understanding pathnames</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#your-home-directory">~ (your home directory)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#calling-the-check-py-scripts">Calling the check.py scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#continue">Continue</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_01.html">Tutorial one</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_02.html">Tutorial two</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
 </ul>
 
             
@@ -198,7 +204,8 @@
 <p>We will now make our way through the first commands:</p>
 <div class="section" id="listing-files-and-directories">
 <h2>Listing files and directories<a class="headerlink" href="#listing-files-and-directories" title="Permalink to this headline">¶</a></h2>
-<p><span class="boldcode">ls (list)</span></p>
+<div class="section" id="ls-list">
+<h3><span class="boldcode">ls (list)</span><a class="headerlink" href="#ls-list" title="Permalink to this headline">¶</a></h3>
 <p>When you first login, your current working directory is your home directory. Your home directory has the same name as your user-name (for us, that username is <code class="docutils literal notranslate"><span class="pre">jovyan</span></code> and the home directory is <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>). Normally your personal files can be found here, but for us, the content of the whole “start science here” project is here. To find out, what exactly can be found here, tye:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
 binder  docs  ideas.txt  LICENSE  pics  python_tutorial  README.md  requirements.txt
@@ -213,9 +220,11 @@ binder  docs  ideas.txt  LICENSE  pics  python_tutorial  README.md  requirements
 <p>Now you can see the hidden <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory and the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file. This command also lists two files, <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code>. The first is the file of the current working cirectory and the second is the file of the parent directory (in our case that would be <code class="docutils literal notranslate"><span class="pre">/home</span></code>).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">-a</span></code> part of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command is reffered to as an option (sometimes also called flag). Options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. (See later in this tutorial)</p>
 </div>
+</div>
 <div class="section" id="changing-into-a-different-directory">
 <h2>Changing into a different directory<a class="headerlink" href="#changing-into-a-different-directory" title="Permalink to this headline">¶</a></h2>
-<p><span class="boldcode">cd (change directory)</span></p>
+<div class="section" id="cd-change-directory">
+<h3><span class="boldcode">cd (change directory)</span><a class="headerlink" href="#cd-change-directory" title="Permalink to this headline">¶</a></h3>
 <p>The command <code class="docutils literal notranslate"><span class="pre">cd</span></code> <span class="italiccode">directory</span> means change the current working directory to ‘directory’. The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.</p>
 <p>To change to the directory you have just made, type:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> linux_tutorial
@@ -247,9 +256,22 @@ $ <span class="nb">pwd</span>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">cd</span></code> command without anything will bring you back to your home directoy.</p>
 </div>
+</div>
+<div class="section" id="autocomplete">
+<h2>Autocomplete<a class="headerlink" href="#autocomplete" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tab">
+<h3><span class="boldcode">[Tab]</span><a class="headerlink" href="#tab" title="Permalink to this headline">¶</a></h3>
+<p>While typing you can peridocally try to press <span class="boldcode">[Tab]</span> (the tabulator key of yoru keyboard) to use the autocomplete feature of the shell. For example. Go to your home directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span>
+</pre></div>
+</div>
+<p>And start to type <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">linu</span></code> and then hit <span class="boldcode">[Tab]</span> and see, how the command autocompletes to <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">linux_tutorial</span></code>. You can also use tab to show you what possible additions you can add to your command. If you type just <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">``</span> <span class="pre">(that</span> <span class="pre">is</span> <span class="pre">``cd</span></code> followed by one space <span class="boldcode">[Spacebar]</span>) and hit <span class="boldcode">[Tab]</span> two times, the console displays all possible directories that you can change to.</p>
+</div>
+</div>
 <div class="section" id="making-directories">
 <h2>Making directories<a class="headerlink" href="#making-directories" title="Permalink to this headline">¶</a></h2>
-<p><span class="boldcode">mkdir (make directory)</span></p>
+<div class="section" id="mkdir-make-directory">
+<h3><span class="boldcode">mkdir (make directory)</span><a class="headerlink" href="#mkdir-make-directory" title="Permalink to this headline">¶</a></h3>
 <p>We will now make a subdirectory in the <code class="docutils literal notranslate"><span class="pre">~/linux_tutorial/tutorial_00</span></code> directory to hold the files you will be creating and using in the course of this tutorial.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -265,9 +287,11 @@ $ <span class="nb">pwd</span>
 <p>Your exercise: Make another directory inside the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory called <code class="docutils literal notranslate"><span class="pre">backups</span></code>.</p>
 </div>
 </div>
+</div>
 <div class="section" id="pathnames">
 <h2>Pathnames<a class="headerlink" href="#pathnames" title="Permalink to this headline">¶</a></h2>
-<p><span class="boldcode">pwd (print working directory)</span></p>
+<div class="section" id="pwd-print-working-directory">
+<h3><span class="boldcode">pwd (print working directory)</span><a class="headerlink" href="#pwd-print-working-directory" title="Permalink to this headline">¶</a></h3>
 <p>We’ve already used the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command extensively. But let’s talk about the <em>filesystem</em>. The filesystem controls how data is stored. We can traverse it with the above commands. The filesystem imposes limits on our PC. The disk can be full or the filesystem can have a largest possible filesize. In Linux, the root filesystem is denoted as <code class="docutils literal notranslate"><span class="pre">/</span></code> and you can change to it with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /
 </pre></div>
@@ -278,6 +302,7 @@ $ <span class="nb">pwd</span>
 </div>
 <p>Here you will find somewhat imposing directories. You can read up about them here: <a class="reference external" href="https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/">https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/</a></p>
 <p>You can also skip this part and return to <code class="docutils literal notranslate"><span class="pre">~/linux_tutorial/tutorial_00</span></code></p>
+</div>
 </div>
 <div class="section" id="understanding-pathnames">
 <h2>Understanding pathnames<a class="headerlink" href="#understanding-pathnames" title="Permalink to this headline">¶</a></h2>
@@ -333,7 +358,7 @@ $ <span class="nb">cd</span> ~/linux_tutorial/tutorial_00
 </div>
 <p>So type these commands in succession:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /home/jovyan/linux_tutorial/tutorial_00
-$ ./check.py
+$ python3 check.py
 </pre></div>
 </div>
 <p>And you will either see:</p>
@@ -345,9 +370,49 @@ $ ./check.py
 </pre></div>
 </div>
 </div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ls</span></code></p></td>
+<td><p>list files and directories</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code></p></td>
+<td><p>list all files and directories</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code></p></td>
+<td><p>make a directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">directory</span></code></p></td>
+<td><p>change to named directory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span></code></p></td>
+<td><p>change to home-directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code></p></td>
+<td><p>change to home-directory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code></p></td>
+<td><p>change to parent directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></td>
+<td><p>display the path of the current directory</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="continue">
 <h2>Continue<a class="headerlink" href="#continue" title="Permalink to this headline">¶</a></h2>
-<p>Continue to the next exercise:</p>
+<p>Continue to the next exercise: <a class="reference internal" href="linux_tutorial_01.html#linux-tutorial-01-label"><span class="std std-ref">Tutorial one</span></a></p>
 </div>
 </div>
 
@@ -357,6 +422,7 @@ $ ./check.py
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="linux_tutorial_01.html" class="btn btn-neutral float-right" title="Tutorial one" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="linux_tutorial.html" class="btn btn-neutral float-left" title="Linux tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

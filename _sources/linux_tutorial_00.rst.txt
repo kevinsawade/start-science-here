@@ -25,6 +25,7 @@ Listing files and directories
 =============================
 
 :boldcode:`ls (list)`
+---------------------
 
 When you first login, your current working directory is your home directory. Your home directory has the same name as your user-name (for us, that username is ``jovyan`` and the home directory is ``/home/jovyan``). Normally your personal files can be found here, but for us, the content of the whole "start science here" project is here. To find out, what exactly can be found here, tye:
 
@@ -51,6 +52,7 @@ Changing into a different directory
 ===================================
 
 :boldcode:`cd (change directory)`
+---------------------------------
 
 The command ``cd`` :italiccode:`directory` means change the current working directory to 'directory'. The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.
 
@@ -96,10 +98,26 @@ And have a look around with ``ls``. To swith between your two most recent direct
 The ``cd`` command without anything will bring you back to your home directoy.
 
 
+Autocomplete
+============
+
+:boldcode:`[Tab]`
+-----------------
+
+While typing you can peridocally try to press :boldcode:`[Tab]` (the tabulator key of yoru keyboard) to use the autocomplete feature of the shell. For example. Go to your home directory
+
+.. code-block:: bash
+
+   $ cd
+
+And start to type ``cd linu`` and then hit :boldcode:`[Tab]` and see, how the command autocompletes to ``cd linux_tutorial``. You can also use tab to show you what possible additions you can add to your command. If you type just ``cd `` (that is ``cd`` followed by one space :boldcode:`[Spacebar]`) and hit :boldcode:`[Tab]` two times, the console displays all possible directories that you can change to.
+
+
 Making directories
 ==================
 
 :boldcode:`mkdir (make directory)`
+----------------------------------
 
 We will now make a subdirectory in the ``~/linux_tutorial/tutorial_00`` directory to hold the files you will be creating and using in the course of this tutorial.
 
@@ -125,6 +143,7 @@ Pathnames
 =========
 
 :boldcode:`pwd (print working directory)`
+-----------------------------------------
 
 We've already used the ``pwd`` command extensively. But let's talk about the *filesystem*. The filesystem controls how data is stored. We can traverse it with the above commands. The filesystem imposes limits on our PC. The disk can be full or the filesystem can have a largest possible filesize. In Linux, the root filesystem is denoted as ``/`` and you can change to it with:
 
@@ -221,7 +240,7 @@ So type these commands in succession:
 .. code-block:: bash
 
    $ cd /home/jovyan/linux_tutorial/tutorial_00
-   $ ./check.py
+   $ python3 check.py
 
 And you will either see:
 
@@ -235,7 +254,31 @@ Or:
 
    The `unixstuff` directory is not present. Try again and make sure, that you are in `/home/jovyan/linux_tutorial/tutorial_00`, when you make the directory.
 
+Summary
+=======
+
++-------------------+--------------------------------------------+
+| Command           | Explanation                                |
++===================+============================================+
+| ``ls``            | list files and directories                 |
++-------------------+--------------------------------------------+
+| ``ls -a``         | list all files and directories             |
++-------------------+--------------------------------------------+
+| ``mkdir``         | make a directory                           |
++-------------------+--------------------------------------------+
+| ``cd directory``  | change to named directory                  |
++-------------------+--------------------------------------------+
+| ``cd``            | change to home-directory                   |
++-------------------+--------------------------------------------+
+| ``cd ~``          | change to home-directory                   |
++-------------------+--------------------------------------------+
+| ``cd ..``         | change to parent directory                 |
++-------------------+--------------------------------------------+
+| ``pwd``           | display the path of the current directory  |
++-------------------+--------------------------------------------+
+
+
 Continue
 ========
 
-Continue to the next exercise: 
+Continue to the next exercise: :ref:`linux-tutorial-01-label`

@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Tutorial one &mdash; start-science-here 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_lesson.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/minipres.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial two" href="linux_tutorial_02.html" />
+    <link rel="prev" title="Tutorial zero" href="linux_tutorial_00.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> start-science-here
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="linux_tutorial.html">Linux tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#credit">Credit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#typographical-conventions">Typographical conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#the-linux-unix-operating-system">The linux (UNIX) operating system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#opening-a-terminal-on-binder">Opening a terminal on binder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#the-prompt">The prompt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#changing-directories">Changing directories</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="linux_tutorial.html#tutorials">Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_00.html">Tutorial zero</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial one</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#copying-files">Copying files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#moving-files">Moving files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-files-and-directories">Removing files and directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#displaying-the-contents-of-a-file-on-the-screen">Displaying the contents of a file on the screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#searching-the-contents-of-a-file">Searching the contents of a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calling-the-check-py-scripts">Calling the check.py scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#continue">Continue</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_02.html">Tutorial two</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">start-science-here</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="linux_tutorial.html">Linux tutorial</a> &raquo;</li>
+        
+      <li>Tutorial one</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/linux_tutorial_01.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="tutorial-one">
+<span id="linux-tutorial-01-label"></span><h1>Tutorial one<a class="headerlink" href="#tutorial-one" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="copying-files">
+<h2>Copying files<a class="headerlink" href="#copying-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cp-copy">
+<h3><span class="boldcode">cp (copy)</span><a class="headerlink" href="#cp-copy" title="Permalink to this headline">¶</a></h3>
+<p><cite>cp</cite> <span class="italiccode">file1</span> <span class="italiccode">file2</span> is the command which makes a copy of <strong>file1</strong> in the current working directory and calls it <strong>file2</strong>.</p>
+<p>What we are going to do now, is to take a file stored in <code class="docutils literal notranslate"><span class="pre">/home/jovyan/linux_tutorial</span></code> and use the <code class="docutils literal notranslate"><span class="pre">cp</span></code> comamnd to copy it to <code class="docutils literal notranslate"><span class="pre">/home/jovyan/linux_tutorial/tutorial_01</span></code>.</p>
+<p>First, cd to your unixstuff directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/linux_tutorial/tutorial_01/unixstuff
+</pre></div>
+</div>
+<p>Then at the UNIX prompt, type,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp /home/jovyan/linux_tutorial/science.txt .
+</pre></div>
+</div>
+<p>(Note: Don’t forget the dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>) at the end. Remember, in UNIX, the dot means the current directory.)</p>
+<p>The above command means copy the file <strong>science.txt</strong> to the current directory, keeping the name the same.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Exercise 1a: Create a backup of your <strong>science.txt</strong> file by copying it to a file called <strong>science.bak</strong>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="moving-files">
+<h2>Moving files<a class="headerlink" href="#moving-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mv-move">
+<h3><span class="boldcode">mv (move)</span><a class="headerlink" href="#mv-move" title="Permalink to this headline">¶</a></h3>
+<p><cite>mv</cite> <span class="italiccode">file1</span> <span class="italiccode">file2</span> moves (or renames) <strong>file1</strong> to <strong>file2</strong>.</p>
+<p>To move a file from one place to another, use the <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. This has the effect of moving rather than copying the file, so you end up with only one file rather than two.</p>
+<p>It can also be used to rename a file, by moving the file to the same directory, but giving it a different name.</p>
+<p>We are now going to move the file science.bak to your backup directory.</p>
+<p>First, change directories to your unixstuff directory (can you remember how?). Then, inside the unixstuff directory, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mv science.bak backups/.
+</pre></div>
+</div>
+<p>Type <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">backups</span></code> to see if it has worked.</p>
+</div>
+</div>
+<div class="section" id="removing-files-and-directories">
+<h2>Removing files and directories<a class="headerlink" href="#removing-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rm-remove-rmdir-remove-directory">
+<h3><span class="boldcode">rm (remove), rmdir (remove directory)</span><a class="headerlink" href="#rm-remove-rmdir-remove-directory" title="Permalink to this headline">¶</a></h3>
+<p>To delete (remove) a file, use the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command. As an example, we are going to create a copy of the <strong>science.txt</strong> file then delete it.</p>
+<p>Inside your unixstuff directory, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp science.txt tempfile.txt
+$ ls <span class="c1"># (to check if it has created the file)</span>
+$ rm tempfile.txt
+$ ls <span class="c1"># (to check if it has deleted the file)</span>
+</pre></div>
+</div>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> command to remove a directory (make sure it is empty first). Try to remove the backups directory. You will not be able to since UNIX will not let you remove a non-empty directory.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Exercise 1b: Create a directory called <code class="docutils literal notranslate"><span class="pre">tempstuff</span></code> using <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>, then remove it using the <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> command.</p>
+</div>
+</div>
+</div>
+<div class="section" id="displaying-the-contents-of-a-file-on-the-screen">
+<h2>Displaying the contents of a file on the screen<a class="headerlink" href="#displaying-the-contents-of-a-file-on-the-screen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clear-clear-screen">
+<h3><span class="boldcode">clear (clear screen)</span><a class="headerlink" href="#clear-clear-screen" title="Permalink to this headline">¶</a></h3>
+<p>Before you start the next section, you may like to clear the terminal window of the previous commands so the output of the following commands can be clearly understood.</p>
+<p>At the prompt, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ clear
+</pre></div>
+</div>
+<p>This will clear all text and leave you with the $ prompt at the top of the window.</p>
+</div>
+<div class="section" id="cat-concatenate">
+<h3><span class="boldcode">cat (concatenate)</span><a class="headerlink" href="#cat-concatenate" title="Permalink to this headline">¶</a></h3>
+<p>The command <code class="docutils literal notranslate"><span class="pre">cat</span></code> can be used to display the contents of a file on the screen. Type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat science.txt
+</pre></div>
+</div>
+<p>As you can see, the file is longer than than the size of the window, so it scrolls past making it unreadable.</p>
+<p>I am obliged to also tell you that <code class="docutils literal notranslate"><span class="pre">cat</span></code>’s original intention is to combine multiple files into one (that’s what concatenation is). So normally one would call:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat file1.txt file2.txt &gt;&gt; out_file.txt
+</pre></div>
+</div>
+<p>But <code class="docutils literal notranslate"><span class="pre">cat</span></code> is easy to enter and works just fine, if you like to get a glimpse at a file.</p>
+</div>
+<div class="section" id="less">
+<h3><span class="boldcode">less</span><a class="headerlink" href="#less" title="Permalink to this headline">¶</a></h3>
+<p>The command <code class="docutils literal notranslate"><span class="pre">less</span></code> writes the contents of a file onto the screen a page at a time. Type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ less science.txt
+</pre></div>
+</div>
+<p>Press the <span class="boldcode">[space-bar]</span> if you want to see another page, type <span class="boldcode">[q]</span> if you want to quit reading. As you can see, less is used in preference to cat for long files.</p>
+</div>
+<div class="section" id="head">
+<h3><span class="boldcode">head</span><a class="headerlink" href="#head" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">head</span></code> command writes the first ten lines of a file to the screen.</p>
+<p>First clear the screen then type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ head science.txt
+</pre></div>
+</div>
+<p>Then type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ head -5 science.txt
+</pre></div>
+</div>
+<p>What difference did the <code class="docutils literal notranslate"><span class="pre">-5</span></code> do to the head command?</p>
+</div>
+<div class="section" id="tail">
+<h3><span class="boldcode">tail</span><a class="headerlink" href="#tail" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">tail</span></code> command writes the last ten lines of a file to the screen.</p>
+<p>Clear the screen and type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tail science.txt
+</pre></div>
+</div>
+<p>How can you view the last 15 lines of the file?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tail -15 science.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="searching-the-contents-of-a-file">
+<h2>Searching the contents of a file<a class="headerlink" href="#searching-the-contents-of-a-file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="simple-searching-using-less">
+<h3>Simple searching using less<a class="headerlink" href="#simple-searching-using-less" title="Permalink to this headline">¶</a></h3>
+<p>Using <code class="docutils literal notranslate"><span class="pre">less</span></code>, you can search though a text file for a keyword (pattern). For example, to search through science.txt for the word ‘science’, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ less science.txt
+</pre></div>
+</div>
+<p>then, still in less (i.e. don’t press <span class="boldcode">[q]</span> to quit), type a forward slash <span class="boldcode">[/]:boldcode:</span> followed by the word to search</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">science</span>
+</pre></div>
+</div>
+<p>As you can see, less finds and highlights the keyword. Type <span class="boldcode">[n]</span> to search for the next occurrence of the word.</p>
+</div>
+<div class="section" id="grep-don-t-ask-why-it-is-called-grep">
+<h3>grep (don’t ask why it is called grep)<a class="headerlink" href="#grep-don-t-ask-why-it-is-called-grep" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> is one of many standard UNIX utilities. It searches files for specified words or patterns. First clear the screen, then type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep science science.txt
+</pre></div>
+</div>
+<p>As you can see, grep has printed out each line containg the word science.</p>
+<p>Or has it????</p>
+<p>Try typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep Science science.txt
+</pre></div>
+</div>
+<p>The grep command is case sensitive; it distinguishes between Science and science.</p>
+<p>To ignore upper/lower case distinctions, use the <code class="docutils literal notranslate"><span class="pre">-i</span></code> option, i.e. type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -i science science.txt
+</pre></div>
+</div>
+<p>To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -i <span class="s1">&#39;spinning top&#39;</span> science.txt
+</pre></div>
+</div>
+<p>Some of the other options of grep are:</p>
+<p><code class="docutils literal notranslate"><span class="pre">-v</span></code> display those lines that do NOT match
+<code class="docutils literal notranslate"><span class="pre">-n</span></code> precede each maching line with the line number
+<code class="docutils literal notranslate"><span class="pre">-c</span></code> print only the total count of matched lines
+Try some of them and see the different results. Don’t forget, you can use more than one option at a time, for example, the number of lines without the words science or Science is</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -ivc science science.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="wc-word-count">
+<h3><span class="boldcode">wc (word count)</span><a class="headerlink" href="#wc-word-count" title="Permalink to this headline">¶</a></h3>
+<p>A handy little utility is the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command, short for word count. To do a word count on science.txt, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wc -w science.txt
+</pre></div>
+</div>
+<p>To find out how many lines the file has, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wc -l science.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="calling-the-check-py-scripts">
+<h2>Calling the check.py scripts<a class="headerlink" href="#calling-the-check-py-scripts" title="Permalink to this headline">¶</a></h2>
+<p>To check whether your exercises succeeded type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /home/jovyan/linux_tutorial/tutorial_01
+$ python3 check.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>cp file1 file2</p></th>
+<th class="head"><p>copy file1 and call it file2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">file1</span> <span class="pre">file2</span></code></p></td>
+<td><p>move or rename file1 to file2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">file</span></code></p></td>
+<td><p>remove a file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rmdir</span> <span class="pre">directory</span></code></p></td>
+<td><p>remove a directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">file</span></code></p></td>
+<td><p>display a file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">more</span> <span class="pre">file</span></code></p></td>
+<td><p>display a file a page at a time</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">file</span></code></p></td>
+<td><p>display the first few lines of a file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">file</span></code></p></td>
+<td><p>display the last few lines of a file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">'keyword'</span> <span class="pre">file</span></code></p></td>
+<td><p>search a file for keywords</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">file</span></code></p></td>
+<td><p>count number of lines/words/characters in file</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="continue">
+<h2>Continue<a class="headerlink" href="#continue" title="Permalink to this headline">¶</a></h2>
+<p>Continue to the next exercise: <a class="reference internal" href="linux_tutorial_02.html#linux-tutorial-02-label"><span class="std std-ref">Tutorial two</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="linux_tutorial_02.html" class="btn btn-neutral float-right" title="Tutorial two" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="linux_tutorial_00.html" class="btn btn-neutral float-left" title="Tutorial zero" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Kevin Sawade.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
