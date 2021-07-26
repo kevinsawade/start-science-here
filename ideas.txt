@@ -76,6 +76,7 @@ Find a balance.
 
 
 Git Tutorial
+https://coderefinery.github.io/git-intro/
 start
 .gitignore
 push/pull

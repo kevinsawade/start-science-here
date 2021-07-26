@@ -55,6 +55,11 @@ napoleon_include_init_with_doc = True
 napoleon_include_special_with_doc = True
 napoleon_include_private_with_doc = True
 
+# Copybutton settings
+copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+copybutton_prompt_is_regexp = True
+copybutton_remove_prompts = True
+
 # bibtex settings
 bibtex_bibfiles = ['refs.bib']
 
