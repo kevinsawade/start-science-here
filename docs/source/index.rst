@@ -31,6 +31,10 @@ Welcome to start science here! This project is meant to introduce you to the wor
 
 There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the python tutorial is very long, but can be put on hold after the beginner tutorials).
 
+.. prereq::
+
+   * A working internet connection
+   * An up-to-date browser (Chrome, Firefox, Safari, Opera, Edge)
 
 Linux Tutorial
 ==============

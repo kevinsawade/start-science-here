@@ -35,19 +35,17 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx_lesson',
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.githubpages',
     'sphinxcontrib.yt',
-    'nbsphinx',
     'sphinx.ext.mathjax',
     'sphinx_copybutton',
     'sphinxcontrib.bibtex',
-    'nbsphinx_link',
     'sphinx.ext.intersphinx',
-    'm2r2'
 ]
 
 # Napoleon settings
