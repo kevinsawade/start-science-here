@@ -1,3 +1,4 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD)
 [![MadeWithLove](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/kevinsawade/bcd9d09bc682b4743b84fc6e967478ac/raw/endpoint.json)](https://www.chemie.uni-konstanz.de/ag-peter/)
 
 # Start Science Here!
@@ -23,3 +24,4 @@ If you are currently viewing this document on github.com it is highly advised, t
 
 ## Linux Tutorial
 
+The linux tutorial will guide you through your first experiences with a command line interface. Please use the page from the documentation under https://kevinsawade.github.io/start-science-here/linux_tutorial.html

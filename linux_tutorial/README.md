@@ -2,15 +2,59 @@
 
 Linux is an open-source operating system, first released in 1991. Linux is what's running on virtually all supercomputers and cluster all over the world. Linux is very modular and comes often as the underlying software of so-called distributions. Such distributions are the popular Ubuntu/Debian Family, of the commercial Red Hat Enterprise Linux distribution. The most significant difference between Windows and Linux for new users is the usage text-only commands. Instead of opening applications or settings pages and working your way through it with a mouse, you just open a terminal and type away.
 
+## Background info: Shell, Terminal, Console
 
-## Working with the terminal
+Skip this part if you don't care for the terminology of these words.
 
-First, let's introduce you to the terminal. The terminal allows you to control your computer, make changes to files, move files, and start calculations using hundreds of processors on a remote supercomputer. Let's open a terminal by pressing ```Ctrl``` + ```Alt``` + ```T``` simultaneously. A new window will open and you are greeted by the *prompt*. The *prompt* looks like this:
+- **Terminal**: A device file, that allows command execution beyond read and write. Terminals are provided by the kernal on behalf of a hardware device (keyboard key presses are presented on screen and output can also be printed). Often Terminal emulators are provided through an extra layer to the kernel. Such emulators are: ssh, screen, tmux and the graphical applications that allow you to type into a window and execute commands.
+- **Console**: A physical device with which commands will be sent to a computer (teletype writers in shorthand tty). The console appears to the computer as a kernel-implemented terminal. Most linux machines come with multiple consoles (ttys), from which one is used to run graphical applications.
+- **Command line**: An interface where a user types commands.
+- **Shell**: A shell is the interface that users see, when they log in. The shell is what starts other programs and defines the syntax with which programs are started. Because these *commands* are entered to the shell in Linux, the command-line can also be referred to as a command-line-shell.
+
+## Opening a terminal on binder
+
+The easiest way to start your first terminal is to head over to binder and select New and the Terminal.
+
+https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD
+
+![open_terminal](../pics/linux_tutorial/open_terminal.png)
+
+## The prompt
+
+You are now greeted by the *prompt*. The *prompt* looks like this:
 
 ```bash
-username@computername:~$
+jovyan@jupyter-kevinsawade-2dstart-2dscience-2dhere-2dd2sbp0zb:~$
 ```
-The *prompt* contains useful information, such as your username, the name of the computer and your current directory. The tilde symbol (~) shows you, that you are in your current come directory. Try and change the directory to your Downloads directory with the ```cd``` command. Commands which are to be entered into the console are often prepended with a dollar sign ($):
+
+This somewhat unusual prompt comes from us using a terminal on a webpage (there are some obstacles associated when using a terminal completely portable on a browser). The *prompt* is normally built like this:
+
+```bash
+username@hostname:~$
+```
+The *prompt* contains useful information, such as your username, the name of the computer (`hostname`) and your current directory. The tilde symbol (~) shows you, that you are in your home directory. To make sure, that you are in your home directory you can print your current working environment by calling your first command. Sometimes the dollar sign ($) is prefixed to commands that you should execute on a linux shell to prevent any confusions with other programs / shells.
+
+The other command prompts are listed below:
+
+- `$`: Linux shells in general, `bash` in particual.
+- `>>>`: Python
+- `>`: Windows command prompt or windows power shell
+- `%`: Tcl
+
+But that's enough of that. Now we want to make sure we are in our home directory. Enter this command (without the dollar sign), hit the enter key and observe the output:
+
+```bash
+$ pwd
+/home/jovyan
+```
+
+Success! You are in your home directory.
+
+
+
+
+
+Try and change the directory to your Downloads directory with the ```cd``` command. Commands which are to be entered into the console are often prepended with a dollar sign ($):
 
 ```bash
 $ cd Downloads
