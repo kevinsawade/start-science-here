@@ -1,3 +1,4 @@
 jupyter contrib nbextension install --user
 jupyter nbextension enable --py widgetsnbextension
+echo "MANPATH=/usr/share/man" >> ~/.bashrc
 mandb
