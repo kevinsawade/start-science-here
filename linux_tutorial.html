@@ -93,7 +93,9 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Linux tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#working-with-the-terminal">Working with the terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background-info-shell-terminal-console">Background info: Shell, Terminal, Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opening-a-terminal-on-binder">Opening a terminal on binder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-prompt">The prompt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-if-git-is-installed">Check if git is installed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#download-the-files">Download the files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#working-with-jupyter-notebooks">Working with jupyter notebooks</a></li>
@@ -195,13 +197,47 @@
 <div class="section" id="linux-tutorial">
 <h1>Linux tutorial<a class="headerlink" href="#linux-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>Linux is an open-source operating system, first released in 1991. Linux is what’s running on virtually all supercomputers and cluster all over the world. Linux is very modular and comes often as the underlying software of so-called distributions. Such distributions are the popular Ubuntu/Debian Family, of the commercial Red Hat Enterprise Linux distribution. The most significant difference between Windows and Linux for new users is the usage text-only commands. Instead of opening applications or settings pages and working your way through it with a mouse, you just open a terminal and type away.</p>
-<div class="section" id="working-with-the-terminal">
-<h2>Working with the terminal<a class="headerlink" href="#working-with-the-terminal" title="Permalink to this headline">¶</a></h2>
-<p>First, let’s introduce you to the terminal. The terminal allows you to control your computer, make changes to files, move files, and start calculations using hundreds of processors on a remote supercomputer. Let’s open a terminal by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Alt</span></code> + <code class="docutils literal notranslate"><span class="pre">T</span></code> simultaneously. A new window will open and you are greeted by the <em>prompt</em>. The <em>prompt</em> looks like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>username@computername:~$
+<div class="section" id="background-info-shell-terminal-console">
+<h2>Background info: Shell, Terminal, Console<a class="headerlink" href="#background-info-shell-terminal-console" title="Permalink to this headline">¶</a></h2>
+<p>Skip this part if you don’t care for the terminology of these words.</p>
+<ul class="simple">
+<li><p><strong>Terminal</strong>: A device file, that allows command execution beyond read and write. Terminals are provided by the kernal on behalf of a hardware device (keyboard key presses are presented on screen and output can also be printed). Often Terminal emulators are provided through an extra layer to the kernel. Such emulators are: ssh, screen, tmux and the graphical applications that allow you to type into a window and execute commands.</p></li>
+<li><p><strong>Console</strong>: A physical device with which commands will be sent to a computer (teletype writers in shorthand tty). The console appears to the computer as a kernel-implemented terminal. Most linux machines come with multiple consoles (ttys), from which one is used to run graphical applications.</p></li>
+<li><p><strong>Command line</strong>: An interface where a user types commands.</p></li>
+<li><p><strong>Shell</strong>: A shell is the interface that users see, when they log in. The shell is what starts other programs and defines the syntax with which programs are started. Because these <em>commands</em> are entered to the shell in Linux, the command-line can also be referred to as a command-line-shell.</p></li>
+</ul>
+</div>
+<div class="section" id="opening-a-terminal-on-binder">
+<h2>Opening a terminal on binder<a class="headerlink" href="#opening-a-terminal-on-binder" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to start your first terminal is to head over to binder and select New and the Terminal.</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD">https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD</a></p>
+<a class="reference external image-reference" href="../pics/linux_tutorial/open_terminal.png"><img alt="open_terminal" src="../pics/linux_tutorial/open_terminal.png" /></a>
+</div>
+<div class="section" id="the-prompt">
+<h2>The prompt<a class="headerlink" href="#the-prompt" title="Permalink to this headline">¶</a></h2>
+<p>You are now greeted by the <em>prompt</em>. The <em>prompt</em> looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jovyan@jupyter-kevinsawade-2dstart-2dscience-2dhere-2dd2sbp0zb:~$
 </pre></div>
 </div>
-<p>The <em>prompt</em> contains useful information, such as your username, the name of the computer and your current directory. The tilde symbol (~) shows you, that you are in your current come directory. Try and change the directory to your Downloads directory with the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command. Commands which are to be entered into the console are often prepended with a dollar sign ($):</p>
+<p>This somewhat unusual prompt comes from us using a terminal on a webpage (there are some obstacles associated when using a terminal completely portable on a browser). The <em>prompt</em> is normally built like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>username@hostname:~$
+</pre></div>
+</div>
+<p>The <em>prompt</em> contains useful information, such as your username, the name of the computer (<code class="docutils literal notranslate"><span class="pre">hostname</span></code>) and your current directory. The tilde symbol (~) shows you, that you are in your home directory. To make sure, that you are in your home directory you can print your current working environment by calling your first command. Sometimes the dollar sign ($) is prefixed to commands that you should execute on a linux shell to prevent any confusions with other programs / shells.</p>
+<p>The other command prompts are listed below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span></code>: Linux shells in general, <code class="docutils literal notranslate"><span class="pre">bash</span></code> in particual.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>: Python</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>: Windows command prompt or windows power shell</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>: Tcl</p></li>
+</ul>
+<p>But that’s enough of that. Now we want to make sure we are in our home directory. Enter this command (without the dollar sign), hit the enter key and observe the output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/home/jovyan
+</pre></div>
+</div>
+<p>Success! You are in your home directory.</p>
+<p>Try and change the directory to your Downloads directory with the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command. Commands which are to be entered into the console are often prepended with a dollar sign ($):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> Downloads
 </pre></div>
 </div>
