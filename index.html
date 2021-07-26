@@ -13,9 +13,11 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_lesson.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
@@ -33,13 +35,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="_static/minipres.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -162,31 +165,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="start-science-here">
+  <div class="section" id="start-science-here">
 <h1>Start Science Here!<a class="headerlink" href="#start-science-here" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a>
 <a class="reference external image-reference" href="https://www.chemie.uni-konstanz.de/ag-peter/"><img alt="MadeWithLove" src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/kevinsawade/bcd9d09bc682b4743b84fc6e967478ac/raw/endpoint.json" /></a>
@@ -203,6 +182,13 @@
 <li><p>Your first project</p></li>
 </ol>
 <p>There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the python tutorial is very long, but can be put on hold after the beginner tutorials).</p>
+<div class="admonition-prerequisites prereq admonition">
+<p class="admonition-title">Prerequisites</p>
+<ul class="simple">
+<li><p>A working internet connection</p></li>
+<li><p>An up-to-date browser (Chrome, Firefox, Safari, Opera, Edge)</p></li>
+</ul>
+</div>
 <div class="section" id="linux-tutorial">
 <h2>Linux Tutorial<a class="headerlink" href="#linux-tutorial" title="Permalink to this headline">¶</a></h2>
 <p>The recommended route starts with the linux tutorial: <a class="reference internal" href="linux_tutorial.html#linux-tutorial-label"><span class="std std-ref">Linux tutorial</span></a>.</p>

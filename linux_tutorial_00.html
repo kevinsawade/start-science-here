@@ -13,9 +13,11 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_lesson.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
@@ -33,13 +35,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="_static/minipres.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -102,9 +105,13 @@
 <li class="toctree-l2 current"><a class="reference internal" href="linux_tutorial.html#tutorials">Tutorials</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial zero</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#listing-files-and-directories">Listing files and directories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#heading-1">Heading 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#heading-2">Heading 2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#heading-3">Heading 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-into-a-different-directory">Changing into a different directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#making-directories">Making directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pathnames">Pathnames</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#understanding-pathnames">Understanding pathnames</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#your-home-directory">~ (your home directory)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calling-the-check-py-scripts">Calling the check.py scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#continue">Continue</a></li>
 </ul>
 </li>
 </ul>
@@ -182,31 +189,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<blockquote>
+  <blockquote>
 <div></div></blockquote>
 <div class="section" id="tutorial-zero">
 <span id="linux-tutorial-00-label"></span><h1>Tutorial zero<a class="headerlink" href="#tutorial-zero" title="Permalink to this headline">¶</a></h1>
@@ -215,28 +198,156 @@
 <p>We will now make our way through the first commands:</p>
 <div class="section" id="listing-files-and-directories">
 <h2>Listing files and directories<a class="headerlink" href="#listing-files-and-directories" title="Permalink to this headline">¶</a></h2>
-<p>boldcode:<cite>ls (list)</cite></p>
+<p><span class="boldcode">ls (list)</span></p>
 <p>When you first login, your current working directory is your home directory. Your home directory has the same name as your user-name (for us, that username is <code class="docutils literal notranslate"><span class="pre">jovyan</span></code> and the home directory is <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>). Normally your personal files can be found here, but for us, the content of the whole “start science here” project is here. To find out, what exactly can be found here, tye:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
+binder  docs  ideas.txt  LICENSE  pics  python_tutorial  README.md  requirements.txt
 </pre></div>
 </div>
-<p>Sample text.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command lists the contents of your current working directory.</p>
+<p>ls does not, in fact, cause all the files in your home directory to be listed, but only those ones whose name does not begin with a dot (.) Files beginning with a dot (.) are known as hidden files and usually contain important program configuration information. They are hidden because you should not change them unless you are very familiar with UNIX!</p>
+<p>To list all files in your home directory including those whose names begin with a dot, type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls -a
+</pre></div>
 </div>
-<div class="section" id="heading-1">
-<h2>Heading 1<a class="headerlink" href="#heading-1" title="Permalink to this headline">¶</a></h2>
-<p>Sample text2</p>
-<div class="section" id="subheading-1">
-<h3>Subheading 1<a class="headerlink" href="#subheading-1" title="Permalink to this headline">¶</a></h3>
-<p>Sample Text again</p>
+<p>Now you can see the hidden <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory and the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file. This command also lists two files, <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code>. The first is the file of the current working cirectory and the second is the file of the parent directory (in our case that would be <code class="docutils literal notranslate"><span class="pre">/home</span></code>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">-a</span></code> part of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command is reffered to as an option (sometimes also called flag). Options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. (See later in this tutorial)</p>
+</div>
+<div class="section" id="changing-into-a-different-directory">
+<h2>Changing into a different directory<a class="headerlink" href="#changing-into-a-different-directory" title="Permalink to this headline">¶</a></h2>
+<p><span class="boldcode">cd (change directory)</span></p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">cd</span></code> <span class="italiccode">directory</span> means change the current working directory to ‘directory’. The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.</p>
+<p>To change to the directory you have just made, type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> linux_tutorial
+</pre></div>
+</div>
+<p>You can have a look around that directory with the <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> command. Now the two files <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code> come into play. Typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> .
+</pre></div>
+</div>
+<p>Means: Stay in the same directory (nothing changes), but typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
+</pre></div>
+</div>
+<p>Moves you back up one directory, back to <code class="docutils literal notranslate"><span class="pre">/home/jovjan</span></code> (enter <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to check your current working directory).</p>
+<p>Now we will move two directories at once. So type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> linux_tutorial/tutorial_00
+</pre></div>
+</div>
+<p>And have a look around with <code class="docutils literal notranslate"><span class="pre">ls</span></code>. To swith between your two most recent directories, you can use <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code>. Type these commands in succession:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/home/jovyan/linux_tutorial/tutorial_00
+$ <span class="nb">cd</span> -
+$ <span class="nb">pwd</span>
+/home/jovyan
+$ <span class="nb">cd</span> -
+$ <span class="nb">pwd</span>
+/home/jovyan
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cd</span></code> command without anything will bring you back to your home directoy.</p>
+</div>
+<div class="section" id="making-directories">
+<h2>Making directories<a class="headerlink" href="#making-directories" title="Permalink to this headline">¶</a></h2>
+<p><span class="boldcode">mkdir (make directory)</span></p>
+<p>We will now make a subdirectory in the <code class="docutils literal notranslate"><span class="pre">~/linux_tutorial/tutorial_00</span></code> directory to hold the files you will be creating and using in the course of this tutorial.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All changes and files that you upload to binder will be deleted. Please refer to <a class="reference internal" href="downloading_files.html#downloading-files-label"><span class="std std-ref">Downloading Files</span></a> for how to download files that you might want to keep.</p>
+</div>
+<p>To make a subdirectory called <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> in your current working directory type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir unixstuff
+</pre></div>
+</div>
+<p>Verify that your directory creation was successful by calling the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Your exercise: Make another directory inside the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory called <code class="docutils literal notranslate"><span class="pre">backups</span></code>.</p>
 </div>
 </div>
-<div class="section" id="heading-2">
-<h2>Heading 2<a class="headerlink" href="#heading-2" title="Permalink to this headline">¶</a></h2>
-<p>More text</p>
+<div class="section" id="pathnames">
+<h2>Pathnames<a class="headerlink" href="#pathnames" title="Permalink to this headline">¶</a></h2>
+<p><span class="boldcode">pwd (print working directory)</span></p>
+<p>We’ve already used the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command extensively. But let’s talk about the <em>filesystem</em>. The filesystem controls how data is stored. We can traverse it with the above commands. The filesystem imposes limits on our PC. The disk can be full or the filesystem can have a largest possible filesize. In Linux, the root filesystem is denoted as <code class="docutils literal notranslate"><span class="pre">/</span></code> and you can change to it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /
+</pre></div>
 </div>
-<div class="section" id="heading-3">
-<h2>Heading 3<a class="headerlink" href="#heading-3" title="Permalink to this headline">¶</a></h2>
-<p>Even more</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can always get back to your home directory by calling <code class="docutils literal notranslate"><span class="pre">cd</span></code>.</p>
+</div>
+<p>Here you will find somewhat imposing directories. You can read up about them here: <a class="reference external" href="https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/">https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/</a></p>
+<p>You can also skip this part and return to <code class="docutils literal notranslate"><span class="pre">~/linux_tutorial/tutorial_00</span></code></p>
+</div>
+<div class="section" id="understanding-pathnames">
+<h2>Understanding pathnames<a class="headerlink" href="#understanding-pathnames" title="Permalink to this headline">¶</a></h2>
+<p>Type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls unixstuff
+</pre></div>
+</div>
+<p>Now type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls backups
+</pre></div>
+</div>
+<p>You will get a message like this -</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>backups: No such file or directory
+</pre></div>
+</div>
+<p>The reason is, <code class="docutils literal notranslate"><span class="pre">backups</span></code> is not in your current working directory. To use a command on a file (or directory) not in the current working directory (the directory you are currently in), you must either cd to the correct directory, or specify its full pathname. To list the contents of your backups directory, you must type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls unixstuff/backups
+</pre></div>
+</div>
+</div>
+<div class="section" id="your-home-directory">
+<h2>~ (your home directory)<a class="headerlink" href="#your-home-directory" title="Permalink to this headline">¶</a></h2>
+<p>Home directories can also be referred to by the tilde <code class="docutils literal notranslate"><span class="pre">~</span></code> character. It can be used to specify paths starting at your home directory. These tow commands result in you landing in the same directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /home/jovyan/linux_tutorial/tutorial_00
+$ <span class="nb">cd</span> ~/linux_tutorial/tutorial_00
+</pre></div>
+</div>
+<p>The command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls ~/unixstuff
+</pre></div>
+</div>
+<p>will list the contents of your unixstuff directory, no matter where you currently are in the file system.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Exercises:</p>
+</div>
+<p>What do you think</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls ~
+</pre></div>
+</div>
+<p>would list?</p>
+<p>What do you think</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls ~/..
+</pre></div>
+</div>
+<p>would list?</p>
+</div>
+<div class="section" id="calling-the-check-py-scripts">
+<h2>Calling the check.py scripts<a class="headerlink" href="#calling-the-check-py-scripts" title="Permalink to this headline">¶</a></h2>
+<p>In every <code class="docutils literal notranslate"><span class="pre">linux_tutorial/tutorial_XX</span></code> directory (where XX can be 00, 01, 02, etc.) there is a file called <code class="docutils literal notranslate"><span class="pre">check.py</span></code> which will check, whether your Exercises have been executed correctly. You can execute them with this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./check.py
+</pre></div>
+</div>
+<p>So type these commands in succession:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /home/jovyan/linux_tutorial/tutorial_00
+$ ./check.py
+</pre></div>
+</div>
+<p>And you will either see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Success! `unixstuff` directory is present!
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The `unixstuff` directory is not present. Try again and make sure, that you are in `/home/jovyan/linux_tutorial/tutorial_00`, when you make the directory.
+</pre></div>
+</div>
+</div>
+<div class="section" id="continue">
+<h2>Continue<a class="headerlink" href="#continue" title="Permalink to this headline">¶</a></h2>
+<p>Continue to the next exercise:</p>
 </div>
 </div>
 

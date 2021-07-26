@@ -13,9 +13,11 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_lesson.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
@@ -33,13 +35,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="_static/minipres.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -181,31 +184,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<blockquote>
+  <blockquote>
 <div></div></blockquote>
 <div class="section" id="linux-tutorial">
 <span id="linux-tutorial-label"></span><h1>Linux tutorial<a class="headerlink" href="#linux-tutorial" title="Permalink to this headline">¶</a></h1>
@@ -280,7 +259,6 @@
 </pre></div>
 </div>
 <p>You can easily tell the directory <code class="docutils literal notranslate"><span class="pre">docs/</span></code> from the file <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. If you want to refer the the <code class="docutils literal notranslate"><span class="pre">get_results.py</span></code> file in the <code class="docutils literal notranslate"><span class="pre">tutorial_00</span></code> directory, you can create a path like so: <code class="docutils literal notranslate"><span class="pre">linux_tutorial/tutorial_00/get_results.py</span></code>.</p>
-<p>More on the root filesystem here: <a class="reference external" href="https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/">https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/</a></p>
 <p>In the diagram above, we see that the directory ee51ab contains the subdirectory unixstuff and a file proj.txt</p>
 </div>
 </div>

@@ -110,8 +110,6 @@ All the files are grouped together in the directory structure. The file-system i
 
 You can easily tell the directory ``docs/`` from the file ``requirements.txt``. If you want to refer the the ``get_results.py`` file in the ``tutorial_00`` directory, you can create a path like so: ``linux_tutorial/tutorial_00/get_results.py``.
 
-More on the root filesystem here: https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/
-
 In the diagram above, we see that the directory ee51ab contains the subdirectory unixstuff and a file proj.txt
 
 Opening a terminal on binder
