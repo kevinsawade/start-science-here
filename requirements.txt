@@ -1,10 +1,11 @@
 numpy
+scipy
 matplotlib
 ipywidgets
 jupyter_contrib_nbextensions
-pip install plotext
 nglview
 mdtraj
+MDanalysis
 jupyter
 pyqt5
 wheel
