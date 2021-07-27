@@ -150,3 +150,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# add scripts
+!scripts/clear_ipynb_cells.sh
