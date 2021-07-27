@@ -63,6 +63,13 @@ For a working gromacs installation, or
 
 Although some gromacs exercises can be done on binder, docker is much easier and faster for larger computations. Follow these instructions to install it: :ref:`install-docker-label`.
 
+Gromacs
+=======
+
+Gromacs is a simulation package for MD simulations of proteins, DNA, and lipids. It is not only fast, utilizing CPUs and GPUs, but also flexible and extensible. We use it for all-atom and coarse-grained simulations of proteins and DNA, but also advanced sampling techniques like replica exchange and path sampling. There are great tutorials for gromacs available at: http://www.mdtutorials.com/gmx/
+
+I adjusted the first tutorial "Lysozyme in water" to work with binder. So follow along at: :ref:`gromacs-tutorial-label`.
+
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -70,6 +77,7 @@ Although some gromacs exercises can be done on binder, docker is much easier and
    linux_tutorial
    windows_susbsystem_for_linux
    install_docker
+   gromacs_tutorial
 
 
 Indices and tables
