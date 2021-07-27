@@ -8,3 +8,5 @@ mdtraj
 jupyter
 pyqt5
 wheel
+Pmw
+pyqt5
