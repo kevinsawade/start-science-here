@@ -11,6 +11,6 @@ python -m ipykernel install --sys-prefix
 jupyter contrib nbextension install --sys-prefix
 jupyter nbextension enable --py --sys-prefix widgetsnbextension
 jupyter nbextension enable --py --sys-prefix nglview
-jupyter nbextension enable --py --sys-prefix scratchpad/main
-jupyter nbextension enable --py --sys-prefix rubberband/main
-jupyter nbextension enable --py --sys-prefix exercise2/main
+jupyter nbextension enable scratchpad/main
+jupyter nbextension enable rubberband/main
+jupyter nbextension enable exercise2/main
