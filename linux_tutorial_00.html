@@ -96,7 +96,8 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="linux_tutorial.html">Linux tutorial</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#credit">Credit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#typographical-conventions">Typographical conventions</a></li>
@@ -120,6 +121,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="linux_tutorial_01.html">Tutorial one</a></li>
 <li class="toctree-l3"><a class="reference internal" href="linux_tutorial_02.html">Tutorial two</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_03.html">Tutorial three</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_04.html">Tutorial four</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_05.html">Tutorial five</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_06.html">Tutorial six</a></li>
 </ul>
 </li>
 </ul>
@@ -127,6 +132,16 @@
 <li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_docker.html">Installation instructions for Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="downloading_files.html">Downloading Files from mybinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uploading_files.html">Uploading Files to mybinder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Having Problems?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html#contact">Contact</a></li>
 </ul>
 
             
@@ -278,16 +293,16 @@ $ <span class="nb">pwd</span>
 <p>We will now make a subdirectory in the <code class="docutils literal notranslate"><span class="pre">~/linux_tutorial/tutorial_00</span></code> directory to hold the files you will be creating and using in the course of this tutorial.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All changes and files that you upload to binder will be deleted. Please refer to <a class="reference internal" href="downloading_files.html#downloading-files-label"><span class="std std-ref">Downloading Files</span></a> for how to download files that you might want to keep.</p>
+<p>All changes and files that you upload to binder will be deleted. Please refer to <a class="reference internal" href="downloading_files.html#downloading-files-label"><span class="std std-ref">Downloading Files from mybinder</span></a> for how to download files that you might want to keep.</p>
 </div>
 <p>To make a subdirectory called <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> in your current working directory type:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir unixstuff
 </pre></div>
 </div>
 <p>Verify that your directory creation was successful by calling the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Your exercise: Make another directory inside the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory called <code class="docutils literal notranslate"><span class="pre">backups</span></code>.</p>
+<div class="admonition-important admonition" id="id1">
+<p class="admonition-title">Exercise</p>
+<p>Exercise 0a: Make another directory inside the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory called <code class="docutils literal notranslate"><span class="pre">backups</span></code>.</p>
 </div>
 </div>
 </div>
@@ -338,24 +353,22 @@ $ <span class="nb">cd</span> ~/linux_tutorial/tutorial_00
 </pre></div>
 </div>
 <p>will list the contents of your unixstuff directory, no matter where you currently are in the file system.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Exercises:</p>
+<div class="admonition-important admonition" id="id2">
+<p class="admonition-title">Exercise</p>
+<p>Exercise 0b: What do you think <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">~</span></code> would list?</p>
 </div>
-<p>What do you think</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls ~
-</pre></div>
-</div>
-<p>would list?</p>
-<p>What do you think</p>
-<div class="admonition-solution solution dropdown admonition">
+<div class="admonition-solution solution important dropdown admonition">
 <p class="admonition-title">Solution</p>
 <p>Your home directory.</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls ~/..
-</pre></div>
+<div class="admonition-important admonition" id="id3">
+<p class="admonition-title">Exercise</p>
+<p>Exercise 0c: What do you think <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">~/..</span></code> would list?</p>
 </div>
-<p>would list?</p>
+<div class="admonition-solution solution important dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>This command will list the contents of the directory above your current home directory (<code class="docutils literal notranslate"><span class="pre">~</span></code>). This is in most cases the <code class="docutils literal notranslate"><span class="pre">/home/</span></code> directory (the first slash in <code class="docutils literal notranslate"><span class="pre">/home/</span></code> shows us, that we start all the way from the root-filesystem <code class="docutils literal notranslate"><span class="pre">/</span></code>). This directory can contain multiple users, depending on how many people you share your computer with.</p>
+</div>
 </div>
 <div class="section" id="calling-the-check-py-scripts">
 <h2>Calling the check.py scripts<a class="headerlink" href="#calling-the-check-py-scripts" title="Permalink to this headline">¶</a></h2>

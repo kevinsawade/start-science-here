@@ -47,3 +47,5 @@ The configuration of the protein (-cp) is contained in the output of the previou
    SOL         10832 
 
 What solvate has done is keep track of how many water molecules it has added, which it then writes to your topology to reflect the changes that have been made. Note that if you use any other (non-water) solvent, solvate will not make these changes to your topology! Its compatibility with updating water molecules is hard-coded.
+
+Next: :ref:`gromacs-tutorial-adding-ions-label`

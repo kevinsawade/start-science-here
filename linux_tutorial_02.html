@@ -50,7 +50,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Windows subsystem for linux" href="windows_susbsystem_for_linux.html" />
+    <link rel="next" title="Tutorial three" href="linux_tutorial_03.html" />
     <link rel="prev" title="Tutorial one" href="linux_tutorial_01.html" /> 
 </head>
 
@@ -96,7 +96,8 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="linux_tutorial.html">Linux tutorial</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#credit">Credit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linux_tutorial.html#typographical-conventions">Typographical conventions</a></li>
@@ -110,8 +111,16 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial two</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#redirection">Redirection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#redirecting-the-output">Redirecting the Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#redirecting-the-input">Redirecting the Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pipes">Pipes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#continue">Continue</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_03.html">Tutorial three</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_04.html">Tutorial four</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_05.html">Tutorial five</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux_tutorial_06.html">Tutorial six</a></li>
 </ul>
 </li>
 </ul>
@@ -119,6 +128,16 @@
 <li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_docker.html">Installation instructions for Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="downloading_files.html">Downloading Files from mybinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uploading_files.html">Uploading Files to mybinder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Having Problems?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html#contact">Contact</a></li>
 </ul>
 
             
@@ -226,24 +245,133 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat list1
 </pre></div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Exercise 2a: Using the above method, create another file called list2 containing the following fruit: orange, plum, mango, grapefruit. Read the contents of list2</p>
-<p>The form &gt;&gt; appends standard output to a file. So to add more items to the file list1, type</p>
-<p>% cat &gt;&gt; list1</p>
-<p>Then type in the names of more fruit</p>
-<p>peach
-grape
-orange
-^D (Control D to stop)</p>
-<p>To read the contents of the file, type</p>
-<p>% cat list1</p>
-<p>You should now have two files. One contains six fruit, the other contains four fruit. We will now use the cat command to join (concatenate) list1 and list2 into a new file called biglist. Type</p>
-<p>% cat list1 list2 &gt; biglist</p>
-<p>What this is doing is reading the contents of list1 and list2 in turn, then outputing the text to the file biglist</p>
-<p>To read the contents of the new file, type</p>
-<p>% cat biglist</p>
+<div class="admonition-important admonition" id="id1">
+<p class="admonition-title">Exercise</p>
+<p>Exercise 2a: Using the above method, create another file called <strong>list2</strong> containing the following fruit: orange, plum, mango, grapefruit. Read the contents of <strong>list2</strong></p>
+<p>The form <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> appends standard output to a file (in contrast to a single <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> which will <strong>overwrite</strong> a file). So to add more items to the file list1, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat &gt;&gt; list1
+</pre></div>
 </div>
+<p>Then type in the names of more fruit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peach</span>
+<span class="n">grape</span>
+<span class="n">orange</span>
+<span class="o">^</span><span class="n">D</span> <span class="p">(</span><span class="n">Control</span> <span class="n">D</span> <span class="n">to</span> <span class="n">stop</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To read the contents of the file, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat list1
+</pre></div>
+</div>
+<p>You should now have two files. One contains six fruit, the other contains four fruit. We will now use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command to join (concatenate) <strong>list1</strong> and <strong>list2</strong> into a new file called <strong>biglist</strong>. Type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat list1 list2 &gt; biglist
+</pre></div>
+</div>
+<p>What this is doing is reading the contents of <strong>list1</strong> and <strong>list2</strong> in turn, then outputing the text to the file <strong>biglist</strong></p>
+<p>To read the contents of the new file, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat biglist
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="redirecting-the-input">
+<h2>Redirecting the Input<a class="headerlink" href="#redirecting-the-input" title="Permalink to this headline">¶</a></h2>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> symbol to redirect the input of a command.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">sort</span></code> alphabetically or numerically sorts a list. Type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sort
+</pre></div>
+</div>
+<p>Then type in the names of some vegetables. Press <span class="boldcode">[Return]</span> after each one.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">carrot</span>
+<span class="n">beetroot</span>
+<span class="n">artichoke</span>
+<span class="o">^</span><span class="n">D</span> <span class="p">(</span><span class="n">control</span> <span class="n">d</span> <span class="n">to</span> <span class="n">stop</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output will be</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">artichoke</span>
+<span class="n">beetroot</span>
+<span class="n">carrot</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> you can redirect the input to come from a file rather than the keyboard. For example, to sort the list of fruit, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sort &lt; biglist
+</pre></div>
+</div>
+<p>and the sorted list will be output to the screen.</p>
+<p>To output the sorted list to a file, type,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sort &lt; biglist &gt; slist
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">cat</span></code> to read the contents of the file slist</p>
+</div>
+<div class="section" id="pipes">
+<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h2>
+<p>To see who is on the system with you, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ who
+</pre></div>
+</div>
+<p>One method to get a sorted list of names is to type,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ who &gt; names.txt
+$ sort &lt; names.txt
+</pre></div>
+</div>
+<p>This is a bit slow and you have to remember to remove the temporary file called names when you have finished. What you really want to do is connect the output of the <code class="docutils literal notranslate"><span class="pre">who</span></code> command directly to the input of the <code class="docutils literal notranslate"><span class="pre">sort</span></code> command. This is exactly what pipes do. The symbol for a pipe is the vertical bar <code class="docutils literal notranslate"><span class="pre">|</span></code></p>
+<p>For example, typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ who <span class="p">|</span> sort
+</pre></div>
+</div>
+<p>will give the same result as above, but quicker and cleaner.</p>
+<p>To find out how many users are logged on, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ who <span class="p">|</span> wc -l
+</pre></div>
+</div>
+<div class="admonition-important admonition" id="id2">
+<p class="admonition-title">Exercise</p>
+<p>Exercise 2b: Using pipes, print all lines of list1 and list2 containing the letter ‘p’, sort the result, and print to screen.</p>
+</div>
+<div class="admonition-solution solution important dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cat</span> <span class="pre">list1</span> <span class="pre">list2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">p</span> <span class="pre">|</span> <span class="pre">sort</span></code></p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>command &gt; file</p></th>
+<th class="head"><p>redirect standard output to a file</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">&gt;</span> <span class="pre">file</span></code></p></td>
+<td><p>append standard output to a file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">&lt;</span> <span class="pre">file</span></code></p></td>
+<td><p>redirect standard input from a file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command1</span> <span class="pre">|</span> <span class="pre">command2</span></code></p></td>
+<td><p>pipe the output of command1 to the input of command2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">file1</span> <span class="pre">file2</span> <span class="pre">&gt;</span> <span class="pre">file0</span></code></p></td>
+<td><p>concatenate file1 and file2 to file0</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sort</span></code></p></td>
+<td><p>sort data</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">who</span></code></p></td>
+<td><p>list users currently logged in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="continue">
+<h2>Continue<a class="headerlink" href="#continue" title="Permalink to this headline">¶</a></h2>
+<p>Continue to the next exercise: <a class="reference internal" href="linux_tutorial_03.html#linux-tutorial-03-label"><span class="std std-ref">Tutorial three</span></a></p>
 </div>
 </div>
 
@@ -253,7 +381,7 @@ orange
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="windows_susbsystem_for_linux.html" class="btn btn-neutral float-right" title="Windows subsystem for linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="linux_tutorial_03.html" class="btn btn-neutral float-right" title="Tutorial three" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="linux_tutorial_01.html" class="btn btn-neutral float-left" title="Tutorial one" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

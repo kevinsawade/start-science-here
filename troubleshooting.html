@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Gromacs Tutorial &mdash; start-science-here 0.0.1 documentation</title>
+  <title>Troubleshooting &mdash; start-science-here 0.0.1 documentation</title>
   
 
   
@@ -50,8 +50,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Generate Topology" href="gromacs_tutorial_generate_topology.html" />
-    <link rel="prev" title="Installation instructions for Docker" href="install_docker.html" /> 
+    <link rel="prev" title="Uploading Files to mybinder" href="uploading_files.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,22 +96,11 @@
             
             
               <p class="caption"><span class="caption-text">Tutorials</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="linux_tutorial.html">Linux tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_docker.html">Installation instructions for Docker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Gromacs Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#some-gromacs-basics">Some Gromacs Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lysozyme-tutorial">Lysozyme Tutorial</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_generate_topology.html">Generate Topology</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_examine_topology.html">Examine Topology</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_solvation.html">Solvation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_adding_ions.html">Adding Ions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_energy_minimization.html">Energy Minimization</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Extras</span></p>
 <ul>
@@ -120,9 +108,9 @@
 <li class="toctree-l1"><a class="reference internal" href="uploading_files.html">Uploading Files to mybinder</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Having Problems?</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html#contact">Contact</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#contact">Contact</a></li>
 </ul>
 
             
@@ -171,14 +159,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Gromacs Tutorial</li>
+      <li>Troubleshooting</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/gromacs_tutorial.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/troubleshooting.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -194,26 +182,13 @@
             
   <blockquote>
 <div></div></blockquote>
-<div class="section" id="gromacs-tutorial">
-<span id="gromacs-tutorial-label"></span><h1>Gromacs Tutorial<a class="headerlink" href="#gromacs-tutorial" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="some-gromacs-basics">
-<h2>Some Gromacs Basics<a class="headerlink" href="#some-gromacs-basics" title="Permalink to this headline">¶</a></h2>
-<p>With the release of version 5.0 of GROMACS, all of the tools are essentially modules of a binary named “gmx.” This is a departure from previous versions, wherein each of the tools was invoked as its own command. In 5.0, this still works via symlinks, but they will go away in future versions, so it is best to get accustomed to the new way of doing things. To get help information about any GROMACS module, you can invoke either of the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx <span class="nb">help</span> <span class="o">(</span>module<span class="o">)</span>
-</pre></div>
+<div class="section" id="troubleshooting">
+<span id="troubleshooting-label"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<p>If mybinder.org does not start your session for whatever reason, there is also a docker container with this repo available. For that you need to follow the steps to install docker and then execute:</p>
 </div>
-<p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx <span class="o">(</span>module<span class="o">)</span> -h
-</pre></div>
-</div>
-<p>where (module) is replaced by the actual name of the command you’re trying to issue. Information will be printed to the terminal, including available algorithms, options, required file formats, known bugs and limitations, etc. For new users of GROMACS, invoking the help information for common commands is a great way to learn about what each command can do. Now, on to the fun stuff!</p>
-</div>
-<div class="section" id="lysozyme-tutorial">
-<h2>Lysozyme Tutorial<a class="headerlink" href="#lysozyme-tutorial" title="Permalink to this headline">¶</a></h2>
-<p>Start the tutorial: <a class="reference internal" href="gromacs_tutorial_generate_topology.html#gromacs-tutorial-generate-topology-label"><span class="std std-ref">Generate Topology</span></a></p>
-<div class="toctree-wrapper compound">
-</div>
-</div>
+<div class="section" id="contact">
+<h1>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h1>
+<p>If you have issues and want someone to help raise an issue on github: <a class="reference external" href="https://github.com/kevinsawade/start-science-here">https://github.com/kevinsawade/start-science-here</a></p>
 </div>
 
 
@@ -222,8 +197,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="gromacs_tutorial_generate_topology.html" class="btn btn-neutral float-right" title="Generate Topology" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="install_docker.html" class="btn btn-neutral float-left" title="Installation instructions for Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="uploading_files.html" class="btn btn-neutral float-left" title="Uploading Files to mybinder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

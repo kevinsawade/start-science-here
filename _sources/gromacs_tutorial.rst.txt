@@ -43,3 +43,5 @@ Start the tutorial: :ref:`gromacs-tutorial-generate-topology-label`
    gromacs_tutorial_generate_topology
    gromacs_tutorial_examine_topology
    gromacs_tutorial_solvation
+   gromacs_tutorial_adding_ions
+   gromacs_tutorial_energy_minimization

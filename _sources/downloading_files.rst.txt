@@ -9,11 +9,11 @@
 .. role:: italiccode
   :class: italiccode
 
-=================
-Downloading Files
-=================
+===============================
+Downloading Files from mybinder
+===============================
 
-Downloading files from binder can be made by selecting a file from the standard "Files" tab in binder and hitting the Download button:
+Downloading files from binder can be done by selecting a file from the standard "Files" tab in binder and hitting the Download button:
 
 .. image:: _static/pics/linux_tutorial/download_from_binder.png
    :target: _static/pics/linux_tutorial/download_from_binder.png

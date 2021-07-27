@@ -59,7 +59,7 @@ For a working gromacs installation, or
 
 .. code-block:: bash
 
-   $ docker exec -it kevinsawade:merge_conflict
+   $ docker exec -it kevinsawade:conflict-resolution
 
 Although some gromacs exercises can be done on binder, docker is much easier and faster for larger computations. Follow these instructions to install it: :ref:`install-docker-label`.
 
@@ -72,12 +72,26 @@ I adjusted the first tutorial "Lysozyme in water" to work with binder. So follow
 
 .. toctree::
    :maxdepth: 1
-   :hidden:
+   :caption: Tutorials
 
    linux_tutorial
    windows_susbsystem_for_linux
    install_docker
    gromacs_tutorial
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Extras
+
+   downloading_files
+   uploading_files
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Having Problems?
+
+   troubleshooting
 
 
 Indices and tables
