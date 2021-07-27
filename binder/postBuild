@@ -1,3 +1,5 @@
+pip install mdtraj
+pip install nglview
 jupyter contrib nbextension install --user
 jupyter nbextension enable --py widgetsnbextension
 python -m ipykernel install --sys-prefix
