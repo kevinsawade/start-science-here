@@ -151,4 +151,6 @@ crashlytics-build.properties
 fabric.properties
 
 # add scripts
+gromacs_tutorial/
 !scripts/clear_ipynb_cells.sh
+!scripts/plot_xvg.py
