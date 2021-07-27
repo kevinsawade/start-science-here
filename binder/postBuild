@@ -1,3 +1,10 @@
+pip install matplotlib
+pip install ipywidgets
+pip install jupyter_contrib_nbextensions
+pip install MDanalysis
+pip install jupyter
+pip install pyqt5
+pip install wheel
 pip install mdtraj
 pip install nglview
 python -m ipykernel install --sys-prefix
