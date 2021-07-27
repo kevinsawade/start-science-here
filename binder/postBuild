@@ -4,4 +4,4 @@ jupyter nbextension enable --py widgetsnbextension
 python -m ipykernel install --sys-prefix
 jupyter nbextension enable --py --sys-prefix widgetsnbextension
 jupyter nbextension enable --py --sys-prefix nglview
-jupyter contrib nbextension install --user
+jupyter contrib nbextension install --sys-prefix
