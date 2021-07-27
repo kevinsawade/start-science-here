@@ -18,3 +18,4 @@ libmsgpack-dev
 python3-pyqt5.qtopengl
 libglm-dev
 libnetcdf-dev
+pymol
