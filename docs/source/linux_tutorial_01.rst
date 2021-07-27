@@ -40,7 +40,7 @@ Then at the UNIX prompt, type,
 
 The above command means copy the file **science.txt** to the current directory, keeping the name the same.
 
-.. important::
+.. sshexercise::
 
    Exercise 1a: Create a backup of your **science.txt** file by copying it to a file called **science.bak**.
 

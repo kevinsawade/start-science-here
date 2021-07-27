@@ -13,6 +13,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(1, os.path.abspath('./_ext'))
 
 
 # -- Project information -----------------------------------------------------
@@ -48,7 +49,8 @@ extensions = [
     'sphinxcontrib.bibtex',
     'sphinx.ext.intersphinx',
     'sphinx_rtd_theme_ext_color_contrast',
-    'sphinx.ext.githubpages'
+    'sphinx.ext.githubpages',
+    'exercise_directive',
 ]
 
 # Napoleon settings

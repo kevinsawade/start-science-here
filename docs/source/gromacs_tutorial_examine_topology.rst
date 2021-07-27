@@ -123,4 +123,4 @@ If you fail to satisfy these concrete requirements at any time, you will get fat
 
 Now that we have examined the contents of a topology file, we can continue building our system.
 
-Next: : :ref:`gromacs-tutorial-solvation-label`
+Next: :ref:`gromacs-tutorial-solvation-label`

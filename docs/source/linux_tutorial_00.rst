@@ -134,9 +134,9 @@ To make a subdirectory called ``unixstuff`` in your current working directory ty
 
 Verify that your directory creation was successful by calling the ``ls`` command.
 
-.. important::
+.. sshexercise::
 
-   Your exercise: Make another directory inside the ``unixstuff`` directory called ``backups``.
+   Exercise 0a: Make another directory inside the ``unixstuff`` directory called ``backups``.
 
 
 Pathnames
@@ -206,29 +206,21 @@ The command:
 will list the contents of your unixstuff directory, no matter where you currently are in the file system.
 
 
-.. important::
+.. sshexercise::
 
-   Exercises:
-
-What do you think
-
-.. code-block:: bash
-
-   $ ls ~
-
-would list?
-
-What do you think
+   Exercise 0b: What do you think ``ls ~`` would list?
 
 .. solution::
    
    Your home directory.
 
-.. code-block:: bash
+.. sshexercise::
 
-   $ ls ~/..
+   Exercise 0c: What do you think ``ls ~/..`` would list?
 
-would list?
+.. solution::
+
+   This command will list the contents of the directory above your current home directory (``~``). This is in most cases the ``/home/`` directory (the first slash in ``/home/`` shows us, that we start all the way from the root-filesystem ``/``). This directory can contain multiple users, depending on how many people you share your computer with.
 
 Calling the check.py scripts
 ============================

@@ -62,31 +62,151 @@ To read the contents of the file, type
 
    $ cat list1
 
-.. important::
+.. sshexercise::
 
-   Exercise 2a: Using the above method, create another file called list2 containing the following fruit: orange, plum, mango, grapefruit. Read the contents of list2
+   Exercise 2a: Using the above method, create another file called **list2** containing the following fruit: orange, plum, mango, grapefruit. Read the contents of **list2**
 
-   The form >> appends standard output to a file. So to add more items to the file list1, type
+   The form ``>>`` appends standard output to a file (in contrast to a single ``>`` which will **overwrite** a file). So to add more items to the file list1, type
 
-   % cat >> list1
+   .. code-block:: bash
+
+      $ cat >> list1
 
    Then type in the names of more fruit
 
-   peach
-   grape
-   orange
-   ^D (Control D to stop)
+   .. code-block::
+
+      peach
+      grape
+      orange
+      ^D (Control D to stop)
 
    To read the contents of the file, type
 
-   % cat list1
+   .. code-block:: bash
 
-   You should now have two files. One contains six fruit, the other contains four fruit. We will now use the cat command to join (concatenate) list1 and list2 into a new file called biglist. Type
+      $ cat list1
 
-   % cat list1 list2 > biglist
+   You should now have two files. One contains six fruit, the other contains four fruit. We will now use the ``cat`` command to join (concatenate) **list1** and **list2** into a new file called **biglist**. Type
 
-   What this is doing is reading the contents of list1 and list2 in turn, then outputing the text to the file biglist
+   .. code-block:: bash
+
+      $ cat list1 list2 > biglist
+
+   What this is doing is reading the contents of **list1** and **list2** in turn, then outputing the text to the file **biglist**
 
    To read the contents of the new file, type
 
-   % cat biglist
+   .. code-block:: bash
+
+      $ cat biglist
+
+
+Redirecting the Input
+=====================
+
+We use the ``<`` symbol to redirect the input of a command.
+
+The command ``sort`` alphabetically or numerically sorts a list. Type
+
+.. code-block:: bash
+
+   $ sort
+
+Then type in the names of some vegetables. Press :boldcode:`[Return]` after each one.
+
+.. code-block::
+
+   carrot
+   beetroot
+   artichoke
+   ^D (control d to stop)
+
+The output will be
+
+.. code-block::
+
+   artichoke
+   beetroot
+   carrot
+
+Using ``<`` you can redirect the input to come from a file rather than the keyboard. For example, to sort the list of fruit, type
+
+.. code-block:: bash
+
+   $ sort < biglist
+
+and the sorted list will be output to the screen.
+
+To output the sorted list to a file, type,
+
+.. code-block:: bash
+
+   $ sort < biglist > slist
+
+Use ``cat`` to read the contents of the file slist
+
+Pipes
+=====
+
+To see who is on the system with you, type
+
+.. code-block:: bash
+
+   $ who
+
+One method to get a sorted list of names is to type,
+
+.. code-block:: bash
+
+   $ who > names.txt
+   $ sort < names.txt
+
+This is a bit slow and you have to remember to remove the temporary file called names when you have finished. What you really want to do is connect the output of the ``who`` command directly to the input of the ``sort`` command. This is exactly what pipes do. The symbol for a pipe is the vertical bar ``|``
+
+For example, typing
+
+.. code-block:: bash
+
+   $ who | sort
+
+will give the same result as above, but quicker and cleaner.
+
+To find out how many users are logged on, type
+
+.. code-block:: bash
+
+   $ who | wc -l
+
+.. sshexercise::
+
+   Exercise 2b: Using pipes, print all lines of list1 and list2 containing the letter 'p', sort the result, and print to screen.
+
+.. solution ::
+
+   ``$ cat list1 list2 | grep p | sort``
+
+Summary
+=======
+
++------------------------------+-------------------------------------------------------+
+| command > file               | redirect standard output to a file                    |
++==============================+=======================================================+
+| ``command > file``           | append standard output to a file                      |
++------------------------------+-------------------------------------------------------+
+| ``command < file``           | redirect standard input from a file                   |
++------------------------------+-------------------------------------------------------+
+| ``command1 | command2``      | pipe the output of command1 to the input of command2  |
++------------------------------+-------------------------------------------------------+
+| ``cat file1 file2 > file0``  | concatenate file1 and file2 to file0                  |
++------------------------------+-------------------------------------------------------+
+| ``sort``                     | sort data                                             |
++------------------------------+-------------------------------------------------------+
+| ``who``                      | list users currently logged in                        |
++------------------------------+-------------------------------------------------------+
+
+
+Continue
+========
+
+Continue to the next exercise: :ref:`linux-tutorial-03-label`

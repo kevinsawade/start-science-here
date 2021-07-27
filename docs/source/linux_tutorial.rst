@@ -184,3 +184,7 @@ Tutorials
    linux_tutorial_00
    linux_tutorial_01
    linux_tutorial_02
+   linux_tutorial_03
+   linux_tutorial_04
+   linux_tutorial_05
+   linux_tutorial_06
