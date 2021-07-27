@@ -6,3 +6,5 @@ pip install plotext
 nglview
 mdtraj
 jupyter
+pyqt5
+wheel
