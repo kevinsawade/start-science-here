@@ -134,7 +134,7 @@ To make a subdirectory called ``unixstuff`` in your current working directory ty
 
 Verify that your directory creation was successful by calling the ``ls`` command.
 
-.. important::
+.. exercise::
 
    Your exercise: Make another directory inside the ``unixstuff`` directory called ``backups``.
 
@@ -219,6 +219,10 @@ What do you think
 would list?
 
 What do you think
+
+.. solution::
+   
+   Your home directory.
 
 .. code-block:: bash
 

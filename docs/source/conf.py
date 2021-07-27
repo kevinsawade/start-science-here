@@ -36,6 +36,7 @@ release = '0.0.1'
 # ones.
 extensions = [
     'sphinx_lesson',
+    'sphinx_lesson.directives',
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
@@ -46,6 +47,8 @@ extensions = [
     'sphinx_copybutton',
     'sphinxcontrib.bibtex',
     'sphinx.ext.intersphinx',
+    'sphinx_rtd_theme_ext_color_contrast',
+    'sphinx.ext.githubpages'
 ]
 
 # Napoleon settings
