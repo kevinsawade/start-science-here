@@ -7,4 +7,3 @@ jupyter nbextension enable --py --sys-prefix nglview
 jupyter nbextension enable --py --sys-prefix rubberband
 jupyter nbextension enable --py --sys-prefix exercise2
 jupyter nbextension enable --py --sys-prefix rubberband
-jupyter nbextension enable --py --sys-prefix toc2
