@@ -102,6 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_docker.html">Installation instructions for Docker</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gromacs_tutorial.html#credit">Credit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gromacs_tutorial.html#some-gromacs-basics">Some Gromacs Basics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="gromacs_tutorial.html#lysozyme-tutorial">Lysozyme Tutorial</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Generate Topology</a></li>
@@ -109,6 +110,12 @@
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_solvation.html">Solvation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_adding_ions.html">Adding Ions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_energy_minimization.html">Energy Minimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration.html">Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration_2.html">Equilibration Phase 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_production.html">Production MD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_analysis.html">Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_more_analysis.html">More Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_more_analysis.html#summary">Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -204,7 +211,7 @@ $ <span class="nb">cd</span> gromacs_tutorial
 </pre></div>
 </div>
 <p>Download the 1AKI.pdb file from the <a class="reference external" href="http://www.rcsb.org/pdb/home/home.do">RCSB</a> via:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget https://files.rcsb.org/view/1AKI.pdb
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget https://files.rcsb.org/view/1AKI.pdb -O 1aki.pdb
 </pre></div>
 </div>
 <p>Have a look at the file with</p>
@@ -221,11 +228,10 @@ $ <span class="nb">cd</span> gromacs_tutorial
 </div>
 <a class="reference external image-reference" href="_static/pics/gromacs_tutorial/lysozyme_nglview.png"><img alt="Ball and Stick and Cartoon representation of the Lysozyme protein." src="_images/lysozyme_nglview.png" /></a>
 <p>Once you’ve had a look at the molecule, you are going to want to strip out the crystal waters. To delete the water molecules (residue “HOH” in the PDB file), either use a plain text editor like vi, emacs (Linux/Mac), or Notepad (Windows). Do not use word processing software! Alternatively, you can use grep to delete these lines very easily:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> $ grep -v HOH 1aki.pdb &gt; 1AKI_clean.pdb
-
-Note that such a procedure is **not universally appropriate** <span class="o">(</span>e.g., the <span class="k">case</span> of a tightly bound or otherwise functional active-site water molecule<span class="o">)</span>. For our intentions here, we <span class="k">do</span> not need crystal water.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -v HOH 1aki.pdb &gt; 1AKI_clean.pdb
 </pre></div>
 </div>
+<p>Note that such a procedure is <strong>not universally appropriate</strong> (e.g., the case of a tightly bound or otherwise functional active-site water molecule). For our intentions here, we do not need crystal water.</p>
 <p>Always check your .pdb file for entries listed under the comment MISSING, as these entries indicate either atoms or whole residues that are not present in the crystal structure. Terminal regions may be absent, and may not present a problem for dynamics. Incomplete internal sequences or any amino acid residues that have missing atoms will cause pdb2gmx to fail. These missing atoms/residues must be modeled in using other software packages. Also note that pdb2gmx is not magic. It cannot generate topologies for arbitrary molecules, just the residues defined by the force field (in the <em>.rtp files - generally proteins, nucleic acids, and a **very*</em> finite amount of cofactors, like NAD(H) and ATP).</p>
 <p>Now that the crystal waters are gone and we have verified that all the necessary atoms are present, the PDB file should contain only protein atoms, and is ready to be input into the first GROMACS module, pdb2gmx. The purpose of pdb2gmx is to generate three files:</p>
 <ol class="arabic simple">

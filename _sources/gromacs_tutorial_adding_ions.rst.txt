@@ -19,7 +19,15 @@ The tool for adding ions within GROMACS is called genion. What genion does is re
 
 To produce a .tpr file with grompp, we will need an additional input file, with the extension .mdp (molecular dynamics parameter file); grompp will assemble the parameters specified in the .mdp file with the coordinates and topology information to generate a .tpr file.
 
-An .mdp file is normally used to run energy minimization or an MD simulation, but in this case is simply used to generate an atomic description of the system. An example .mdp file (the one we will use) can be downloaded `here <http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp>`_. Download that file to your PC and upload it to binder :ref:
+An .mdp file is normally used to run energy minimization or an MD simulation, but in this case is simply used to generate an atomic description of the system. An example .mdp file (the one we will use) can be downloaded `here <http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp>`_. Download that file to your PC and upload it to binder :ref:`uploading-files-label`.
+
+Alternatively you can call this command:
+
+.. code-block:: bash
+
+   $ wget http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp
+
+And move the file to the correct ``~/gromacs_tutorial`` directory.
 
 In reality, the .mdp file used at this step can contain any legitimate combination of parameters. I typically use an energy-minimization script, because they are very basic and do not involve any complicated parameter combinations.
 

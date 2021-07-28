@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Adding Ions &mdash; start-science-here 0.0.1 documentation</title>
+  <title>Equilibration &mdash; start-science-here 0.0.1 documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Energy Minimization" href="gromacs_tutorial_energy_minimization.html" />
-    <link rel="prev" title="Solvation" href="gromacs_tutorial_solvation.html" /> 
+    <link rel="next" title="Equilibration Phase 2" href="gromacs_tutorial_equilibration_2.html" />
+    <link rel="prev" title="Energy Minimization" href="gromacs_tutorial_energy_minimization.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,9 +108,9 @@
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_generate_topology.html">Generate Topology</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_examine_topology.html">Examine Topology</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_solvation.html">Solvation</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding Ions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_adding_ions.html">Adding Ions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_energy_minimization.html">Energy Minimization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration.html">Equilibration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Equilibration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration_2.html">Equilibration Phase 2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_production.html">Production MD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_analysis.html">Analysis</a></li>
@@ -180,14 +180,14 @@
         
           <li><a href="gromacs_tutorial.html">Gromacs Tutorial</a> &raquo;</li>
         
-      <li>Adding Ions</li>
+      <li>Equilibration</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/gromacs_tutorial_adding_ions.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/gromacs_tutorial_equilibration.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -203,42 +203,37 @@
             
   <blockquote>
 <div></div></blockquote>
-<div class="section" id="adding-ions">
-<span id="gromacs-tutorial-adding-ions-label"></span><h1>Adding Ions<a class="headerlink" href="#adding-ions" title="Permalink to this headline">¶</a></h1>
-<p>We now have a solvated system that contains a charged protein. The output of pdb2gmx told us that the protein has a net charge of +8e (based on its amino acid composition). If you missed this information in the pdb2gmx output, look at the last line of your <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">atoms</span> <span class="pre">]</span></code> directive in topol.top; it should read (in part) “qtot 8.” Since life does not exist at a net charge, we must add ions to our system.</p>
-<p>The tool for adding ions within GROMACS is called genion. What genion does is read through the topology and replace water molecules with the ions that the user specifies. The input is called a run input file, which has an extension of .tpr; this file is produced by the GROMACS grompp module (GROMACS pre-processor), which will also be used later when we run our first simulation. What grompp does is process the coordinate file and topology (which describes the molecules) to generate an atomic-level input (.tpr). The .tpr file contains all the parameters for all of the atoms in the system.</p>
-<p>To produce a .tpr file with grompp, we will need an additional input file, with the extension .mdp (molecular dynamics parameter file); grompp will assemble the parameters specified in the .mdp file with the coordinates and topology information to generate a .tpr file.</p>
-<p>An .mdp file is normally used to run energy minimization or an MD simulation, but in this case is simply used to generate an atomic description of the system. An example .mdp file (the one we will use) can be downloaded <a class="reference external" href="http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp">here</a>. Download that file to your PC and upload it to binder <a class="reference internal" href="uploading_files.html#uploading-files-label"><span class="std std-ref">Uploading Files to mybinder</span></a>.</p>
-<p>Alternatively you can call this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp
+<div class="section" id="equilibration">
+<span id="gromacs-equilibration-label"></span><h1>Equilibration<a class="headerlink" href="#equilibration" title="Permalink to this headline">¶</a></h1>
+<p>EM ensured that we have a reasonable starting structure, in terms of geometry and solvent orientation. To begin real dynamics, we must equilibrate the solvent and ions around the protein. If we were to attempt unrestrained dynamics at this point, the system may collapse. The reason is that the solvent is mostly optimized within itself, and not necessarily with the solute. It needs to be brought to the temperature we wish to simulate and establish the proper orientation about the solute (the protein). After we arrive at the correct temperature (based on kinetic energies), we will apply pressure to the system until it reaches the proper density.</p>
+<p>Remember that posre.itp file that pdb2gmx generated a long time ago? We’re going to use it now. The purpose of posre.itp is to apply a position restraining force on the heavy atoms of the protein (anything that is not a hydrogen). Movement is permitted, but only after overcoming a substantial energy penalty. The utility of position restraints is that they allow us to equilibrate our solvent around our protein, without the added variable of structural changes in the protein. The origin of the position restraints (the coordinates at which the restraint potential is zero) is provided via a coordinate file passed to the -r option of grompp.</p>
+<p>Equilibration is often conducted in two phases. The first phase is conducted under an NVT ensemble (constant Number of particles, Volume, and Temperature). This ensemble is also referred to as “isothermal-isochoric” or “canonical.” The timeframe for such a procedure is dependent upon the contents of the system, but in NVT, the temperature of the system should reach a plateau at the desired value. If the temperature has not yet stabilized, additional time will be required. Typically, 50-100 ps should suffice, and we will conduct a 100-ps NVT equilibration for this exercise. Depending on your machine, this may take a while (just under an hour if run in parallel on 16 cores or so). Get the .mdp file <a class="reference external" href="http://www.mdtutorials.com/gmx/lysozyme/Files/nvt.mdp">here</a>, or call:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget http://www.mdtutorials.com/gmx/lysozyme/Files/nvt.mdp
 </pre></div>
 </div>
-<p>And move the file to the correct <code class="docutils literal notranslate"><span class="pre">~/gromacs_tutorial</span></code> directory.</p>
-<p>In reality, the .mdp file used at this step can contain any legitimate combination of parameters. I typically use an energy-minimization script, because they are very basic and do not involve any complicated parameter combinations.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The files provided with this tutorial are intended <strong>only</strong> for use with the OPLS-AA force field. Settings, particularly nonbonded interaction settings, will be different for other force fields.</p>
-</div>
-<p>Assemble your .tpr file with the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx grompp -f ions.mdp -c 1AKI_solv.gro -p topol.top -o ions.tpr
+<p>We will call grompp and mdrun just as we did at the EM step:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+
+$ gmx mdrun -deffnm nvt
 </pre></div>
 </div>
-<p>Now we have an atomic-level description of our system in the binary file ions.tpr. We will pass this file to genion:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx genion -s ions.tpr -o 1AKI_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+<p>A full explanation of the parameters used can be found in the GROMACS manual, in addition to the comments provided. Take note of a few parameters in the .mdp file:</p>
+<ul class="simple">
+<li><p>gen_vel = yes: Initiates velocity generation. Using different random seeds (gen_seed) gives different initial velocities, and thus multiple (different) simulations can be conducted from the same starting structure.</p></li>
+<li><p>tcoupl = V-rescale: The velocity rescaling thermostat is an improvement upon the Berendsen weak coupling method, which did not reproduce a correct kinetic ensemble.</p></li>
+<li><p>pcoupl = no: Pressure coupling is not applied.</p></li>
+</ul>
+<p>Let’s analyze the temperature progression, again using energy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx energy -f nvt.edr -o temperature.xvg
 </pre></div>
 </div>
-<p>When prompted, choose group 13 “SOL” for embedding ions. You do not want to replace parts of your protein with ions.</p>
-<p>In the genion command, we provide the structure/state file (-s) as input, generate a .gro file as output (-o), process the topology (-p) to reflect the removal of water molecules and addition of ions, define positive and negative ion names (-pname and -nname, respectively), and tell genion to add only the ions necessary to neutralize the net charge on the protein by adding the correct number of negative ions (-neutral, which in this case will add 8 Cl- ions to offset the +8 charge on the protein). You can also use genion to add a specified concentration of ions in addition to simply neutralizing the system by specifying the -neutral and -conc options in conjunction. Refer to the genion man page for information on how to use these options.</p>
-<p>The names of the ions specified with -pname and -nname were force field-specific in previous versions of GROMACS, but were standardized in version 4.5. The specified ion names are always the elemental symbol in all capital letters, which is the <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">moleculetype</span> <span class="pre">]</span></code> name that is then written to the topology. Residue or atom names may or may not append the sign of the charge (+/-), depending on the force field. <strong>Do not use atom or residue names in the genion command, or you will encounter errors in subsequent steps.</strong></p>
-<p>Your <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">molecules</span> <span class="pre">]</span></code> directive should now look like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">molecules</span> <span class="p">]</span>
-<span class="p">;</span> <span class="n">Compound</span>      <span class="c1">#mols</span>
-<span class="n">Protein_A</span>         <span class="mi">1</span>
-<span class="n">SOL</span>           <span class="mi">10636</span>
-<span class="n">CL</span>                <span class="mi">8</span>
-</pre></div>
+<p>Type “16 0” at the prompt to select the temperature of the system and exit.</p>
+<div class="admonition-solution solution important dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>The resulting plot should look something like the following:</p>
+<a class="reference external image-reference" href="_static/pics/gromacs_tutorial/plotted_temperature.png"><img alt="Fluctuation of the temperature." src="_static/pics/gromacs_tutorial/plotted_temperature.png" /></a>
 </div>
-<p>Next step: <a class="reference internal" href="gromacs_tutorial_energy_minimization.html#gromacs-energy-minimization-label"><span class="std std-ref">Energy Minimization</span></a></p>
+<p>From the plot, it is clear that the temperature of the system quickly reaches the target value (300 K), and remains stable over the remainder of the equilibration. For this system, a shorter equilibration period (on the order of 50 ps) may have been adequate.</p>
 </div>
 
 
@@ -247,8 +242,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="gromacs_tutorial_energy_minimization.html" class="btn btn-neutral float-right" title="Energy Minimization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="gromacs_tutorial_solvation.html" class="btn btn-neutral float-left" title="Solvation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gromacs_tutorial_equilibration_2.html" class="btn btn-neutral float-right" title="Equilibration Phase 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gromacs_tutorial_energy_minimization.html" class="btn btn-neutral float-left" title="Energy Minimization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

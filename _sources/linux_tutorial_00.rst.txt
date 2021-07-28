@@ -134,9 +134,9 @@ To make a subdirectory called ``unixstuff`` in your current working directory ty
 
 Verify that your directory creation was successful by calling the ``ls`` command.
 
-.. sshexercise::
+.. exercise:: Exercise 0a
 
-   Exercise 0a: Make another directory inside the ``unixstuff`` directory called ``backups``.
+   Make another directory inside the ``unixstuff`` directory called ``backups``.
 
 
 Pathnames
@@ -206,17 +206,17 @@ The command:
 will list the contents of your unixstuff directory, no matter where you currently are in the file system.
 
 
-.. sshexercise::
+.. exercise:: Exercise 0b
 
-   Exercise 0b: What do you think ``ls ~`` would list?
+   What do you think ``ls ~`` would list?
 
 .. solution::
    
    Your home directory.
 
-.. sshexercise::
+.. exercise:: Exercise 0c
 
-   Exercise 0c: What do you think ``ls ~/..`` would list?
+   What do you think ``ls ~/..`` would list?
 
 .. solution::
 

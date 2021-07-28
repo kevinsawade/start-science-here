@@ -50,7 +50,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Downloading Files from mybinder" href="downloading_files.html" />
+    <link rel="next" title="Equilibration" href="gromacs_tutorial_equilibration.html" />
     <link rel="prev" title="Adding Ions" href="gromacs_tutorial_adding_ions.html" /> 
 </head>
 
@@ -102,6 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_docker.html">Installation instructions for Docker</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gromacs_tutorial.html#credit">Credit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gromacs_tutorial.html#some-gromacs-basics">Some Gromacs Basics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="gromacs_tutorial.html#lysozyme-tutorial">Lysozyme Tutorial</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_generate_topology.html">Generate Topology</a></li>
@@ -109,6 +110,12 @@
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_solvation.html">Solvation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_adding_ions.html">Adding Ions</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Energy Minimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration.html">Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration_2.html">Equilibration Phase 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_production.html">Production MD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_analysis.html">Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_more_analysis.html">More Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_more_analysis.html#summary">Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -200,7 +207,10 @@
 <span id="gromacs-energy-minimization-label"></span><h1>Energy Minimization<a class="headerlink" href="#energy-minimization" title="Permalink to this headline">¶</a></h1>
 <p>The solvated, electroneutral system is now assembled. Before we can begin dynamics, we must ensure that the system has no steric clashes or inappropriate geometry. The structure is relaxed through a process called energy minimization (EM).</p>
 <p>The process for EM is much like the addition of ions. We are once again going to use grompp to assemble the structure, topology, and simulation parameters into a binary input file (.tpr), but this time, instead of passing the .tpr to genion, we will run the energy minimization through the GROMACS MD engine, mdrun.</p>
-<p>Assemble the binary input using grompp using <a class="reference external" href="http://www.mdtutorials.com/gmx/lysozyme/Files/minim.mdp">this</a> input parameter file:</p>
+<p>Assemble the binary input using grompp using <a class="reference external" href="http://www.mdtutorials.com/gmx/lysozyme/Files/minim.mdp">this</a> input parameter file, which you can get with <code class="docutils literal notranslate"><span class="pre">wget</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget http://www.mdtutorials.com/gmx/lysozyme/Files/minim.mdp
+</pre></div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx grompp -f minim.mdp -c 1AKI_solv_ions.gro -p topol.top -o em.tpr
 </pre></div>
 </div>
@@ -221,7 +231,15 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx energy -f em.edr -o potential.xvg
 </pre></div>
 </div>
-<p>At the prompt, type “10 0” to select Potential (10); zero (0) terminates input. You will be shown the average of Epot, and a file called “potential.xvg” will be written. To plot this data, you will need to call one of the provided script like so:</p>
+<p>At the prompt, type “10 0” to select Potential (10); zero (0) terminates input. You will be shown the average of Epot, and a file called “potential.xvg” will be written. To plot this data, you will need to call one of the provided scripts like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 ~/scripts/plot_xvg.py potential.xvg
+</pre></div>
+</div>
+<div class="admonition-solution solution important dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>Your data will now be plotted to your terminal.</p>
+<a class="reference external image-reference" href="_static/pics/gromacs_tutorial/plotted_to_terminal.png"><img alt="Decay of potential energy during minimization." src="_static/pics/gromacs_tutorial/plotted_to_terminal.png" /></a>
+</div>
 <p>Now that our system is at an energy minimum, we can begin real dynamics.</p>
 </div>
 
@@ -231,7 +249,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="downloading_files.html" class="btn btn-neutral float-right" title="Downloading Files from mybinder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gromacs_tutorial_equilibration.html" class="btn btn-neutral float-right" title="Equilibration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="gromacs_tutorial_adding_ions.html" class="btn btn-neutral float-left" title="Adding Ions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

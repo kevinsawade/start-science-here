@@ -24,7 +24,7 @@ Download the 1AKI.pdb file from the `RCSB <http://www.rcsb.org/pdb/home/home.do>
 
 .. code-block:: bash
 
-   $ wget https://files.rcsb.org/view/1AKI.pdb
+   $ wget https://files.rcsb.org/view/1AKI.pdb -O 1aki.pdb
 
 Have a look at the file with
 
@@ -52,7 +52,7 @@ Once you've had a look at the molecule, you are going to want to strip out the c
 
    $ grep -v HOH 1aki.pdb > 1AKI_clean.pdb
 
-  Note that such a procedure is **not universally appropriate** (e.g., the case of a tightly bound or otherwise functional active-site water molecule). For our intentions here, we do not need crystal water.
+Note that such a procedure is **not universally appropriate** (e.g., the case of a tightly bound or otherwise functional active-site water molecule). For our intentions here, we do not need crystal water.
 
 Always check your .pdb file for entries listed under the comment MISSING, as these entries indicate either atoms or whole residues that are not present in the crystal structure. Terminal regions may be absent, and may not present a problem for dynamics. Incomplete internal sequences or any amino acid residues that have missing atoms will cause pdb2gmx to fail. These missing atoms/residues must be modeled in using other software packages. Also note that pdb2gmx is not magic. It cannot generate topologies for arbitrary molecules, just the residues defined by the force field (in the *.rtp files - generally proteins, nucleic acids, and a **very** finite amount of cofactors, like NAD(H) and ATP).
 

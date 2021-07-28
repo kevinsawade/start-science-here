@@ -17,7 +17,11 @@ The solvated, electroneutral system is now assembled. Before we can begin dynami
 
 The process for EM is much like the addition of ions. We are once again going to use grompp to assemble the structure, topology, and simulation parameters into a binary input file (.tpr), but this time, instead of passing the .tpr to genion, we will run the energy minimization through the GROMACS MD engine, mdrun.
 
-Assemble the binary input using grompp using `this <http://www.mdtutorials.com/gmx/lysozyme/Files/minim.mdp>`_ input parameter file:
+Assemble the binary input using grompp using `this <http://www.mdtutorials.com/gmx/lysozyme/Files/minim.mdp>`_ input parameter file, which you can get with ``wget``.
+
+.. code-block:: bash
+
+   $ wget http://www.mdtutorials.com/gmx/lysozyme/Files/minim.mdp
 
 .. code-block:: bash
 
@@ -46,6 +50,18 @@ Let's do a bit of analysis. The em.edr file contains all of the energy terms tha
 
    $ gmx energy -f em.edr -o potential.xvg
 
-At the prompt, type "10 0" to select Potential (10); zero (0) terminates input. You will be shown the average of Epot, and a file called "potential.xvg" will be written. To plot this data, you will need to call one of the provided script like so:
+At the prompt, type "10 0" to select Potential (10); zero (0) terminates input. You will be shown the average of Epot, and a file called "potential.xvg" will be written. To plot this data, you will need to call one of the provided scripts like so:
+
+.. code-block:: bash
+
+   $ python3 ~/scripts/plot_xvg.py potential.xvg
+
+.. solution::
+
+   Your data will now be plotted to your terminal.
+
+   .. image:: _static/pics/gromacs_tutorial/plotted_to_terminal.png
+      :target: _static/pics/gromacs_tutorial/plotted_to_terminal.png
+      :alt: Decay of potential energy during minimization.
 
 Now that our system is at an energy minimum, we can begin real dynamics.
