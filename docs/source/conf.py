@@ -51,6 +51,7 @@ extensions = [
     'sphinx_rtd_theme_ext_color_contrast',
     'sphinx.ext.githubpages',
     'exercise_directive',
+    'sphinx_togglebutton',
 ]
 
 # Napoleon settings

@@ -13,6 +13,11 @@
 Gromacs Tutorial
 ================
 
+Credit
+======
+
+Thanks to Justin A. Lemkul, Ph.D. (Virginia Tech Department of Biochemistry) for his GROMACS tutorials, I adjusted them a bit to include ``wget`` and use a plotting tool for the command line.
+
 Some Gromacs Basics
 ===================
 
@@ -38,10 +43,14 @@ Start the tutorial: :ref:`gromacs-tutorial-generate-topology-label`
 
 .. toctree::
    :maxdepth: 1
-   :hidden:
 
    gromacs_tutorial_generate_topology
    gromacs_tutorial_examine_topology
    gromacs_tutorial_solvation
    gromacs_tutorial_adding_ions
    gromacs_tutorial_energy_minimization
+   gromacs_tutorial_equilibration
+   gromacs_tutorial_equilibration_2
+   gromacs_tutorial_production
+   gromacs_tutorial_analysis
+   gromacs_tutorial_more_analysis
