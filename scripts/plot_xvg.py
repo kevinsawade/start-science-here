@@ -33,7 +33,7 @@ def get_title(file):
     return titles[0]
 
 
-def main(file, columns=[]):
+def main(file, columns=[], running_average=0, grid=False):
     usecols = parse_cols(file, columns=columns)
     data = np.loadtxt(file, comments=['#', '@'], usecols=[0] + [i + 1 for i in usecols.keys()])
     labels = get_axis_labels(file)
@@ -41,9 +41,16 @@ def main(file, columns=[]):
 
     for i, label in usecols.items():
         plt.plot(data[:,i + 1], label=label)
+        if running_average:
+            y = data[:, i + 1]
+            y = np.convolve(y, np.ones(running_average)/running_average, mode='valid')
+            x = np.arange(len(y)) + running_average/2
+            plt.plot(x, y, label=label + f' running avg over {running_average}', color='red')
     plt.title(title)
     plt.xlabel(labels[0])
     plt.ylabel(labels[1])
+    if grid:
+        plt.grid(True, True)
     plt.show()
 
 
@@ -66,8 +73,25 @@ if __name__ == '__main__':
         help="""The fields that should be plotted. Can either be a list of [ener\
                 gy, potential], or all."""
     )
+    parser.add_argument(
+        "-rav",
+        "--running-avg",
+        required=False,
+        default=0,
+        type=int,
+        dest='running_average',
+        help="""Adds n ps running averages to the plots."""
+    )
+    parser.add_argument(
+        "-grid",
+        required=False,
+        default=False,
+        action='store_true',
+        dest='grid',
+        help="Whether to add a grid to the figure."
+    )
     args = parser.parse_args()
     if args.columns == 'all':
         args.columns = {}
-    main(args.xvg_file, args.columns)
+    main(args.xvg_file, args.columns, args.running_average, args.grid)
 
