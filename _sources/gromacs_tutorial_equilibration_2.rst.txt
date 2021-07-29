@@ -45,8 +45,8 @@ Type "18 0" at the prompt to select the pressure of the system and exit. The res
 
 .. code-block:: bash
 
-   $ python3 ~/scripts/plot_xvg.py --help
-   $ python3 ~/scripts/plot_xvg.py pressure.xvg -rav 10
+   $ python3 plot_xvg.py --help
+   $ python3 plot_xvg.py pressure.xvg -rav 10
 
 .. solution::
 

@@ -206,8 +206,12 @@
 <div class="section" id="generate-topology">
 <span id="gromacs-tutorial-generate-topology-label"></span><h1>Generate Topology<a class="headerlink" href="#generate-topology" title="Permalink to this headline">¶</a></h1>
 <p>We must download the protein structure file with which we will be working. For this tutorial, we will utilize hen egg white lysozyme (PDB code 1AKI). Open a Terminal on Binder and create a new directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir gromacs_tutorial
-$ <span class="nb">cd</span> gromacs_tutorial
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> gromacs_tutorial
+</pre></div>
+</div>
+<p>Currently the directory is empty, except the <code class="docutils literal notranslate"><span class="pre">plot_xvg.py</span></code> script, that will help us plot our results. Have a look at it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
+$ python3 plot_xvg.py --help:
 </pre></div>
 </div>
 <p>Download the 1AKI.pdb file from the <a class="reference external" href="http://www.rcsb.org/pdb/home/home.do">RCSB</a> via:</p>

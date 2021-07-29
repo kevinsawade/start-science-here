@@ -35,6 +35,18 @@ If we wish to calculate RMSD relative to the crystal structure, we could issue t
 
    $ gmx rms -s em.tpr -f md_0_1_noPBC.xtc -o rmsd_xtal.xvg -tu ns
 
-Plotted together, results look something like:
+Use:
+
+.. code-block::
+
+   $ python3 plot_xvg.py rmsd.xvg rmsd_xtal.xvg -lbl ref:eq ref:crystal
+
+To plot both xvg files and manually set the labels
+
+.. solution::
+
+   .. image:: _static/pics/gromacs_tutorial/plotted_analysis.png
+      :target: _static/pics/gromacs_tutorial/plotted_analysis.png
+      :alt: Difference between reference equilibrated and reference crystal is that RMSD distance to crystal is generally greater.
 
 Both time series show the RMSD levels off to ~0.1 nm (1 Å), indicating that the structure is very stable. Subtle differences between the plots indicate that the structure at t = 0 ns is slightly different from this crystal structure. This is to be expected, since it has been energy-minimized, and because the position restraints are not 100% perfect, as discussed previously.

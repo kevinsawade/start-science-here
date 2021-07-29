@@ -17,8 +17,14 @@ We must download the protein structure file with which we will be working. For t
 
 .. code-block:: bash
 
-   $ mkdir gromacs_tutorial
    $ cd gromacs_tutorial
+
+Currently the directory is empty, except the ``plot_xvg.py`` script, that will help us plot our results. Have a look at it with:
+
+.. code-block:: bash
+
+   $ ls
+   $ python3 plot_xvg.py --help:
 
 Download the 1AKI.pdb file from the `RCSB <http://www.rcsb.org/pdb/home/home.do>`_ via:
 

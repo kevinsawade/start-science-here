@@ -372,6 +372,11 @@ Try some of them and see the different results. Don’t forget, you can use more
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -ivc science science.txt
 </pre></div>
 </div>
+<p>There is also the option to print the following or preceding lines of a line matching the grep pattern. That can come in handy, when you search for some code or other text you wrote long ago and want to have the context of the matching line and not just the line itself. <code class="docutils literal notranslate"><span class="pre">-A</span></code> will print lines <a href="#id1"><span class="problematic" id="id2">**</span></a>A**fter the match, <code class="docutils literal notranslate"><span class="pre">-B</span></code> will print lines <a href="#id3"><span class="problematic" id="id4">**</span></a>B**efore the match.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -A <span class="m">5</span> <span class="c1"># 5 lines after match</span>
+$ grep -A <span class="m">5</span> -B <span class="m">5</span> <span class="c1"># 5 lines before and after match</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="wc-word-count">
 <h3><span class="boldcode">wc (word count)</span><a class="headerlink" href="#wc-word-count" title="Permalink to this headline">¶</a></h3>
