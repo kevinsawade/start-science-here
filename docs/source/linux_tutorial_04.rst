@@ -109,9 +109,9 @@ To give read and write permissions on the file biglist to all,
 
    $ chmod a+rw biglist
 
-.. sshexercise::
+.. exercise:: Exercise 4a
 
-   Exercise 4a: Try changing access permissions on the file science.txt and on the directory backups
+   Try changing access permissions on the file science.txt and on the directory backups
 
    Use ls -l to check that the permissions have changed.
 

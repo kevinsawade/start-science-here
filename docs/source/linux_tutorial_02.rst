@@ -62,9 +62,9 @@ To read the contents of the file, type
 
    $ cat list1
 
-.. sshexercise::
+.. exercise:: Exercise 2a
 
-   Exercise 2a: Using the above method, create another file called **list2** containing the following fruit: orange, plum, mango, grapefruit. Read the contents of **list2**
+   Using the above method, create another file called **list2** containing the following fruit: orange, plum, mango, grapefruit. Read the contents of **list2**
 
    The form ``>>`` appends standard output to a file (in contrast to a single ``>`` which will **overwrite** a file). So to add more items to the file list1, type
 
@@ -178,9 +178,9 @@ To find out how many users are logged on, type
 
    $ who | wc -l
 
-.. sshexercise::
+.. exercise:: Exercise 2b
 
-   Exercise 2b: Using pipes, print all lines of list1 and list2 containing the letter 'p', sort the result, and print to screen.
+   Using pipes, print all lines of list1 and list2 containing the letter 'p', sort the result, and print to screen.
 
 .. solution ::
 
