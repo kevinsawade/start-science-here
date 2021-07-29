@@ -8,9 +8,14 @@ import plotext as plt
 
 def parse_cols(file, columns=[]):
     with open(file, 'r') as f:
-        lines = list(filter(lambda x: x.startswith('@ s'), f.read().splitlines()))
-    indices = list(map(lambda x: int(x.lstrip('@ ').split()[0].lstrip('s')), lines))
-    labels = [re.findall(r"\"([A-Za-z0-9_]+)\"", s)[0] for s in lines]
+        lines = f.read()
+    energy = 'gmx energy' in lines
+    lines = list(filter(lambda x: x.startswith('@ s'), lines.splitlines()))
+    if energy:
+        indices = list(map(lambda x: int(x.lstrip('@ ').split()[0].lstrip('s')), lines))
+    else:
+        indices = [0]
+    labels = [s.split('"')[-2] for s in lines]
     if not columns:
         return {k: v for k, v in zip(indices, labels)}
     else:
@@ -29,29 +34,46 @@ def get_title(file):
     with open(file, 'r') as f:
         lines = list(filter(lambda x: 'title' in x, f.read().splitlines()))
     titles = [s.split('"')[-2] for s in lines]
-    assert len(titles) == 1
-    return titles[0]
+    if len(titles) == 0:
+        raise Exception(f"Could not find title in {file}")
+    elif len(titles) == 1:
+        return titles[0]
+    else:
+        return ' '.join(titles)
 
 
-def main(file, columns=[], running_average=0, grid=False):
-    usecols = parse_cols(file, columns=columns)
-    data = np.loadtxt(file, comments=['#', '@'], usecols=[0] + [i + 1 for i in usecols.keys()])
-    labels = get_axis_labels(file)
-    title = get_title(file)
+def main(files, columns=[], running_average=0, grid=False, plot_labels=[]):
+    lbl = 0
+    for file in files:
+        usecols = parse_cols(file, columns=columns)
+        data = np.loadtxt(file, comments=['#', '@'], usecols=[0] + [i + 1 for i in usecols.keys()])
+        labels = get_axis_labels(file)
+        title = get_title(file)
 
-    for i, label in usecols.items():
-        plt.plot(data[:,i + 1], label=label)
-        if running_average:
-            y = data[:, i + 1]
-            y = np.convolve(y, np.ones(running_average)/running_average, mode='valid')
-            x = np.arange(len(y)) + running_average/2
-            plt.plot(x, y, label=label + f' running avg over {running_average}', color='red')
+        assert usecols
+
+        for i, label in usecols.items():
+            if labels:
+                try:
+                    label = plot_labels[lbl]
+                except IndexError:
+                    pass
+            plt.plot(data[:,i + 1], label=label)
+            if running_average:
+                y = data[:, i + 1]
+                y = np.convolve(y, np.ones(running_average)/running_average, mode='valid')
+                x = np.arange(len(y)) + running_average/2
+                plt.plot(x, y, label=label + f' running avg over {running_average}', color='red')
+            lbl += 1
     plt.title(title)
     plt.xlabel(labels[0])
     plt.ylabel(labels[1])
     if grid:
         plt.grid(True, True)
     plt.show()
+
+    _ = input("Press any button to clear plot")
+    plt.clt()
 
 
 if __name__ == '__main__':
@@ -62,6 +84,7 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         dest="xvg_file",
+        nargs='+',
         help="The xvg file containing the data."
     )
     parser.add_argument(
@@ -70,8 +93,7 @@ if __name__ == '__main__':
         required=False,
         default='all',
         dest="columns",
-        help="""The fields that should be plotted. Can either be a list of [ener\
-                gy, potential], or all."""
+        help="""The fields that should be plotted. Can either be a list of [energy, potential], or all."""
     )
     parser.add_argument(
         "-rav",
@@ -80,7 +102,7 @@ if __name__ == '__main__':
         default=0,
         type=int,
         dest='running_average',
-        help="""Adds n ps running averages to the plots."""
+        help="""Adds n steps running averages to the plots. For example: -rav 10 sets a 10 step runnign average for all plots."""
     )
     parser.add_argument(
         "-grid",
@@ -88,10 +110,19 @@ if __name__ == '__main__':
         default=False,
         action='store_true',
         dest='grid',
-        help="Whether to add a grid to the figure."
+        help="Whether to add a grid to the figure. This option does not take arguments. Set to set grid true."
+    )
+    parser.add_argument(
+        '-lbl',
+        '--labels',
+        nargs='+',
+        required=False,
+        default = [],
+        dest = 'labels',
+        help = 'Manually set plot labels. This option takes as many labels as there are plots to be plotted. Further provided labels will be discarded.'
     )
     args = parser.parse_args()
     if args.columns == 'all':
         args.columns = {}
-    main(args.xvg_file, args.columns, args.running_average, args.grid)
+    main(args.xvg_file, args.columns, args.running_average, args.grid, args.labels)
 
