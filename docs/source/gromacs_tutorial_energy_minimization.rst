@@ -54,7 +54,7 @@ At the prompt, type "10 0" to select Potential (10); zero (0) terminates input. 
 
 .. code-block:: bash
 
-   $ python3 ~/scripts/plot_xvg.py potential.xvg
+   $ python3 plot_xvg.py potential.xvg
 
 .. solution::
 

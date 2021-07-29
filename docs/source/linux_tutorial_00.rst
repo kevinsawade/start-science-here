@@ -212,7 +212,7 @@ will list the contents of your unixstuff directory, no matter where you currentl
 
 .. solution::
    
-   Your home directory.
+   **Your** home directory. So if your username is ``jovyan``, ``ls ~`` would list the contents of the ``/home/jovyan/`` directory.
 
 .. exercise:: Exercise 0c
 

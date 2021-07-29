@@ -74,6 +74,14 @@ Annoy your cubicle mates every time they present you with a Python class. Claim 
 Rediscover the Strategy pattern and then all those things from imperative code you tried so hard to forget after Haskell.
 Find a balance.
 
+Python Tutorials:
+https://github.com/trekhleb/learn-python
+https://github.com/jerry-git/learn-python3
+https://github.com/quobit/awesome-python-in-education
+
+Slurm Tutorials:
+https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html
+https://slurm.schedmd.com/quickstart.html
 
 Git Tutorial
 https://coderefinery.github.io/git-intro/
