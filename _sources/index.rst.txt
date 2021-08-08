@@ -69,6 +69,11 @@ Gromacs is a simulation package for MD simulations of proteins, DNA, and lipids.
 
 I adjusted the first tutorial "Lysozyme in water" to work with binder. So follow along at: :ref:`gromacs-tutorial-label`.
 
+Python
+======
+
+The longest part of start science here! is the python tutorial. If you feel confident with python you might just glimpse over the quick reference at :ref:`python-tutorial-label`. Otherwise you can open this Repo in binder and start making your way through the notebooks.
+
 .. toctree::
    :maxdepth: 1
    :caption: Tutorials
@@ -77,6 +82,8 @@ I adjusted the first tutorial "Lysozyme in water" to work with binder. So follow
    windows_susbsystem_for_linux
    install_docker
    gromacs_tutorial
+   python_tutorial
+   setting_up_your_own_python
 
 
 .. toctree::
