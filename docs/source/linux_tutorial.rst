@@ -28,8 +28,8 @@ Typographical conventions
 We will use the following typographical conventions:
 
 
-* Characters written in ``typewriter font`` are commands that can be typed into the computer.
-* Characters written in :italiccode:`italic typewriter font` indicate non-specific file or directory (i.e. folder names).
+* Characters written in ``typewriter font`` are commands that can be typed into the command line on the computer.
+* Characters written in :italiccode:`italic typewriter font` indicate a non-specific file or directory (i.e. folder names).
 * Words inserted within square brackets indicate :boldcode:`[Ctrl]` indicate keys to be pressed.
 
 Don't forget to press the enter key. Commands are not sent to the computer until this is done.
