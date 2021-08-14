@@ -15,7 +15,7 @@ Start Science Here!
    :target: https://www.chemie.uni-konstanz.de/ag-peter/
    :alt: MadeWithLove
 
-**An introduction to scientific programming, python, molecular dynamics and more**
+**An introduction to scientific programming, python, molecular dynamics, and more**
 
 Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the python tutorial by visiting: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD. If you want to take the full course, take the recommended route:
 
