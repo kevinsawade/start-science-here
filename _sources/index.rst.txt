@@ -15,20 +15,20 @@ Start Science Here!
    :target: https://www.chemie.uni-konstanz.de/ag-peter/
    :alt: MadeWithLove
 
-**An introduction to scientific programming, python, molecular dynamics, and more**
+**An introduction to scientific programming, Python, molecular dynamics, and more**
 
-Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the python tutorial by visiting: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD. If you want to take the full course, take the recommended route:
+Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the Python tutorial by visiting: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD. If you want to take the full course, take the recommended route:
 
 1. Working with Linux from the command line
 2. Installing the Windows subsystem for Linux (Windows users only)
 3. Installing Docker
 4. Gromacs
 5. Python
-6. Setting up your own python
+6. Setting up your own Python
 7. Git
 8. Your first project
 
-There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the python tutorial is very long, but can be put on hold after the beginner tutorials).
+There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the Python tutorial is very long, but can be put on hold after the beginner tutorials).
 
 .. prereq::
 
@@ -40,15 +40,15 @@ Linux Tutorial
 
 The recommended route starts with the linux tutorial: :ref:`linux-tutorial-label`.
 
-Windows subsystem for Linux
+Windows Subsystem for Linux
 ===========================
 
-You now have a pretty solid understanding about unix-like operating systems and how to work with a command-line interface. Binder makes it very easy to learn because all you need is a working browser and internet connection. However, we can't use binder forever, at some point we want to switch to our own computers. The caveat is, that there are three prevalent OSes. Mac OS X and our favorite Linux distribution (ubuntu) are very similar, but Windows 10 is very different. Luckily, there is the Windows subsystem for linux, which gives you a working ubuntu machine for your Windows 10 PC. Here's a summary of how to install the latest version of ubuntu: :ref:`wsl-label`.
+You now have a pretty solid understanding about unix-like operating systems and know how to work with a command-line interface. Binder makes it very easy to learn because all you need is a browser and a working internet connection. However, we can't use binder forever, at some point we will want to switch to our own computers. The caveat is that there are three prevalent OSes. Mac OS X and our favorite Linux distribution (Ubuntu) are very similar, but Windows 10 is very different. Luckily, there is the Windows subsystem for Linux, which gives you a working Ubuntu machine for your Windows 10 PC. Here's a summary of how to install the latest version of Ubuntu: :ref:`wsl-label`.
 
 Docker
 ======
 
-Docker allows us to bring you pre-configured ubuntu installations. Instead of writing pages upon pages of installation instructions for all kinds of pograms, we will install docker and can bring you different environments by calling:
+Docker allows us to bring you pre-configured ubuntu installations. Instead of writing pages upon pages of installation instructions for all kinds of programs, we will install docker and can provide you different environments by calling:
 
 .. code-block:: bash
 
@@ -65,14 +65,14 @@ Although some gromacs exercises can be done on binder, docker is much easier and
 Gromacs
 =======
 
-Gromacs is a simulation package for MD simulations of proteins, DNA, and lipids. It is not only fast, utilizing CPUs and GPUs, but also flexible and extensible. We use it for all-atom and coarse-grained simulations of proteins and DNA, but also advanced sampling techniques like replica exchange and path sampling. There are great tutorials for gromacs available at: http://www.mdtutorials.com/gmx/
+Gromacs is a simulation package for MD simulations of proteins, DNA, and lipids. It is not only fast, utilizing CPUs and GPUs, but also flexible and extensible. We use it for all-atom and coarse-grained simulations of proteins and DNA, but also for advanced sampling techniques like replica exchange and path sampling. There are great tutorials for gromacs available at: http://www.mdtutorials.com/gmx/
 
 I adjusted the first tutorial "Lysozyme in water" to work with binder. So follow along at: :ref:`gromacs-tutorial-label`.
 
 Python
 ======
 
-The longest part of start science here! is the python tutorial. If you feel confident with python you might just glimpse over the quick reference at :ref:`python-tutorial-label`. Otherwise you can open this Repo in binder and start making your way through the notebooks.
+The longest part of Start Science Here! is the Python tutorial. If you feel confident with Python you might just glimpse over the quick reference at :ref:`python-tutorial-label`. Otherwise you can open this Repo in binder and start making your way through the notebooks.
 
 .. toctree::
    :maxdepth: 1
@@ -100,7 +100,7 @@ The longest part of start science here! is the python tutorial. If you feel conf
    troubleshooting
 
 
-Indices and tables
+Indices and Tables
 ==================
 
 * :ref:`genindex`
