@@ -35,7 +35,7 @@ There is no set up required to follow along with this tutorial. It can take thre
    * A working internet connection
    * An up-to-date browser (Chrome, Firefox, Safari, Opera, Edge)
 
-Linux Tutorial
+1. Working with Linux from the command line
 ==============
 
 The recommended route starts with the linux tutorial: :ref:`linux-tutorial-label`.
