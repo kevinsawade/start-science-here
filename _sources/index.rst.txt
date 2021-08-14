@@ -19,7 +19,7 @@ Start Science Here!
 
 Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the Python tutorial by visiting: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD. If you want to take the full course, take the recommended route:
 
-1. Working with Linux from the command line
+1. Linux tutorial
 2. Installing the Windows subsystem for Linux (Windows users only)
 3. Installing Docker
 4. Gromacs
