@@ -52,20 +52,20 @@ The kernel
 
 The kernel of UNIX is the hub of the operating system: it allocates time and memory to programs and handles the filestore and communications in response to system calls.
 
-As an illustration of the way that the shell and the kernel work together, suppose a user types ``rm myfile`` (which has the effect of removing the file myfile). The shell searches the filestore for the file containing the program ``rm``\ , and then requests the kernel, through system calls, to execute the program ``rm`` on myfile. When the process ``rm myfile`` has finished running, the shell then returns the UNIX prompt $ to the user, indicating that it is waiting for further commands.
+As an illustration of the way that the shell and the kernel work together, suppose a user types ``rm myfile`` (which has the effect of removing the file myfile). The shell searches the filestore for the file containing the program ``rm``\ , and then requests the kernel, through system calls, to execute the program ``rm`` on myfile. When the process ``rm myfile`` has finished running, the shell then returns the UNIX prompt $ to the user indicating that it is waiting for further commands.
 
 The shell
 ---------
 
-The shell acts as an interface between the user and the kernel. When a user logs in, the login program checks the username and password, and then starts another program called the shell. The shell is a command line interpreter (CLI). It interprets the commands the user types in and arranges for them to be carried out. The commands are themselves programs: when they terminate, the shell gives the user another prompt.
+The shell acts as an interface between the user and the kernel. When a user logs in, the login program checks the username and password and then starts another program called the shell. The shell is a command line interpreter (CLI). It interprets the commands the user types in and arranges for them to be carried out. The commands themselves are programs: when they terminate, the shell gives the user another prompt.
 
 **Background info: shell, terminal, console**
 
 Skip this part if you don't care for the terminology of these words.
 
 
-* **Terminal**\ : A device file, that allows command execution beyond read and write. Terminals are provided by the kernal on behalf of a hardware device (keyboard key presses are presented on screen and output can also be printed). Often Terminal emulators are provided through an extra layer to the kernel. Such emulators are: ssh, screen, tmux and the graphical applications that allow you to type into a window and execute commands.
-* **Console**\ : A physical device with which commands will be sent to a computer (teletype writers in shorthand tty). The console appears to the computer as a kernel-implemented terminal. Most linux machines come with multiple consoles (ttys), from which one is used to run graphical applications.
+* **Terminal**\ : A device file, that allows command execution beyond read and write. Terminals are provided by the kernel on behalf of a hardware device (keyboard key presses are presented on screen and output can also be printed). Often Terminal emulators are provided through an extra layer to the kernel. Such emulators are: ssh, screen, tmux, and graphical applications that allow you to type into a window and execute commands.
+* **Console**\ : A physical device with which commands will be sent to a computer (teletype writers, in shorthand tty). The console appears to the computer as a kernel-implemented terminal. Most linux machines come with multiple consoles (ttys), from which one is used to run graphical applications.
 * **Command line**\ : An interface where a user types commands.
 * **Shell**\ : A shell is the interface that users see, when they log in. The shell is what starts other programs and defines the syntax with which programs are started. Because these *commands* are entered to the shell in Linux, the command-line can also be referred to as a command-line-shell.
 
@@ -81,10 +81,10 @@ A file is a collection of data. They are created by users using text editors, ru
 Examples of files:
 
 
-* a document (report, essay etc.)
+* a document (report, essay, etc.)
 * the text of a program written in some high-level programming language
 * instructions comprehensible directly to the machine and incomprehensible to a casual user, for example, a collection of binary digits (an executable or binary file);
-* a directory, containing information about its contents, which may be a mixture of other directories (subdirectories) and ordinary files.
+* a directory containing information about its contents, which may be a mixture of other directories (subdirectories) and ordinary files.
 
 The directory structure
 -----------------------
@@ -134,7 +134,7 @@ You are now greeted by the *prompt*. The *prompt* looks like this:
 
    jovyan@jupyter-kevinsawade-2dstart-2dscience-2dhere-2dd2sbp0zb:~$
 
-This somewhat unusual prompt comes from us using a terminal on a webpage (there are some obstacles associated when using a terminal completely portable on a browser). The *prompt* is normally built like this:
+This somewhat unusual prompt comes from using a terminal on a webpage (there are some obstacles associated to using a terminal completely portable on a browser). The *prompt* is normally built like this:
 
 .. code-block:: bash
 

@@ -234,16 +234,16 @@
 <div class="section" id="the-kernel">
 <h3>The kernel<a class="headerlink" href="#the-kernel" title="Permalink to this headline">¶</a></h3>
 <p>The kernel of UNIX is the hub of the operating system: it allocates time and memory to programs and handles the filestore and communications in response to system calls.</p>
-<p>As an illustration of the way that the shell and the kernel work together, suppose a user types <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">myfile</span></code> (which has the effect of removing the file myfile). The shell searches the filestore for the file containing the program <code class="docutils literal notranslate"><span class="pre">rm</span></code>, and then requests the kernel, through system calls, to execute the program <code class="docutils literal notranslate"><span class="pre">rm</span></code> on myfile. When the process <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">myfile</span></code> has finished running, the shell then returns the UNIX prompt $ to the user, indicating that it is waiting for further commands.</p>
+<p>As an illustration of the way that the shell and the kernel work together, suppose a user types <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">myfile</span></code> (which has the effect of removing the file myfile). The shell searches the filestore for the file containing the program <code class="docutils literal notranslate"><span class="pre">rm</span></code>, and then requests the kernel, through system calls, to execute the program <code class="docutils literal notranslate"><span class="pre">rm</span></code> on myfile. When the process <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">myfile</span></code> has finished running, the shell then returns the UNIX prompt $ to the user indicating that it is waiting for further commands.</p>
 </div>
 <div class="section" id="the-shell">
 <h3>The shell<a class="headerlink" href="#the-shell" title="Permalink to this headline">¶</a></h3>
-<p>The shell acts as an interface between the user and the kernel. When a user logs in, the login program checks the username and password, and then starts another program called the shell. The shell is a command line interpreter (CLI). It interprets the commands the user types in and arranges for them to be carried out. The commands are themselves programs: when they terminate, the shell gives the user another prompt.</p>
+<p>The shell acts as an interface between the user and the kernel. When a user logs in, the login program checks the username and password and then starts another program called the shell. The shell is a command line interpreter (CLI). It interprets the commands the user types in and arranges for them to be carried out. The commands themselves are programs: when they terminate, the shell gives the user another prompt.</p>
 <p><strong>Background info: shell, terminal, console</strong></p>
 <p>Skip this part if you don’t care for the terminology of these words.</p>
 <ul class="simple">
-<li><p><strong>Terminal</strong>: A device file, that allows command execution beyond read and write. Terminals are provided by the kernal on behalf of a hardware device (keyboard key presses are presented on screen and output can also be printed). Often Terminal emulators are provided through an extra layer to the kernel. Such emulators are: ssh, screen, tmux and the graphical applications that allow you to type into a window and execute commands.</p></li>
-<li><p><strong>Console</strong>: A physical device with which commands will be sent to a computer (teletype writers in shorthand tty). The console appears to the computer as a kernel-implemented terminal. Most linux machines come with multiple consoles (ttys), from which one is used to run graphical applications.</p></li>
+<li><p><strong>Terminal</strong>: A device file, that allows command execution beyond read and write. Terminals are provided by the kernel on behalf of a hardware device (keyboard key presses are presented on screen and output can also be printed). Often Terminal emulators are provided through an extra layer to the kernel. Such emulators are: ssh, screen, tmux, and graphical applications that allow you to type into a window and execute commands.</p></li>
+<li><p><strong>Console</strong>: A physical device with which commands will be sent to a computer (teletype writers, in shorthand tty). The console appears to the computer as a kernel-implemented terminal. Most linux machines come with multiple consoles (ttys), from which one is used to run graphical applications.</p></li>
 <li><p><strong>Command line</strong>: An interface where a user types commands.</p></li>
 <li><p><strong>Shell</strong>: A shell is the interface that users see, when they log in. The shell is what starts other programs and defines the syntax with which programs are started. Because these <em>commands</em> are entered to the shell in Linux, the command-line can also be referred to as a command-line-shell.</p></li>
 </ul>
@@ -255,10 +255,10 @@
 <p>A file is a collection of data. They are created by users using text editors, running compilers etc.</p>
 <p>Examples of files:</p>
 <ul class="simple">
-<li><p>a document (report, essay etc.)</p></li>
+<li><p>a document (report, essay, etc.)</p></li>
 <li><p>the text of a program written in some high-level programming language</p></li>
 <li><p>instructions comprehensible directly to the machine and incomprehensible to a casual user, for example, a collection of binary digits (an executable or binary file);</p></li>
-<li><p>a directory, containing information about its contents, which may be a mixture of other directories (subdirectories) and ordinary files.</p></li>
+<li><p>a directory containing information about its contents, which may be a mixture of other directories (subdirectories) and ordinary files.</p></li>
 </ul>
 </div>
 <div class="section" id="the-directory-structure">
@@ -296,7 +296,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jovyan@jupyter-kevinsawade-2dstart-2dscience-2dhere-2dd2sbp0zb:~$
 </pre></div>
 </div>
-<p>This somewhat unusual prompt comes from us using a terminal on a webpage (there are some obstacles associated when using a terminal completely portable on a browser). The <em>prompt</em> is normally built like this:</p>
+<p>This somewhat unusual prompt comes from using a terminal on a webpage (there are some obstacles associated to using a terminal completely portable on a browser). The <em>prompt</em> is normally built like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>username@hostname:~$
 </pre></div>
 </div>
