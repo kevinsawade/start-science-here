@@ -140,17 +140,14 @@ This somewhat unusual prompt comes from using a terminal on a webpage (there are
 
    username@hostname:~$
 
-The *prompt* contains useful information, such as your username, the name of the computer (\ ``hostname``\ ) and your current directory. The tilde symbol (~) shows you, that you are in your home directory. To make sure, that you are in your home directory you can print your current working environment by calling your first command. Sometimes the dollar sign ($) is prefixed to commands that you should execute on a linux shell to prevent any confusions with other programs / shells.
-
-The other command prompts are listed below:
-
+The *prompt* contains useful information, such as your username, the name of the computer (\ ``hostname``\ ) and your current directory. The tilde symbol (~) shows you, that you are in your home directory and the dollar symbol ($) shows you what shell you are currenlty using. Oftentimes commands are prepended with these symbols to let you know where to enter this command. In this tutorial the bash commands are prepended with the dollar sign ($). Please do not enter that sign into your shell, when copying commands. Here are other possible shell symbols:
 
 * ``$``\ : Linux shells in general, ``bash`` in particular.
 * ``>>>``\ : Python
 * ``>``\ : Windows command prompt or windows power shell
-* ``%``\ : Tcl
+* ``%``\ : Tcl or zsh
 
-But that's enough of that. Now we want to make sure we are in our home directory. Enter this command (without the dollar sign), hit the enter key and observe the output:
+But that's enough of that. Now we want to make sure we are in our home directory by calling our first command. Enter this command (without the dollar sign), hit the enter key and observe the output:
 
 .. code-block:: bash
 

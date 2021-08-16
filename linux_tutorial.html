@@ -300,15 +300,14 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>username@hostname:~$
 </pre></div>
 </div>
-<p>The <em>prompt</em> contains useful information, such as your username, the name of the computer (<code class="docutils literal notranslate"><span class="pre">hostname</span></code>) and your current directory. The tilde symbol (~) shows you, that you are in your home directory. To make sure, that you are in your home directory you can print your current working environment by calling your first command. Sometimes the dollar sign ($) is prefixed to commands that you should execute on a linux shell to prevent any confusions with other programs / shells.</p>
-<p>The other command prompts are listed below:</p>
+<p>The <em>prompt</em> contains useful information, such as your username, the name of the computer (<code class="docutils literal notranslate"><span class="pre">hostname</span></code>) and your current directory. The tilde symbol (~) shows you, that you are in your home directory and the dollar symbol ($) shows you what shell you are currenlty using. Oftentimes commands are prepended with these symbols to let you know where to enter this command. In this tutorial the bash commands are prepended with the dollar sign ($). Please do not enter that sign into your shell, when copying commands. Here are other possible shell symbols:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$</span></code>: Linux shells in general, <code class="docutils literal notranslate"><span class="pre">bash</span></code> in particular.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>: Python</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>: Windows command prompt or windows power shell</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>: Tcl</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>: Tcl or zsh</p></li>
 </ul>
-<p>But that’s enough of that. Now we want to make sure we are in our home directory. Enter this command (without the dollar sign), hit the enter key and observe the output:</p>
+<p>But that’s enough of that. Now we want to make sure we are in our home directory by calling our first command. Enter this command (without the dollar sign), hit the enter key and observe the output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
 /home/jovyan
 </pre></div>
