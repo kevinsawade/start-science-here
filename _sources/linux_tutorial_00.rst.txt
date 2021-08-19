@@ -13,7 +13,7 @@
 Tutorial zero
 =============
 
-After accessing the terminal on binder you will be greeted by a black screen showing the prompt:
+After accessing the terminal on binder (it may take a while and show error messages, just sit it out) you will be greeted by a black screen showing the prompt:
 
 .. image:: _static/pics/linux_tutorial/example_terminal_binder.png
    :target: _static/pics/linux_tutorial/example_terminal_binder.png
