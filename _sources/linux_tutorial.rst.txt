@@ -115,7 +115,7 @@ In the diagram above, we see that the directory ee51ab contains the subdirectory
 Opening a terminal on binder
 ============================
 
-The easiest way to start your first terminal is to head over to binder and select New and then Terminal.
+The easiest way to start your first terminal is to head over to binder (it may take a while and show error messages, just sit it out) and select New and then Terminal.
 
 https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD
 
