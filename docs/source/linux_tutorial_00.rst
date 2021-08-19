@@ -34,9 +34,9 @@ When you first login, your current working directory is your home directory. You
    $ ls
    binder  docs  ideas.txt  LICENSE  pics  python_tutorial  README.md  requirements.txt
 
-The ``ls`` command lists the contents of your current working directory.
+By default, the ``ls`` command lists the contents of your current working directory alphabetically, the files and folders are sorted together. In our case, folders are highlighted in blue while files are displayed in  white color.
 
-ls does not, in fact, cause all the files in your home directory to be listed, but only those ones whose name does not begin with a dot (.) Files beginning with a dot (.) are known as hidden files and usually contain important program configuration information. They are hidden because you should not change them unless you are very familiar with UNIX!
+``ls`` does not, in fact, cause all the files in your home directory to be listed, but only those ones whose name does not begin with a dot (.) Files beginning with a dot (.) are known as hidden files and usually contain important program configuration information. They are hidden because you should not make changes unless you are very familiar with UNIX!
 
 To list all files in your home directory including those whose names begin with a dot, type:
 
@@ -44,19 +44,19 @@ To list all files in your home directory including those whose names begin with 
 
    $ ls -a
 
-Now you can see the hidden ``.git`` directory and the ``.gitignore`` file. This command also lists two files, ``.`` and ``..``. The first is the file of the current working cirectory and the second is the file of the parent directory (in our case that would be ``/home``).
+Now you can see the hidden ``.git`` directory and the ``.gitignore`` file. This command also lists two files, ``.`` and ``..``. ``.`` is the file of the current working directory and ``..`` is the file of the parent directory (in our case that would be ``/home``).
 
-The ``-a`` part of the ``ls`` command is reffered to as an option (sometimes also called flag). Options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. (See later in this tutorial)
+The ``-a`` part of the ``ls -a`` command is reffered to as an option (sometimes also called flag). Options change the behaviour of the command. There are online manuals that tell you which options a particular command accepts and how each option modifies the behavior of the command. This will be treated later in the tutorial.
 
 Changing into a different directory
 ===================================
 
-:boldcode:`cd (change directory)`
+:boldcode:`cd ("change directory")`
 ---------------------------------
 
 The command ``cd`` :italiccode:`directory` means change the current working directory to 'directory'. The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.
 
-To change to the directory you have just made, type:
+To change to the directory please type:
 
 .. code-block:: bash
 
@@ -76,13 +76,13 @@ Means: Stay in the same directory (nothing changes), but typing:
 
 Moves you back up one directory, back to ``/home/jovjan`` (enter ``pwd`` to check your current working directory).
 
-Now we will move two directories at once. So type:
+Now we will navigate around two directories at once. In case you typed ``cd ..`` you need to navigate back using ``cd jovyan/``. Remember that you can check the existing files and folder using ``ls``.  So type:
 
 .. code-block:: bash
 
    $ cd linux_tutorial/tutorial_00
 
-And have a look around with ``ls``. To swith between your two most recent directories, you can use ``cd -``. Type these commands in succession:
+And have a look around with ``ls``. To switch between your two most recent directories, you can use ``cd -``. Type these commands in succession:
 
 .. code-block:: bash
 
@@ -95,7 +95,7 @@ And have a look around with ``ls``. To swith between your two most recent direct
    $ pwd
    /home/jovyan
 
-The ``cd`` command without anything will bring you back to your home directoy.
+The ``cd`` command without any option will bring you back to your home directoy.
 
 
 Autocomplete
@@ -104,19 +104,19 @@ Autocomplete
 :boldcode:`[Tab]`
 -----------------
 
-While typing you can peridocally try to press :boldcode:`[Tab]` (the tabulator key of yoru keyboard) to use the autocomplete feature of the shell. For example. Go to your home directory
+While typing you can peridocally try to press :boldcode:`[Tab]` (the tabulator key of your keyboard) to use the autocomplete feature of the shell. For example: Go to your home directory
 
 .. code-block:: bash
 
    $ cd
 
-And start to type ``cd linu`` and then hit :boldcode:`[Tab]` and see, how the command autocompletes to ``cd linux_tutorial``. You can also use tab to show you what possible additions you can add to your command. If you type just ``cd `` (that is ``cd`` followed by one space :boldcode:`[Spacebar]`) and hit :boldcode:`[Tab]` two times, the console displays all possible directories that you can change to.
+And start to type ``cd linu`` and then hit :boldcode:`[Tab]` and see, how the command autocompletes to ``cd linux_tutorial``. You can also use tab to show you what possible additions you can add to your command. If you type just ``cd `` (that is ``cd`` followed by one space :boldcode:`[Spacebar]`) and hit :boldcode:`[Tab]` two times, the console displays all included directories that you can navigate to.
 
 
 Making directories
 ==================
 
-:boldcode:`mkdir (make directory)`
+:boldcode:`mkdir ("make directory")`
 ----------------------------------
 
 We will now make a subdirectory in the ``~/linux_tutorial/tutorial_00`` directory to hold the files you will be creating and using in the course of this tutorial.
@@ -142,7 +142,7 @@ Verify that your directory creation was successful by calling the ``ls`` command
 Pathnames
 =========
 
-:boldcode:`pwd (print working directory)`
+:boldcode:`pwd ("print working directory")`
 -----------------------------------------
 
 We've already used the ``pwd`` command extensively. But let's talk about the *filesystem*. The filesystem controls how data is stored. We can traverse it with the above commands. The filesystem imposes limits on our PC. The disk can be full or the filesystem can have a largest possible filesize. In Linux, the root filesystem is denoted as ``/`` and you can change to it with:
@@ -180,7 +180,7 @@ You will get a message like this -
 
    backups: No such file or directory
 
-The reason is, ``backups`` is not in your current working directory. To use a command on a file (or directory) not in the current working directory (the directory you are currently in), you must either cd to the correct directory, or specify its full pathname. To list the contents of your backups directory, you must type
+The reason is, ``backups`` is not in your current working directory. To use a command on a file (or directory) not in the current working directory (the directory you are currently in), you must either cd to the correct directory or specify its full pathname. To list the contents of your backups directory, you must type
 
 .. code-block:: bash
 
@@ -189,7 +189,7 @@ The reason is, ``backups`` is not in your current working directory. To use a co
 ~ (your home directory)
 =======================
 
-Home directories can also be referred to by the tilde ``~`` character. It can be used to specify paths starting at your home directory. These tow commands result in you landing in the same directory:
+Home directories can also be referred to by the tilde ``~`` character. It can be used to specify paths starting at your home directory. These two commands result in you landing in the same directory:
 
 .. code-block:: bash
 
