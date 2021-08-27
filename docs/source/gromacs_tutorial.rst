@@ -21,7 +21,7 @@ Thanks to Justin A. Lemkul, Ph.D. (Virginia Tech Department of Biochemistry) for
 Some Gromacs Basics
 ===================
 
-With the release of version 5.0 of GROMACS, all of the tools are essentially modules of a binary named "gmx." This is a departure from previous versions, wherein each of the tools was invoked as its own command. In 5.0, this still works via symlinks, but they will go away in future versions, so it is best to get accustomed to the new way of doing things. To get help information about any GROMACS module, you can invoke either of the following commands:
+With the release of version 5.0 of GROMACS, all of the tools are essentially modules of a binary named "gmx". This is a departure from previous versions, wherein each of the tools was invoked as its own command. In 5.0, this still works via symlinks, but they will go away in future versions, so it is best to get accustomed to the new way of doing things. To get help information about any GROMACS module, you can invoke either of the following commands:
 
 .. code-block:: bash
 
