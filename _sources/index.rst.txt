@@ -35,6 +35,13 @@ There is no set up required to follow along with this tutorial. It can take thre
    * A working internet connection
    * An up-to-date browser (Chrome, Firefox, Safari, Opera, Edge)
 
+0. Proposing Changes and Issues with start science here
+=======================================================
+
+Before you leave this page and start the tutorials check out the pages :ref:`raising-issues-label` and :ref:`proposing-changes-label`.
+
+We are trying to continually improve start science here and are more than happy if users bring us feedback. These two pages allow you to give us such feedback. Be it spelling mistakes, factual mistakes or bugs. You can also raise issues on GitHub if you run into any problems that you can't fix yourself.
+
 1. Linux tutorial
 =================
 
@@ -90,6 +97,8 @@ The longest part of Start Science Here! is the Python tutorial. If you feel conf
    :maxdepth: 1
    :caption: Extras
 
+   raising_issues
+   propose_changes
    downloading_files
    uploading_files
 

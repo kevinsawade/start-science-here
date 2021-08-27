@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>More Analysis &mdash; start-science-here 0.0.1 documentation</title>
+  <title>Propose Changes &mdash; start-science-here 0.0.1 documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python Tutorial" href="python_tutorial.html" />
-    <link rel="prev" title="Analysis" href="gromacs_tutorial_analysis.html" /> 
+    <link rel="next" title="Downloading Files from mybinder" href="downloading_files.html" />
+    <link rel="prev" title="Raising Issues" href="raising_issues.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,35 +97,20 @@
             
             
               <p class="caption"><span class="caption-text">Tutorials</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="linux_tutorial.html">Linux tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install_docker.html">Installation instructions for Docker</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gromacs_tutorial.html#credit">Credit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gromacs_tutorial.html#some-gromacs-basics">Some Gromacs Basics</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="gromacs_tutorial.html#lysozyme-tutorial">Lysozyme Tutorial</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_generate_topology.html">Generate Topology</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_examine_topology.html">Examine Topology</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_solvation.html">Solvation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_adding_ions.html">Adding Ions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_energy_minimization.html">Energy Minimization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration.html">Equilibration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration_2.html">Equilibration Phase 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_production.html">Production MD</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_analysis.html">Analysis</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">More Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_tutorial.html">Python Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Extras</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="raising_issues.html">Raising Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="propose_changes.html">Propose Changes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Propose Changes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thank-you">Thank you!</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="downloading_files.html">Downloading Files from mybinder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uploading_files.html">Uploading Files to mybinder</a></li>
 </ul>
@@ -181,16 +166,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="gromacs_tutorial.html">Gromacs Tutorial</a> &raquo;</li>
-        
-      <li>More Analysis</li>
+      <li>Propose Changes</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/gromacs_tutorial_more_analysis.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/propose_changes.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -206,24 +189,24 @@
             
   <blockquote>
 <div></div></blockquote>
-<div class="section" id="more-analysis">
-<span id="gromacs-more-analysis-label"></span><h1>More Analysis<a class="headerlink" href="#more-analysis" title="Permalink to this headline">¶</a></h1>
-<p>The radius of gyration of a protein is a measure of its compactness. If a protein is stably folded, it will likely maintain a relatively steady value of Rg. If a protein unfolds, its Rg will change over time. Let’s analyze the radius of gyration for lysozyme in our simulation:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx gyrate -s md_0_1.tpr -f md_0_1_noPBC.xtc -o gyrate.xvg
-</pre></div>
+<div class="section" id="propose-changes">
+<span id="propose-changes-label"></span><h1>Propose Changes<a class="headerlink" href="#propose-changes" title="Permalink to this headline">¶</a></h1>
+<p>Proposing changes is also a very nice way of improving start science here. On this page you will learn how to propose your own changes to start science here. Let’s say you found a very nasty typo and want to help the developers resolving that. If that typo was on a page in the documentation you can use the “Edit on GitHub” button to directly jump to the source file of that page.</p>
+<a class="reference external image-reference" href="_static/pics/raising_and_merging/propose_changes_1.PNG"><img alt="Image showing where the Edit on GitHub button is located." src="_images/propose_changes_1.PNG" /></a>
+<p>The .rst file is again rendered nicely, but we want to edit it and fix the punctuation in one sentence. Open the editing window via clicking on the pen button.</p>
+<a class="reference external image-reference" href="_static/pics/raising_and_merging/propose_changes_2.PNG"><img alt="Image showing where the Pen button is located." src="_images/propose_changes_2.PNG" /></a>
+<p>Let’s make some changes and use the “Propose Changes” button at ther very bottom, combined with some descriptive text, to propose these changes to the developers.</p>
+<a class="reference external image-reference" href="_static/pics/raising_and_merging/propose_changes_3.PNG"><img alt="Image showing how to propose the changes to a file." src="_images/propose_changes_3.PNG" /></a>
+<p>From here, we want to create a pull request. That way the developers can simply accept your proposed changes with a single button click.</p>
+<a class="reference external image-reference" href="_static/pics/raising_and_merging/propose_changes_4.PNG"><img alt="Image showing how to create a pull request." src="_images/propose_changes_4.PNG" /></a>
+<p>The pull request is designed similar to an issue. Just put some descriptive text here.</p>
+<a class="reference external image-reference" href="_static/pics/raising_and_merging/propose_changes_5.PNG"><img alt="Image showing where how to add more info to a pull request." src="_images/propose_changes_5.PNG" /></a>
+<p>The developers will then approve your pull request like so:</p>
+<a class="reference external image-reference" href="_static/pics/raising_and_merging/propose_changes_6.PNG"><img alt="Image showing how a pull request is accepted." src="_images/propose_changes_6.PNG" /></a>
+<div class="section" id="thank-you">
+<h2>Thank you!<a class="headerlink" href="#thank-you" title="Permalink to this headline">¶</a></h2>
+<p>If you made some changes via a pull request and improved start science here, I want to thank you. Thanks for your work and effort and thanks for helping me out.</p>
 </div>
-<p>Choose group 1 (Protein) for analysis.</p>
-<div class="admonition-solution solution important dropdown admonition">
-<p class="admonition-title">Solution</p>
-<a class="reference external image-reference" href="_static/pics/gromacs_tutorial/plotted_gyration.png"><img alt="The radius of gyration stays soemwhat stable." src="_images/plotted_gyration.png" /></a>
-</div>
-<p>We can see from the reasonably invariant R<sub>g</sub> values that the protein remains very stable, in its compact (folded) form over the course of 1 ns at 300 K. This result is not unexpected, but illustrates an advanced capacity of GROMACS analysis that comes built-in.</p>
-</div>
-<div class="section" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
-<p>You have now conducted a molecular dynamics simulation with GROMACS, and analyzed some of the results. This tutorial should not be viewed as comprehensive. There are many more types of simulations that one can conduct with GROMACS (free energy calculations, non-equilibrium MD, and normal modes analysis, just to name a few). You should also review the literature and the GROMACS manual for adjustments to the .mdp files provided here for efficiency and accuracy purposes.</p>
-<p>If you have suggestions for improving this tutorial, if you notice a mistake, or if anything is otherwise unclear, please feel free to email me. Please note: this is not an invitation to <a class="reference external" href="mailto:kevin&#46;sawade&#37;&#52;&#48;uni-konstanz&#46;de">email me</a> for GROMACS problems. I do not advertise myself as a private tutor or personal help service. That’s what the <a class="reference external" href="http://lists.gromacs.org/mailman/listinfo/gmx-users">gmx-users list</a> is for. I may help you there, but only in the context of providing service to the community as a whole, not just the end user.</p>
-<p>Happy simulating!</p>
 </div>
 
 
@@ -232,8 +215,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="python_tutorial.html" class="btn btn-neutral float-right" title="Python Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="gromacs_tutorial_analysis.html" class="btn btn-neutral float-left" title="Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="downloading_files.html" class="btn btn-neutral float-right" title="Downloading Files from mybinder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="raising_issues.html" class="btn btn-neutral float-left" title="Raising Issues" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
