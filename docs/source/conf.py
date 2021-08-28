@@ -36,6 +36,8 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    # 'nbsphinx',
+    # 'nbsphinx_link'
     'sphinx_lesson',
     'sphinx_lesson.directives',
     'sphinx.ext.autodoc',
@@ -52,7 +54,12 @@ extensions = [
     'sphinx.ext.githubpages',
     'exercise_directive',
     'sphinx_togglebutton',
+    'myst_nb'
 ]
+
+# sphinx-lesson settings
+jupyter_execute_notebooks = 'cache'
+execution_allow_errors=True
 
 # Napoleon settings
 napoleon_google_docstring = True
@@ -95,7 +102,6 @@ language = None
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
 exclude_patterns = ['.build', 'Thumbs.db', '.DS_Store', 'setup.rst', '**.ipynb_checkpoints']
-                    # 'contributing.rst', 'example_google.rst', 'example_typing.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'

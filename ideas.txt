@@ -79,6 +79,15 @@ https://github.com/trekhleb/learn-python
 https://github.com/jerry-git/learn-python3
 https://github.com/quobit/awesome-python-in-education
 
+Python Packaging Tutorial:
+https://pythonhosted.org/foo-test/index.html
+
+Use the pdb:
+https://github.com/spiside/pdb-tutorial
+
+Advanced Tutorials:
+https://github.com/huangsam/ultimate-python
+
 Slurm Tutorials:
 https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html
 https://slurm.schedmd.com/quickstart.html

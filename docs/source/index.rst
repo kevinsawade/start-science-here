@@ -83,7 +83,7 @@ The longest part of start science here! is the python tutorial. If you feel conf
    install_docker
    gromacs_tutorial
    python_tutorial
-   setting_up_your_own_python
+   setting_up_python
 
 
 .. toctree::
