@@ -69,8 +69,12 @@ Data Types
 To quickly start into an interactive environment with infos about data types:
 
 .. image:: https://mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?filepath=python_tutorial%2Fquick_reference%2Fqr_01_data_types.ipynb
+   :alt: Binder link to qr_01_data_types.ipynb
+
+.. image:: https://img.shields.io/badge/offline-notebook-orange
    :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?filepath=python_tutorial%2F01_python_basics.ipynb
-   :alt: Binder link to 01_python_basics.ipynb
+   :alt: Link to offline 01_data_types.ipynb
 
 Determine the type of an object:
 
@@ -85,7 +89,7 @@ Determine the type of an object:
    print(type(1))       # int (integer)
    print(type(1.1))     # float (floating point number)
    print(type('hello')) # str (string)
-   printtype((True))    # bool (boolean, True/False values)
+   print(type(True))    # bool (boolean, True/False values)
    print(type(None))    # NoneType (NoneType is a singleton)
 
 Check the type of an object:
@@ -93,7 +97,7 @@ Check the type of an object:
 .. code-block:: python
 
    isinstance(2, int) # True
-   isinstance(2.2 (float, int)) # True
+   isinstance(2.2, (float, int)) # True
 
 Converting between types:
 
@@ -213,13 +217,13 @@ Continue and break:
            break
        print(i)
 
-While loops continue running until either ``break`` occurs or the statement beckomes false.
+While loops continue running until either ``break`` occurs or the statement becomes false.
 
 .. code-block:: python
 
-   max = 50
+   max_square = 50
    i = 0
-   while i ** 2 <= max:
+   while i ** 2 <= max_square:
        print(i ** 2)
        i += 1
        if i > 100:
@@ -851,7 +855,7 @@ Instead of fixing the numbers of arguments to a function, you can let the functi
   addition(1, 5, 10, 20)
   additon(1, -1)
 
-That were unnamed (positional) arguments. But what about named arguments? For that we have ``**``:
+That's it for unnamed (positional) arguments. But what about named arguments? For that we have ``**``:
 
 .. code-block:: python
 
@@ -970,3 +974,11 @@ Again, the ``list()`` is because ``map`` returns a ``iterator`` which can not di
 
    # equivalent list comprehension
    [num for num in nums if num % 2 == 0]
+
+Static Notebooks
+================
+
+.. toctree::
+   :maxdepth: 1
+
+   qr_01_data_types.ipynb
