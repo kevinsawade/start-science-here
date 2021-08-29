@@ -52,7 +52,7 @@ Changing into a different directory
 ===================================
 
 :boldcode:`cd ("change directory")`
----------------------------------
+-----------------------------------
 
 The command ``cd`` :italiccode:`directory` means change the current working directory to 'directory'. The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.
 
@@ -117,7 +117,7 @@ Making directories
 ==================
 
 :boldcode:`mkdir ("make directory")`
-----------------------------------
+------------------------------------
 
 We will now make a subdirectory in the ``~/linux_tutorial/tutorial_00`` directory to hold the files you will be creating and using in the course of this tutorial.
 
@@ -134,7 +134,7 @@ To make a subdirectory called ``unixstuff`` in your current working directory ty
 
 Verify that your directory creation was successful by calling the ``ls`` command.
 
-.. exercise:: Exercise 0a
+.. sshexercise:: Exercise 0a
 
    Make another directory inside the ``unixstuff`` directory called ``backups``.
 
@@ -143,7 +143,7 @@ Pathnames
 =========
 
 :boldcode:`pwd ("print working directory")`
------------------------------------------
+-------------------------------------------
 
 We've already used the ``pwd`` command extensively. But let's talk about the *filesystem*. The filesystem controls how data is stored. We can traverse it with the above commands. The filesystem imposes limits on our PC. The disk can be full or the filesystem can have a largest possible filesize. In Linux, the root filesystem is denoted as ``/`` and you can change to it with:
 
@@ -206,19 +206,21 @@ The command:
 will list the contents of your unixstuff directory, no matter where you currently are in the file system.
 
 
-.. exercise:: Exercise 0b
+.. sshexercise:: Exercise 0b
 
    What do you think ``ls ~`` would list?
 
-.. solution::
+.. sshsolution::
+   :class: dropdown
    
    **Your** home directory. So if your username is ``jovyan``, ``ls ~`` would list the contents of the ``/home/jovyan/`` directory.
 
-.. exercise:: Exercise 0c
+.. sshexercise:: Exercise 0c
 
    What do you think ``ls ~/..`` would list?
 
-.. solution::
+.. sshsolution::
+   :class: dropdown
 
    This command will list the contents of the directory above your current home directory (``~``). This is in most cases the ``/home/`` directory (the first slash in ``/home/`` shows us, that we start all the way from the root-filesystem ``/``). This directory can contain multiple users, depending on how many people you share your computer with.
 

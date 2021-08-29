@@ -36,10 +36,10 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    # 'nbsphinx',
-    # 'nbsphinx_link'
-    'sphinx_lesson',
-    'sphinx_lesson.directives',
+    'nbsphinx',
+    'nbsphinx_link',
+    # 'sphinx_lesson',
+    # 'sphinx_lesson.directives',
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
@@ -54,12 +54,22 @@ extensions = [
     'sphinx.ext.githubpages',
     'exercise_directive',
     'sphinx_togglebutton',
-    'myst_nb'
+    # 'myst_nb'
 ]
+
+# disallow myst-nb to parse .ipynb
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.ipynb': '',
+    '.myst': 'myst-nb',
+}
+
+# settings for nbsphinx
+html_sourcelink_suffix = ''
 
 # sphinx-lesson settings
 jupyter_execute_notebooks = 'cache'
-execution_allow_errors=True
+execution_allow_errors = True
 
 # Napoleon settings
 napoleon_google_docstring = True

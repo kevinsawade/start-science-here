@@ -62,7 +62,7 @@ To read the contents of the file, type
 
    $ cat list1
 
-.. exercise:: Exercise 2a
+.. sshexercise:: Exercise 2a
 
    Using the above method, create another file called **list2** containing the following fruit: orange, plum, mango, grapefruit. Read the contents of **list2**
 
@@ -178,7 +178,7 @@ To find out how many users are logged on, type
 
    $ who | wc -l
 
-.. exercise:: Exercise 2b
+.. sshexercise:: Exercise 2b
 
    Using pipes, print all lines of list1 and list2 containing the letter 'p', sort the result, and print to screen.
 

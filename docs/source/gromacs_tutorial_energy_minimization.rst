@@ -56,7 +56,8 @@ At the prompt, type "10 0" to select Potential (10); zero (0) terminates input. 
 
    $ python3 plot_xvg.py potential.xvg
 
-.. solution::
+.. sshsolution::
+   :class: dropdown
 
    Your data will now be plotted to your terminal.
 

@@ -40,7 +40,7 @@ Then at the UNIX prompt, type,
 
 The above command means copy the file **science.txt** to the current directory, keeping the name the same.
 
-.. exercise:: Exercise 1a
+.. sshexercise:: Exercise 1a
 
    Create a backup of your **science.txt** file by copying it to a file called **science.bak**.
 
@@ -86,7 +86,7 @@ Inside your unixstuff directory, type
 
 You can use the ``rmdir`` command to remove a directory (make sure it is empty first). Try to remove the backups directory. You will not be able to since UNIX will not let you remove a non-empty directory.
 
-.. important::
+.. sshexercise::
 
    Exercise 1b: Create a directory called ``tempstuff`` using ``mkdir``, then remove it using the ``rmdir`` command.
 

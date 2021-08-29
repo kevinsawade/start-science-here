@@ -45,7 +45,8 @@ Let's analyze the temperature progression, again using energy:
 
 Type "16 0" at the prompt to select the temperature of the system and exit.
 
-.. solution::
+.. sshsolution::
+   :class: dropdown
 
    The resulting plot should look something like the following:
 

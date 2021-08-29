@@ -48,7 +48,8 @@ Type "18 0" at the prompt to select the pressure of the system and exit. The res
    $ python3 plot_xvg.py --help
    $ python3 plot_xvg.py pressure.xvg -rav 10
 
-.. solution::
+.. sshsolution::
+   :class: dropdown
 
    .. image:: _static/pics/gromacs_tutorial/plotted_pressure.png
       :target: _static/pics/gromacs_tutorial/plotted_pressure.png
@@ -62,7 +63,8 @@ Let's take a look at density as well, this time using energy and entering "24 0"
 
    $ gmx energy -f npt.edr -o density.xvg
 
-.. solution::
+.. sshsolution::
+   :class: dropdown
 
    .. image:: _static/pics/gromacs_tutorial/plotted_density.png
       :target: _static/pics/gromacs_tutorial/plotted_density.png

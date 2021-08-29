@@ -73,7 +73,7 @@ To quickly start into an interactive environment with infos about data types:
    :alt: Binder link to qr_01_data_types.ipynb
 
 .. image:: https://img.shields.io/badge/offline-notebook-orange
-   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?filepath=python_tutorial%2F01_python_basics.ipynb
+   :target: qr_01_data_types.html
    :alt: Link to offline 01_data_types.ipynb
 
 Determine the type of an object:
@@ -981,4 +981,4 @@ Static Notebooks
 .. toctree::
    :maxdepth: 1
 
-   qr_01_data_types.ipynb
+   qr_01_data_types

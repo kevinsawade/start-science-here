@@ -22,7 +22,8 @@ The radius of gyration of a protein is a measure of its compactness. If a protei
 
 Choose group 1 (Protein) for analysis.
 
-.. solution::
+.. sshsolution::
+   :class: dropdown
 
    .. image:: _static/pics/gromacs_tutorial/plotted_gyration.png
       :target: _static/pics/gromacs_tutorial/plotted_gyration.png

@@ -109,7 +109,7 @@ To give read and write permissions on the file biglist to all,
 
    $ chmod a+rw biglist
 
-.. exercise:: Exercise 4a
+.. sshexercise:: Exercise 4a
 
    Try changing access permissions on the file science.txt and on the directory backups
 

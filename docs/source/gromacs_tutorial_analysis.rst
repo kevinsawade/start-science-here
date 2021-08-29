@@ -43,7 +43,8 @@ Use:
 
 To plot both xvg files and manually set the labels
 
-.. solution::
+.. sshsolution::
+   :class: dropdown
 
    .. image:: _static/pics/gromacs_tutorial/plotted_analysis.png
       :target: _static/pics/gromacs_tutorial/plotted_analysis.png
