@@ -182,7 +182,7 @@ To find out how many users are logged on, type
 
    Using pipes, print all lines of list1 and list2 containing the letter 'p', sort the result, and print to screen.
 
-.. solution ::
+.. sshsolution ::
 
    ``$ cat list1 list2 | grep p | sort``
 

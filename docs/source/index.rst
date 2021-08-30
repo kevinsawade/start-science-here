@@ -91,6 +91,9 @@ The longest part of Start Science Here! is the Python tutorial. If you feel conf
    gromacs_tutorial
    python_tutorial
    setting_up_python
+   git_tutorial
+   first_project
+
 
 
 .. toctree::

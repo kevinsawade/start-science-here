@@ -8,20 +8,41 @@ The python tutorial of 'start science here!' certainly is the longest and most e
 
 First things first: You don't have to work through the python tutorial from start to finish. For a start the following Quick Reference might suffice. But if you find the time you can head over to binder and start with the notebooks in the `python_tutorial` folder. You can stop at any point and do some other tutorials or work on your own project. But let me tell you, that I learned new stuff while composing the tutorial and I was using python daily for 3 years at this point.
 
+Introduction to Jupyter Notebooks
+=================================
+
+Before clicking on that binder link and starting a python session read this short introduction about jupyter notebooks, how to work with them and how to execute code inside of them.
+
+.. toctree::
+
+   introduction
+
 Interactive Tutorial Notebooks
 ==============================
 
-Available on binder: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD
+Available on binder:
+
+.. image:: https://mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD
+   :alt: Binder link to repo.
 
 Non-interactive static notebooks
 ================================
 
-An offline, non-interactive version of the notebooks can be found via the sidebar.
+An offline, non-interactive version of the notebooks can be found via this menu:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Basics
+
+   basics_00_intro
+   basics_01_dataypes
+   basics_02_comprehensions_functions_classes
 
 Quick Reference
 ===============
 
-The python quick reference or cheat sheet was taken from https://github.com/justmarkham/python-reference and adjusted for start science here. The remainder of this page will contain this quick reference.
+The python quick reference or cheat sheet was taken from https://github.com/justmarkham/python-reference and adjusted for start science here. The remainder of this page will contain this quick reference. Each topic has a direct link to the examples in binder and an offline version of the examples.
 
 Imports
 -------

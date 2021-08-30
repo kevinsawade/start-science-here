@@ -67,6 +67,7 @@ source_suffix = {
 # settings for nbsphinx
 html_sourcelink_suffix = ''
 nbsphinx_allow_errors = True
+nbsphinx_execute = 'always'
 
 # sphinx-lesson settings
 jupyter_execute_notebooks = 'cache'
