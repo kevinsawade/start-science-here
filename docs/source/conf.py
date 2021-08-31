@@ -57,13 +57,6 @@ extensions = [
     # 'myst_nb'
 ]
 
-# disallow myst-nb to parse .ipynb
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.ipynb': '',
-    '.myst': 'myst-nb',
-}
-
 # settings for nbsphinx
 html_sourcelink_suffix = ''
 nbsphinx_allow_errors = True
