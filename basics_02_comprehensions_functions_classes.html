@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02_comprehensions_functions_classes &mdash; start-science-here 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Types" href="qr_01_data_types.html" />
+    <link rel="prev" title="Welcome" href="basics_00_intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> start-science-here
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="linux_tutorial.html">Linux tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_docker.html">Installation instructions for Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="python_tutorial.html">Python Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#introduction-to-jupyter-notebooks">Introduction to Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#interactive-tutorial-notebooks">Interactive Tutorial Notebooks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="python_tutorial.html#non-interactive-static-notebooks">Non-interactive static notebooks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basics_00_intro.html">Welcome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_00_intro.html#How-to-navigate-jupyter-notebooks">How to navigate jupyter notebooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_00_intro.html#The-zen-of-python">The zen of python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_00_intro.html#Antigravity">Antigravity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_00_intro.html#Keywords">Keywords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_00_intro.html#Variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_00_intro.html#Comments">Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_00_intro.html#Operators">Operators</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">02_comprehensions_functions_classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Comprehensions">Comprehensions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Fizz-Buzz">Fizz-Buzz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Nested-list-comprehensions">Nested list comprehensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Dictionary-comprehensions">Dictionary comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Return-statements">Return statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Variables-in-functions">Variables in functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Arguments">Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Keyworded-Arguments">Keyworded Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Nested-functions">Nested functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Docstrings">Docstrings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Writing-functions">Writing functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Return-values">Return values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Order-of-arguments-matter">Order of arguments matter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Return-multiple-values">Return multiple values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Nested functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Keyworded-arguments">Keyworded arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Lambda-functions">Lambda functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Use-case:-filter">Use case: filter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Functions-as-arguments">Functions as arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#quick-reference">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#static-notebooks">Static Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setting_up_python.html">Setting Up Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_tutorial.html">Git Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first_project.html">Your first project</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="raising_issues.html">Raising Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="propose_changes.html">Propose Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloading_files.html">Downloading Files from mybinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uploading_files.html">Uploading Files to mybinder</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Having Problems?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html#contact">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">start-science-here</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="python_tutorial.html">Python Tutorial</a> &raquo;</li>
+      <li>02_comprehensions_functions_classes</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/basics_02_comprehensions_functions_classes.nblink" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="02_comprehensions_functions_classes">
+<h1>02_comprehensions_functions_classes<a class="headerlink" href="#02_comprehensions_functions_classes" title="Permalink to this headline"></a></h1>
+<p>This tutorial follows the tutorials created by Rajath Kumar (<a class="reference external" href="https://github.com/rajathkmp/Python-Lectures">https://github.com/rajathkmp/Python-Lectures</a>)</p>
+</div>
+<div class="section" id="Comprehensions">
+<h1>Comprehensions<a class="headerlink" href="#Comprehensions" title="Permalink to this headline"></a></h1>
+<p>Oftentimes you will use <code class="docutils literal notranslate"><span class="pre">for</span></code>-lopps to fill lists with some data. Let’s say we want all square numbers up to and including 20 (that means we have to use <code class="docutils literal notranslate"><span class="pre">range(21)</span></code>, because python is right exclusive) in a list.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">):</span>
+    <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>With a so-called list-comprehension you could abbreviate this code to one line:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Normal list comprehensions follow a style of</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[expression for item in iterator]
+</pre></div>
+</div>
+<p>and can be extended with if statements to filter a list:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[expression for item in iterator if filter-expression]
+</pre></div>
+</div>
+<p>and with if-else statements like so:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[expression if filter-expression else different-item for item in iterator]
+</pre></div>
+</div>
+<p>If we only want to print those squared numbers, that contain ‘2’ we can filter the list comprehension like so:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">squares_only_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;2&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squares_only_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Fizz-Buzz">
+<h2>Fizz-Buzz<a class="headerlink" href="#Fizz-Buzz" title="Permalink to this headline"></a></h2>
+<p>Let’s play a game of fizz-buzz using list comprehension. Fizz-buzz is a standard exercise for new programmers. Oftentimes recruiters from software-firms use this to check the proficiency of people in a respective programming language. In the game of fizz-buzz, you count upwards from 1. When you reach a number, that is divisible by 3, you let the program print “Fizz”, If the number is divisible by 5, you let the program print “Buzz”, if the number is divisible by both “FizzBuzz”. In all other
+cases the number itself should be printed. Here’s what the code looks like without list comprehension.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">+=</span> <span class="s2">&quot;Fizz&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">+=</span> <span class="s2">&quot;Buzz&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span> <span class="ow">or</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>And here it is with list comprehension:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="p">[(</span><span class="s2">&quot;Fizz&quot;</span><span class="o">*</span><span class="p">(</span><span class="ow">not</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span>) + &quot;Buzz&quot;*(not i%5) or i) for i in range(1, 101)]
+</pre></div>
+</div>
+</div>
+<p>Let’s understand this list comprehension. - The mapping expression is a tuple with the <code class="docutils literal notranslate"><span class="pre">or</span></code> boolean operator. - This tuple is either the expression left of the <code class="docutils literal notranslate"><span class="pre">or</span></code> or the expression right of the <code class="docutils literal notranslate"><span class="pre">or</span></code>. - If the left expression is an empty string (which equals the boolean value False in python) the right expression is printed. - If the string is not empty, the string itself is printed. - The string itself is the result of the string addition of <code class="docutils literal notranslate"><span class="pre">&quot;Fizz&quot;*(not</span> <span class="pre">i%3)</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Buzz&quot;*(not</span> <span class="pre">i%5)</span></code>.
+- The <code class="docutils literal notranslate"><span class="pre">(not</span> <span class="pre">i%3)</span></code> negates the result of the modulo operator of <code class="docutils literal notranslate"><span class="pre">i</span></code> and three. - If <code class="docutils literal notranslate"><span class="pre">i</span></code> is divisible by three the modulo equals 0. - The integer 0 equals a boolean value of False in python. Due to the negation this becomes True. - If this is True the string is multiplied with True which gives the string itself. - For all other integers the <code class="docutils literal notranslate"><span class="pre">(not</span> <span class="pre">i%3</span></code> gives a False. False multiplied with a string gives an empty string.</p>
+</div>
+<div class="section" id="Nested-list-comprehensions">
+<h2>Nested list comprehensions<a class="headerlink" href="#Nested-list-comprehensions" title="Permalink to this headline"></a></h2>
+<p>You can also use nested for loops in list comprehensions. This might look something like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[expression for nested_iterable in iterable for expression in nested_iterable]
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="p">[</span><span class="mi">27</span><span class="o">*</span><span class="n">z</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">27</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Dictionary-comprehensions">
+<h2>Dictionary comprehensions<a class="headerlink" href="#Dictionary-comprehensions" title="Permalink to this headline"></a></h2>
+<p>Similarly, you can write dictionary comprehensions. Let’s say we have a shop with items and prices for said items. We want to raise the prices by 10%. We use the <code class="docutils literal notranslate"><span class="pre">dict</span></code> objects built-in <code class="docutils literal notranslate"><span class="pre">items()</span></code> method to get a tuple iteration of key-value pairs.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">base_prices</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;potatoes&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">base_prices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> costs </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.02f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">new_prices</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">base_prices</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">new_prices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> costs </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.02f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Functions">
+<h1>Functions<a class="headerlink" href="#Functions" title="Permalink to this headline"></a></h1>
+<p>In 01_python_basics we talked about built-in functions. For example, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is a built-in function, meaning it is always included. A function groups a set of statements so they can be run more than once. <em>Functions are an alternative for copying and pasting code segments you might call often</em>. Functions are the most basic program structure python provides to maximize <em>code reuse</em>.</p>
+<p>Functions are called by their name and parentheses (). Functions are defined by the <code class="docutils literal notranslate"><span class="pre">def</span></code> or the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> statement.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argN</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This is the documentation to that func.&quot;&quot;&quot;</span>
+    <span class="n">Indented</span> <span class="n">code</span> <span class="n">belonging</span> <span class="n">to</span> <span class="n">the</span> <span class="n">function</span>
+    <span class="n">More</span> <span class="n">indented</span> <span class="n">code</span> <span class="n">also</span> <span class="n">belonging</span> <span class="n">to</span> <span class="n">the</span> <span class="n">function</span>
+
+<span class="n">lambda_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="section" id="Return-statements">
+<h2>Return statements<a class="headerlink" href="#Return-statements" title="Permalink to this headline"></a></h2>
+<p>There are two return statements which send results to the function call. <code class="docutils literal notranslate"><span class="pre">return</span></code> and the more advanced <code class="docutils literal notranslate"><span class="pre">yield</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;awesome&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This function is&#39;</span><span class="p">,</span> <span class="n">some_func</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Variables-in-functions">
+<h2>Variables in functions<a class="headerlink" href="#Variables-in-functions" title="Permalink to this headline"></a></h2>
+<p>Variables assigned in functions are generally not accessible outside of these functions. Consider the following example:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">add_two_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Adds a number to the argument.&quot;&quot;&quot;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">y</span>
+<span class="n">add_two_numbers</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The value of the variable y in this function is not accessible to code outside of the function. Variables from functions can be made available to the outside code via a <code class="docutils literal notranslate"><span class="pre">global</span></code> statement.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;old&#39;</span>
+<span class="k">def</span> <span class="nf">change_x</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;new&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">change_x</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Here are some important infos about functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> is executable code. The function is created when python reaches the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement. Thus, different functions can be defined in if-else statements. This differentiates python functions from C functions, which are compiled before they are executed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> creates an object and assigns it to a name. There’s nothing special about that function. It can be added to lists, it can also be assigned to other names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> creates an object but returns it as a result. <code class="docutils literal notranslate"><span class="pre">lambda</span></code> can be used in places, where <code class="docutils literal notranslate"><span class="pre">def</span></code> can’t be used syntactically.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> sends a result object to the caller. Python only returns with the remaining code, when the function is finished. This differentiates <code class="docutils literal notranslate"><span class="pre">return</span></code> from</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yield</span></code> which sends a result object, but remembers where it left off. This can be used to make code faster.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">global</span></code> defines variables which should be taken from outside the variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nonlocal</span></code> defined enclosing function variables that are to be assigned. It allows a nested function to access the variables of the above functions and change them.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;old&#39;</span>
+    <span class="k">def</span> <span class="nf">changer</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">x</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;new&#39;</span>
+    <span class="n">changer</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">outer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Arguments">
+<h2>Arguments<a class="headerlink" href="#Arguments" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Arguments are passed by assignment. This means that we use the assignment (=) to pass arguments.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">a_func</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">arg1</span> <span class="o">+</span> <span class="p">(</span><span class="n">arg2</span> <span class="o">*</span> <span class="n">arg3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a_func</span><span class="p">(</span><span class="n">arg1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Arguments are passed by position unless you say otherwise.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">a_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Keyworded-Arguments">
+<h2>Keyworded Arguments<a class="headerlink" href="#Keyworded-Arguments" title="Permalink to this headline"></a></h2>
+<p>You can define <em>default</em> arguments by assigning them inside the parentheses of the <code class="docutils literal notranslate"><span class="pre">def</span></code> expression.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">powers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates powers to an argument.</span>
+<span class="sd">    If not specified otherwise the power</span>
+<span class="sd">    of 2 will be calculated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="n">power</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">powers</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">powers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Nested-functions">
+<h2>Nested functions<a class="headerlink" href="#Nested-functions" title="Permalink to this headline"></a></h2>
+<p>Functions can be nested in other statements.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s2">&quot;The test is true. I am a function.&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s2">&quot;The test is false. Sad times. I am still a function.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Docstrings">
+<h2>Docstrings<a class="headerlink" href="#Docstrings" title="Permalink to this headline"></a></h2>
+<p>As you have already seen some of the previous functions have segments with triple quotes. These are there for documentation purposes. If you want to help other people (and your future self) write a short summary of what your function does. These docstrings can be accessed via the built-in function <code class="docutils literal notranslate"><span class="pre">help()</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">help</span><span class="p">(</span><span class="n">powers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Writing-functions">
+<h1>Writing functions<a class="headerlink" href="#Writing-functions" title="Permalink to this headline"></a></h1>
+<p>With this we can go straight to some more advanced function stuffs.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">print_hello_world</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>To access the docstring you can call the built-in function <code class="docutils literal notranslate"><span class="pre">help()</span></code> on the function itself. Note, how the function is <strong>not</strong> called. The parentheses are omitted.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">help</span><span class="p">(</span><span class="n">print_hello_world</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Return-values">
+<h2>Return values<a class="headerlink" href="#Return-values" title="Permalink to this headline"></a></h2>
+<p>Let’s assign the output of the function to a variable and check that variable out.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">out</span> <span class="o">=</span> <span class="n">print_hello_world</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>See, how the function returned a <code class="docutils literal notranslate"><span class="pre">None</span></code>? That’s because in python all functions return something. If not further specified, they return <code class="docutils literal notranslate"><span class="pre">None</span></code>. Let’s specify the return value of our function. By executing the next cell, you overwrite the previously defined function. Be careful not to overwrite built-in functions. They are lost, until you restart the program.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">print_hello_world</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Prints &quot;Hello World!&quot;</span>
+<span class="sd">    and returns a string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;Python is awesome!&quot;</span>
+    <span class="c1"># Return is not a function, that&#39;s why it is shown in bold letters.</span>
+    <span class="c1"># It does not need the parentheses like print() does.</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">out</span> <span class="o">=</span> <span class="n">print_hello_world</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Arguments<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<p>Let’s add some arguments to our function.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">print_hello_user</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+<span class="n">print_hello_user</span><span class="p">(</span><span class="s2">&quot;Keith&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Let’s use a user provided input to print the message.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter your name: &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">print_hello_user</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You can also have multiple arguments, separated by comma.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">print_hello_user</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+<span class="n">print_hello_user</span><span class="p">(</span><span class="s2">&quot;Nice to see you,&quot;</span><span class="p">,</span> <span class="s2">&quot;Keith&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Order-of-arguments-matter">
+<h2>Order of arguments matter<a class="headerlink" href="#Order-of-arguments-matter" title="Permalink to this headline"></a></h2>
+<p>The order of arguments matter when functions are called.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Kurt&#39;</span>
+<span class="n">greet</span> <span class="o">=</span> <span class="s1">&#39;Good afternoon,&#39;</span>
+<span class="n">print_hello_user</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>But when you specifically type the name of the arguments, order does not matter anymore.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">print_hello_user</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="n">greet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Return-multiple-values">
+<h2>Return multiple values<a class="headerlink" href="#Return-multiple-values" title="Permalink to this headline"></a></h2>
+<p>Let’s recap the return statement at the end of functions. Instead of returning a more or less static string it would be beneficial to return something that has been calculated inside the function.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Instead of assigning to result to a useless variable return it direclty&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<p>Sometimes you want your function to return multiple values. However the return statement breaks the execution of the function. Instead of two separate return statements, you should separate the return values with a cpmma.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">examplelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">):</span>
+    <span class="n">highest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
+    <span class="n">lowest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">examplelist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="n">examplelist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">highest</span>
+    <span class="k">return</span> <span class="n">lowest</span>
+    <span class="k">return</span> <span class="n">first</span>
+    <span class="k">return</span> <span class="n">last</span>
+
+<span class="n">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">examplelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">):</span>
+    <span class="n">highest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
+    <span class="n">lowest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">examplelist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="n">examplelist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">highest</span><span class="p">,</span> <span class="n">lowest</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span>
+
+<span class="n">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<p>The return values are packed in a tuple. Which makes sense, because you want to have the result be immutable as to not accidentally scramble it. The return tuple can be unpacked like this:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rval_one</span><span class="p">,</span> <span class="n">rval_two</span><span class="p">,</span> <span class="n">rval_three</span><span class="p">,</span> <span class="n">rval_four</span> <span class="o">=</span> <span class="n">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rval_two</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>More about packing and unpacking below.</p>
+</div>
+<div class="section" id="id2">
+<h2>Nested functions<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>Functions can also be nested. In fact that’s one of the beautiful aspects of python. By stacking functions, you can create increasingly complex programs relying on a number of easy functions. Let me show it to you.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">convert_12_h_to_24_h</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">timevalue</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># split the string into a list, use 0th element and make it an integer</span>
+    <span class="k">if</span> <span class="s1">&#39;pm&#39;</span> <span class="ow">in</span> <span class="n">time</span><span class="p">:</span>
+        <span class="n">timevalue</span> <span class="o">=</span> <span class="n">timevalue</span> <span class="o">+</span> <span class="mi">12</span>
+    <span class="k">return</span> <span class="n">timevalue</span>
+
+<span class="k">def</span> <span class="nf">return_greeting</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="c1"># convert time string to numbers</span>
+    <span class="k">if</span> <span class="s1">&#39;am&#39;</span> <span class="ow">in</span> <span class="n">time</span> <span class="ow">or</span> <span class="s1">&#39;pm&#39;</span> <span class="ow">in</span> <span class="n">time</span><span class="p">:</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="n">convert_12_h_to_24_h</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="c1"># decide on greeting</span>
+    <span class="k">if</span> <span class="n">time</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Sleep tight&quot;</span>
+    <span class="k">elif</span> <span class="n">time</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Good morning&quot;</span>
+    <span class="k">elif</span> <span class="n">time</span> <span class="o">&gt;=</span> <span class="mi">12</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Good afternoon&quot;</span>
+    <span class="k">elif</span> <span class="n">time</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">22</span><span class="p">:</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Good evening&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Good night&quot;</span>
+    <span class="k">return</span> <span class="n">greeting</span>
+
+
+<span class="k">def</span> <span class="nf">print_hello_user_time</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+    <span class="n">greeting</span> <span class="o">=</span> <span class="n">return_greeting</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">print_hello_user_time</span><span class="p">(</span><span class="s2">&quot;Sandra&quot;</span><span class="p">,</span> <span class="s2">&quot;12 am&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Keyworded-arguments">
+<h2>Keyworded arguments<a class="headerlink" href="#Keyworded-arguments" title="Permalink to this headline"></a></h2>
+<p>By explicitly stating the argument in your function, you can change the order in which you pass arguments to a function.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Subtracts y from x.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+
+<span class="n">one</span> <span class="o">=</span> <span class="n">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">two</span> <span class="o">=</span> <span class="n">subtract</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">one</span><span class="p">,</span> <span class="n">two</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>In the same fashion you can set the defaults for a functions arguments, when defining the function. In that case you only need to provide as many arguments as there are non-keyworded arguments.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Subtracts y from x.</span>
+<span class="sd">    If not specified otherwise 5 will be subtracted from x.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">subtract</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">subtract</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Lambda-functions">
+<h1>Lambda functions<a class="headerlink" href="#Lambda-functions" title="Permalink to this headline"></a></h1>
+<p>As previously stated, lambda functions are functions returned by the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword. They are often used as throwaway functions, that are only used a single time. They can come in quite useful, when something needs to be a function, but you want to make your code more readable. The keyword <code class="docutils literal notranslate"><span class="pre">lambda</span></code> returns a function that is now accessible under the assigned variable name.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myfunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Besides the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword, you can give arguments and use them in the expression after the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>). In this case, the input argument x is multiplied by 2. Multiple arguments can also be given like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myfunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">myfunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">myfunc</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Use-case:-filter">
+<h2>Use case: filter<a class="headerlink" href="#Use-case:-filter" title="Permalink to this headline"></a></h2>
+<p>The built-in <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function can filter an iterable based on boolean values. It expects as the first argument a function (more on that later) and an iterable as the second. Let’s say we have a list of ints and want to remove all ints below 10 and above 25</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]</span>
+
+<span class="n">filtered</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">mylist</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function was directly supplied without writing a function with <code class="docutils literal notranslate"><span class="pre">def</span></code>. You have no way of using that function again, because it wasn’t assigned to a variable. This makes the code easily to read. However, if you use this function (check whether greater than 9 and smaller than 26) often consider putting it into it’s own function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">in_range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p>Because now, you can use this function repeatedly and a change in this function changes all code that uses this function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filtered</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">in_range</span><span class="p">,</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]))</span>
+<span class="n">filtered</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">in_range</span><span class="p">,</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">50</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]))</span>
+<span class="n">filtered</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">in_range</span><span class="p">,</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Functions-as-arguments">
+<h1>Functions as arguments<a class="headerlink" href="#Functions-as-arguments" title="Permalink to this headline"></a></h1>
+<p>To further elaborate on functions as arguments. Keep in mind: Everything in python is an object and as such there is principally no difference between int, str and function.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">apply_arithmetic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">operation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">apply_arithmetic</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">apply_arithmetic</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Classes">
+<h1>Classes<a class="headerlink" href="#Classes" title="Permalink to this headline"></a></h1>
+<p>Classes is where python starts to shine. Welcome to object-oriented programming. At first we want to get some terminology right. First we need to know the difference between <code class="docutils literal notranslate"><span class="pre">class</span></code> and the <em>instance</em> of a class. If we define a class like so (The <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement can be used to do nothing here).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<p>After running this cell the <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">MyClass</span></code> now is available to us and we do stuff with it.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">MyClass</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>A class can be filled with <em>class variables</em></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">MyClass</span><span class="o">.</span><span class="n">greeting</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Classes can also be filled with methods. Methods are just like functions, except they belong to a class.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">greeting</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span>
+
+<span class="n">MyClass</span><span class="o">.</span><span class="n">greet</span><span class="p">(</span><span class="n">MyClass</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You probably wonder, what the <code class="docutils literal notranslate"><span class="pre">self</span></code> inside the greet method does. That’s because of <em>instances</em>. What you do normally with a class, is instantiate it by calling <code class="docutils literal notranslate"><span class="pre">MyClass()</span></code>. The <code class="docutils literal notranslate"><span class="pre">self</span></code> in the method refers to the current instance. Because we didn’t instantiate the class, we don’t have an instance and have to do the <code class="docutils literal notranslate"><span class="pre">MyClass.greet(MyClass)</span></code> workaround.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">instance</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>And this is where classes become interesting. Consider this:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">john</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">jane</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">jane</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Goodbye&#39;</span>
+<span class="n">jane</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jane</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>We have two instances of one class, both doing something similar, but with differet variables. Overwriting the variables if an instance like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jane</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Goodbye&#39;</span>
+<span class="n">jane</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
+</pre></div>
+</div>
+<p>What you would normally do is, using a special method called <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>, which is called when the class is instantiated and set the variables of the instance like in the next cell. The <code class="docutils literal notranslate"><span class="pre">self</span></code> in the class refers to a current instance of that class. More on that in <code class="docutils literal notranslate"><span class="pre">03_intermediate_python.ipynb</span></code>.</p>
+<p>(Normally you would also not set the variables <code class="docutils literal notranslate"><span class="pre">greeting</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> as class variables but only as instance variables.)</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="n">greeting</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">greeting</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span>
+
+    <span class="k">def</span> <span class="nf">change_greeting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_greet</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">new_greet</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Give </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> a new greeting:&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="n">new_greet</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">john</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+<span class="n">jane</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Goodbye&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jane</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>You can also try to interactively change Jane’s greeting by calling:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jane</span><span class="o">.</span><span class="n">change_greeting</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">jane</span><span class="o">.</span><span class="n">change_greeting</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jane</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basics_00_intro.html" class="btn btn-neutral float-left" title="Welcome" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qr_01_data_types.html" class="btn btn-neutral float-right" title="Data Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Kevin Sawade.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

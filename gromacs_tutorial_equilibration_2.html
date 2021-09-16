@@ -1,82 +1,42 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Equilibration Phase 2 &mdash; start-science-here 0.0.1 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
-  <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
-  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_lesson.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
-  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/togglebutton.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
-        <script src="_static/minipres.js"></script>
-        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Production MD" href="gromacs_tutorial_production.html" />
     <link rel="prev" title="Equilibration" href="gromacs_tutorial_equilibration.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> start-science-here
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -84,19 +44,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Tutorials</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="linux_tutorial.html">Linux tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
@@ -122,93 +71,75 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_tutorial.html">Python Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setting_up_python.html">Setting Up Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_tutorial.html">Git Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first_project.html">Your first project</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Extras</span></p>
+<p class="caption" role="heading"><span class="caption-text">Extras</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="raising_issues.html">Raising Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="propose_changes.html">Propose Changes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downloading_files.html">Downloading Files from mybinder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uploading_files.html">Uploading Files to mybinder</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Having Problems?</span></p>
+<p class="caption" role="heading"><span class="caption-text">Having Problems?</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html#contact">Contact</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">start-science-here</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="gromacs_tutorial.html">Gromacs Tutorial</a> &raquo;</li>
-        
       <li>Equilibration Phase 2</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/gromacs_tutorial_equilibration_2.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <blockquote>
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<blockquote>
 <div></div></blockquote>
 <div class="section" id="equilibration-phase-2">
-<span id="gromacs-equilibration-2-label"></span><h1>Equilibration Phase 2<a class="headerlink" href="#equilibration-phase-2" title="Permalink to this headline">¶</a></h1>
+<span id="gromacs-equilibration-2-label"></span><h1>Equilibration Phase 2<a class="headerlink" href="#equilibration-phase-2" title="Permalink to this headline"></a></h1>
 <p>The previous step, <em>NVT</em> equilibration, stabilized the temperature of the system. Prior to data collection, we must also stabilize the pressure (and thus also the density) of the system. Equilibration of pressure is conducted under an NPT ensemble, wherein the Number of particles, Pressure, and Temperature are all constant. The ensemble is also called the “isothermal-isobaric” ensemble, and most closely resembles experimental conditions.</p>
 <p>The .mdp file used for a 100-ps NPT equilibration can be found <a class="reference external" href="http://www.mdtutorials.com/gmx/lysozyme/Files/npt.mdp">here</a>. It is not drastically different from the parameter file used for <em>NVT</em> equilibration. Note the addition of the pressure coupling section, using the Parrinello-Rahman barostat.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget http://www.mdtutorials.com/gmx/lysozyme/Files/npt.mdp
@@ -234,7 +165,7 @@ $ gmx mdrun -deffnm npt
 $ python3 plot_xvg.py pressure.xvg -rav <span class="m">10</span>
 </pre></div>
 </div>
-<div class="admonition-solution solution important dropdown admonition">
+<div class="dropdown admonition" id="id1">
 <p class="admonition-title">Solution</p>
 <a class="reference external image-reference" href="_static/pics/gromacs_tutorial/plotted_pressure.png"><img alt="Fluctuation of pressure." src="_images/plotted_pressure.png" /></a>
 </div>
@@ -243,7 +174,7 @@ $ python3 plot_xvg.py pressure.xvg -rav <span class="m">10</span>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx energy -f npt.edr -o density.xvg
 </pre></div>
 </div>
-<div class="admonition-solution solution important dropdown admonition">
+<div class="dropdown admonition" id="id2">
 <p class="admonition-title">Solution</p>
 <a class="reference external image-reference" href="_static/pics/gromacs_tutorial/plotted_density.png"><img alt="Fluctuation of density. This time with a strong increase in the first few ps." src="_images/plotted_density.png" /></a>
 </div>
@@ -256,50 +187,33 @@ $ python3 plot_xvg.py pressure.xvg -rav <span class="m">10</span>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="gromacs_tutorial_production.html" class="btn btn-neutral float-right" title="Production MD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="gromacs_tutorial_equilibration.html" class="btn btn-neutral float-left" title="Equilibration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gromacs_tutorial_production.html" class="btn btn-neutral float-right" title="Production MD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Kevin Sawade.
-
-    </p>
+    <p>&#169; Copyright 2021, Kevin Sawade.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
