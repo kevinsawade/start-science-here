@@ -23,7 +23,7 @@ Interactive Tutorial Notebooks
 Available on binder:
 
 .. image:: https://mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD
+   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F
    :alt: Binder link to repo.
 
 Non-interactive static notebooks
@@ -90,7 +90,7 @@ Data Types
 To quickly start into an interactive environment with infos about data types:
 
 .. image:: https://mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?filepath=python_tutorial%2Fquick_reference%2Fqr_01_data_types.ipynb
+   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F?filepath=python_tutorial%2Fquick_reference%2Fqr_01_data_types.ipynb
    :alt: Binder link to qr_01_data_types.ipynb
 
 .. image:: https://img.shields.io/badge/offline-notebook-orange
