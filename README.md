@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD/urlpath=tree)
 [![MadeWithLove](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/kevinsawade/bcd9d09bc682b4743b84fc6e967478ac/raw/endpoint.json)](https://www.chemie.uni-konstanz.de/ag-peter/)
 
 # Start Science Here!
