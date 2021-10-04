@@ -17,3 +17,4 @@ jupyter nbextension enable exercise2/main
 jupyter nbextension enable toggle_all_line_numbers/main
 jupyter nbextension enable execute_time/ExecuteTime
 jupyter nbextension enable latex_envs/latex_envs
+jupyter-notebook
