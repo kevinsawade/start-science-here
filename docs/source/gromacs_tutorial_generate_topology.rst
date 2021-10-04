@@ -30,7 +30,7 @@ Download the 1AKI.pdb file from the `RCSB <http://www.rcsb.org/pdb/home/home.do>
 
 .. code-block:: bash
 
-   $ wget https://files.rcsb.org/view/1AKI.pdb -O 1aki.pdb
+   $ wget https://files.rcsb.org/view/1AKI.pdb -O 1AKI.pdb
 
 Have a look at the file with
 
