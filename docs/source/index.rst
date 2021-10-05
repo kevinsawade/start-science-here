@@ -47,12 +47,17 @@ We are trying to continually improve start science here and are more than happy 
 
 Start the recommended route with the linux tutorial here: :ref:`linux-tutorial-label`.
 
-2. Windows Subsystem for Linux (Windows users only)
+2. Python
+=========
+
+The longest part of Start Science Here! is the Python tutorial. If you feel confident with Python you might just glimpse over the quick reference at :ref:`python-tutorial-label`. Otherwise you can open this Repo in binder and start making your way through the notebooks.
+
+3. Windows Subsystem for Linux (Windows users only)
 ===================================================
 
 You now have a pretty solid understanding about unix-like operating systems and know how to work with a command-line interface. Binder makes it very easy to learn because all you need is a browser and a working internet connection. However, we can't use binder forever, at some point we will want to switch to our own computers. The caveat is that there are three prevalent OSes. Mac OS X and our favorite Linux distribution (Ubuntu) are very similar, but Windows 10 is very different. Luckily, there is the Windows subsystem for Linux, which gives you a working Ubuntu machine for your Windows 10 PC. Here's a summary of how to install the latest version of Ubuntu: :ref:`wsl-label`.
 
-3. Installing Docker
+4. Installing Docker
 ====================
 
 Docker allows to bring you pre-configured ubuntu installations. Instead of writing pages upon pages of installation instructions for all kinds of programs, we will install docker and can provide you different environments by calling:
@@ -76,24 +81,18 @@ Gromacs is a simulation package for MD simulations of proteins, DNA, and lipids.
 
 I adjusted the first tutorial "Lysozyme in water" to work with binder. So follow along at: :ref:`gromacs-tutorial-label`.
 
-5. Python
-=========
-
-The longest part of Start Science Here! is the Python tutorial. If you feel confident with Python you might just glimpse over the quick reference at :ref:`python-tutorial-label`. Otherwise you can open this Repo in binder and start making your way through the notebooks.
-
 .. toctree::
    :maxdepth: 1
    :caption: Tutorials
 
    linux_tutorial
+   python_tutorial
    windows_susbsystem_for_linux
+   setting_up_python
    install_docker
    gromacs_tutorial
-   python_tutorial
-   setting_up_python
    git_tutorial
    first_project
-
 
 
 .. toctree::
