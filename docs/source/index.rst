@@ -8,7 +8,7 @@ Start Science Here!
 ===================
 
 .. image:: https://mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD
+   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F
    :alt: Binder
 
 .. image:: https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/kevinsawade/bcd9d09bc682b4743b84fc6e967478ac/raw/endpoint.json
@@ -17,7 +17,7 @@ Start Science Here!
 
 **An introduction to scientific programming, Python, molecular dynamics, and more**
 
-Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the Python tutorial by visiting: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD. If you want to take the full course, take the recommended route:
+Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the Python tutorial by visiting: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F. If you want to take the full course, take the recommended route:
 
 1. Linux tutorial
 2. Windows Subsystem for Linux (Windows users only)
