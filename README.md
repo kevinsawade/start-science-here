@@ -3,24 +3,37 @@
 
 # Start Science Here!
 
-## An introduction to scientific programming, python, molecular dynamics and more
-
-Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the python tutorial by visiting: \<XX binder address XX\>. If you want to take the full course, take the recommended route:
-
-1. Working with Linux from the command line.
-2. Installing the Windows subsystem for Linux (Windows users only).
-3. Installing Docker
-4. Gromacs
-5. Python
-6. Setting up your own python
-7. Git
-8. Your first project
-
-There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the python tutorial is very long, but can be put on hold after the beginner tutorials).
 
 ## Going to the documentation page
 
 If you are currently viewing this document on github.com it is highly advised, that you move over to the documentation page at https://kevinsawade.github.io/start-science-here/. This page is much more user friendly and can contain more content, that can not be rendered at github.com
+
+## An introduction to scientific programming, python, molecular dynamics and more
+
+Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the python tutorial by visiting: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2Ffilepath=python_tutorial). If you want to take the full course, take the recommended route:
+
+1. Working with Linux from the command line
+    * Introduction to the Unix operating systems, the shell, commands, programs.
+2. Python
+    * Basics: operators, data types, functions, classes
+    * Intermediate: OOPs, generators, closures, decorators, scopes, context manager
+    * Built-ins: os, shutil, glob, re, datetime, doctest, unittest
+    * Packages: NumPy, MDTraj, matplotlib, MDAnalysis, pandas
+    * Advanced: metaclasses, function factories, multithreading, async, C extensions
+3. Gromacs
+    * Run a molecular dynamics simulation from the comfort of your own home
+4. Installing the Windows subsystem for Linux (Windows users only)
+    * Learn how to run all of the above locally on your Windows PC.
+5. Installing Docker
+    * platform independent runtimes
+6. Setting up your own python
+    * The next step towards independence
+7. Git
+    * Version your code for backups and sharing with others
+8. Your first project
+    * Build your own python library that other people can install and use.
+
+There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the python tutorial is very long, but can be put on hold after the beginner tutorials).
 
 ## Linux Tutorial
 
