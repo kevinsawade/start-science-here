@@ -15,8 +15,8 @@ Tutorial zero
 
 After accessing the terminal on binder (it may take a while and show error messages, just sit it out) you will be greeted by a black screen showing the prompt:
 
-.. image:: _static/pics/linux_tutorial/example_terminal_binder.png
-   :target: _static/pics/linux_tutorial/example_terminal_binder.png
+.. image:: ../_static/pics/linux_tutorial/example_terminal_binder.png
+   :target: ../_static/pics/linux_tutorial/example_terminal_binder.png
    :alt: Terminal Session on Binder showing blank.
 
 We will now make our way through the first commands:

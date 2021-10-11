@@ -40,8 +40,8 @@ The linux (UNIX) operating system
 An operating system is a piece of software that manages a computer's hardware and software resources and provides services to other computer programs.
 
 
-.. image:: _static/pics/linux_tutorial/unix_like_os_tree.png
-   :target: _static/pics/linux_tutorial/unix_like_os_tree.png
+.. image:: ../_static/pics/linux_tutorial/unix_like_os_tree.png
+   :target: ../_static/pics/linux_tutorial/unix_like_os_tree.png
    :alt: Inheritance of Unix-like operating systems.
 
 
@@ -120,8 +120,8 @@ The easiest way to start your first terminal is to head over to binder (it may t
 https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F
 
 
-.. image:: _static/pics/linux_tutorial/open_terminal.png
-   :target: _static/pics/linux_tutorial/open_terminal.png
+.. image:: ../_static/pics/linux_tutorial/open_terminal.png
+   :target: ../_static/pics/linux_tutorial/open_terminal.png
    :alt: Open a Terminal on binder.
 
 
