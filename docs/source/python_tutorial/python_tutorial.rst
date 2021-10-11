@@ -23,7 +23,7 @@ Interactive Tutorial Notebooks
 Available on binder:
 
 .. image:: https://mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F
+   :target: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2Ffilepath=python_tutorial
    :alt: Binder link to repo.
 
 Non-interactive static notebooks
