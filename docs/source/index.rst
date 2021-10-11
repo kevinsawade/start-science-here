@@ -85,11 +85,11 @@ The longest part of Start Science Here! is the Python tutorial. If you feel conf
    :maxdepth: 1
    :caption: Tutorials
 
-   linux_tutorial
+   linux_tutorial/linux_tutorial
    windows_susbsystem_for_linux
    install_docker
-   gromacs_tutorial
-   python_tutorial
+   gromacs_tutorial/gromacs_tutorial
+   python_tutorial/python_tutorial
    setting_up_python
    git_tutorial
    first_project
