@@ -3,6 +3,11 @@
 
 # Start Science Here!
 
+
+## Going to the documentation page
+
+If you are currently viewing this document on github.com it is highly advised, that you move over to the documentation page at https://kevinsawade.github.io/start-science-here/. This page is much more user friendly and can contain more content, that can not be rendered at github.com
+
 ## An introduction to scientific programming, python, molecular dynamics and more
 
 Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the python tutorial by visiting: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2Ffilepath=python_tutorial). If you want to take the full course, take the recommended route:
@@ -29,10 +34,6 @@ Welcome to start science here! This project is meant to introduce you to the wor
     * Build your own python library that other people can install and use.
 
 There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the python tutorial is very long, but can be put on hold after the beginner tutorials).
-
-## Going to the documentation page
-
-If you are currently viewing this document on github.com it is highly advised, that you move over to the documentation page at https://kevinsawade.github.io/start-science-here/. This page is much more user friendly and can contain more content, that can not be rendered at github.com
 
 ## Linux Tutorial
 
