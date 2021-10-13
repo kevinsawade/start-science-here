@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equilibration &mdash; start-science-here 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Equilibration Phase 2" href="gromacs_tutorial_equilibration_2.html" />
+    <link rel="prev" title="Energy Minimization" href="gromacs_tutorial_energy_minimization.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> start-science-here
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux_tutorial/linux_tutorial.html">Linux tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_tutorial/python_tutorial.html">Python Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting_up_python.html">Setting Up Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_docker.html">Installation instructions for Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="gromacs_tutorial.html">Gromacs Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gromacs_tutorial.html#credit">Credit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gromacs_tutorial.html#some-gromacs-basics">Some Gromacs Basics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="gromacs_tutorial.html#lysozyme-tutorial">Lysozyme Tutorial</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_generate_topology.html">Generate Topology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_examine_topology.html">Examine Topology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_solvation.html">Solvation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_adding_ions.html">Adding Ions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_energy_minimization.html">Energy Minimization</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Equilibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_equilibration_2.html">Equilibration Phase 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_production.html">Production MD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_analysis.html">Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_more_analysis.html">More Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs_tutorial_more_analysis.html#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../setting_up_python.html">Setting Up Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git_tutorial.html">Git Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first_project.html">Your first project</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../raising_issues.html">Raising Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../propose_changes.html">Propose Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../downloading_files.html">Downloading Files from mybinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uploading_files.html">Uploading Files to mybinder</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Having Problems?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html#contact">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">start-science-here</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="gromacs_tutorial.html">Gromacs Tutorial</a> &raquo;</li>
+      <li>Equilibration</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/gromacs_tutorial/gromacs_tutorial_equilibration.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<blockquote>
+<div></div></blockquote>
+<div class="section" id="equilibration">
+<span id="gromacs-equilibration-label"></span><h1>Equilibration<a class="headerlink" href="#equilibration" title="Permalink to this headline"></a></h1>
+<p>EM ensured that we have a reasonable starting structure, in terms of geometry and solvent orientation. To begin real dynamics, we must equilibrate the solvent and ions around the protein. If we were to attempt unrestrained dynamics at this point, the system may collapse. The reason is that the solvent is mostly optimized within itself, and not necessarily with the solute. It needs to be brought to the temperature we wish to simulate and establish the proper orientation about the solute (the protein). After we arrive at the correct temperature (based on kinetic energies), we will apply pressure to the system until it reaches the proper density.</p>
+<p>Remember that posre.itp file that pdb2gmx generated a long time ago? We’re going to use it now. The purpose of posre.itp is to apply a position restraining force on the heavy atoms of the protein (anything that is not a hydrogen). Movement is permitted, but only after overcoming a substantial energy penalty. The utility of position restraints is that they allow us to equilibrate our solvent around our protein, without the added variable of structural changes in the protein. The origin of the position restraints (the coordinates at which the restraint potential is zero) is provided via a coordinate file passed to the -r option of grompp.</p>
+<p>Equilibration is often conducted in two phases. The first phase is conducted under an NVT ensemble (constant Number of particles, Volume, and Temperature). This ensemble is also referred to as “isothermal-isochoric” or “canonical.” The timeframe for such a procedure is dependent upon the contents of the system, but in NVT, the temperature of the system should reach a plateau at the desired value. If the temperature has not yet stabilized, additional time will be required. Typically, 50-100 ps should suffice, and we will conduct a 100-ps NVT equilibration for this exercise. Depending on your machine, this may take a while (just under an hour if run in parallel on 16 cores or so). Get the .mdp file <a class="reference external" href="http://www.mdtutorials.com/gmx/lysozyme/Files/nvt.mdp">here</a>, or call:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget http://www.mdtutorials.com/gmx/lysozyme/Files/nvt.mdp
+</pre></div>
+</div>
+<p>We will call grompp and mdrun just as we did at the EM step:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+
+$ gmx mdrun -deffnm nvt
+</pre></div>
+</div>
+<p>A full explanation of the parameters used can be found in the GROMACS manual, in addition to the comments provided. Take note of a few parameters in the .mdp file:</p>
+<ul class="simple">
+<li><p>gen_vel = yes: Initiates velocity generation. Using different random seeds (gen_seed) gives different initial velocities, and thus multiple (different) simulations can be conducted from the same starting structure.</p></li>
+<li><p>tcoupl = V-rescale: The velocity rescaling thermostat is an improvement upon the Berendsen weak coupling method, which did not reproduce a correct kinetic ensemble.</p></li>
+<li><p>pcoupl = no: Pressure coupling is not applied.</p></li>
+</ul>
+<p>Let’s analyze the temperature progression, again using energy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmx energy -f nvt.edr -o temperature.xvg
+</pre></div>
+</div>
+<p>Type “16 0” at the prompt to select the temperature of the system and exit.</p>
+<div class="dropdown admonition" id="id1">
+<p class="admonition-title">Solution</p>
+<p>The resulting plot should look something like the following:</p>
+<a class="reference external image-reference" href="../_static/pics/gromacs_tutorial/plotted_temperature.png"><img alt="Fluctuation of the temperature." src="../_images/plotted_temperature.png" /></a>
+</div>
+<p>From the plot, it is clear that the temperature of the system quickly reaches the target value (300 K), and remains stable over the remainder of the equilibration. For this system, a shorter equilibration period (on the order of 50 ps) may have been adequate.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gromacs_tutorial_energy_minimization.html" class="btn btn-neutral float-left" title="Energy Minimization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gromacs_tutorial_equilibration_2.html" class="btn btn-neutral float-right" title="Equilibration Phase 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Kevin Sawade.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

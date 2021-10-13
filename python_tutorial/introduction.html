@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to execute python code &mdash; start-science-here 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="00_datatypes" href="basics_00_datatypes.html" />
+    <link rel="prev" title="Python Tutorial" href="python_tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> start-science-here
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux_tutorial/linux_tutorial.html">Linux tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="python_tutorial.html">Python Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="python_tutorial.html#introduction-to-jupyter-notebooks">Introduction to Jupyter Notebooks</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to execute python code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Jupyter-Notebooks">Jupyter Notebooks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#The-python-shell">The python shell</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#interactive-tutorial-notebooks">Interactive Tutorial Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#non-interactive-static-notebooks">Non-interactive static notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#quick-reference">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#static-quick-reference-notebooks">Static quick reference notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../windows_susbsystem_for_linux.html">Windows subsystem for linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting_up_python.html">Setting Up Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_docker.html">Installation instructions for Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gromacs_tutorial/gromacs_tutorial.html">Gromacs Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting_up_python.html">Setting Up Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git_tutorial.html">Git Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first_project.html">Your first project</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../raising_issues.html">Raising Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../propose_changes.html">Propose Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../downloading_files.html">Downloading Files from mybinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uploading_files.html">Uploading Files to mybinder</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Having Problems?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html#contact">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">start-science-here</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="python_tutorial.html">Python Tutorial</a> &raquo;</li>
+      <li>How to execute python code</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/kevinsawade/start-science-here/blob/main/docs/source/python_tutorial/introduction.nblink" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="How-to-execute-python-code">
+<h1>How to execute python code<a class="headerlink" href="#How-to-execute-python-code" title="Permalink to this headline"></a></h1>
+<p>Welcome to the python tutorial of Welcome to the python tutorial of <a class="reference external" href="https://kevinsawade.github.io/start-science-here/">start science here!</a> This tutorial will guide you through all the important topics in learning the python programming language.</p>
+<p>Python is an interpreted, high-level, general purpose programming language.</p>
+<ul class="simple">
+<li><p>It’s interpreted because python programs don’t need to be compiled.</p></li>
+<li><p>It’s a high-level programming language, because of its layer of abstraction. You don’t need to write instructions which memory register to pass through which core of the CPU. This would also prohibit us from sharing code, between different processors.</p></li>
+<li><p>It’s general purpose, because you can do almost anything with it. From math, websites, inventory management systems to computational chemistry.</p></li>
+</ul>
+<div class="section" id="Jupyter-Notebooks">
+<h2>Jupyter Notebooks<a class="headerlink" href="#Jupyter-Notebooks" title="Permalink to this headline"></a></h2>
+<p>The easiest way to run python code is via the jupyter notebooks provided at binder:</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F?filepath=python_tutorial"><img alt="Binder" src="https://binder.pangeo.io/badge_logo.svg" /></a></p>
+<p><em>jupyter-notebooks</em> contain a number of so-called cells. Cells can either be code cells, or markdown cells. This text is written in a markdown cell. In these cells text is easier to read and can be formatted <em>like</em> <strong>these</strong> [STRIKEOUT:examples] here. You can make lists, tables and format your text nicely. These markdown cells accompany the code cells. In the code cells the magic happens. These cells contain code segments which can be executed on a cell-by-cell basis. All variables declared in
+the code cells are available as long as the notebook is running. This means that contrary to a code.py file a variable declared in a cell further down can be used in a cell further up, as long as the cell with the variable declaration is ran first.</p>
+<p><strong>How to execute code in jupyter notebooks</strong></p>
+<p>To execute a cell you can either use the “Run” button at menu bar on top, our you can use these key combinations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to run a cell and move the cursor to the next cell.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to run a cell without moving the cursor to the next cell.</p></li>
+</ul>
+<p><strong>Further PROs for jupyter notebooks</strong></p>
+<ul class="simple">
+<li><p>You can render graphs and images.</p></li>
+<li><p>You can also render molecule structures.</p></li>
+<li><p>You can add additional functionality like exercises, tables of contents for quick navigation of larger notebooks.</p></li>
+<li><p>You can describe your code via markdown cells.</p></li>
+</ul>
+<p>\begin{exercise} View this specific notebook on binder <a class="reference external" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F?filepath=python_tutorial"><img alt="Binder" src="https://binder.pangeo.io/badge_logo.svg" /></a> you can try to execute the cell below and see what happens: \end{exercise}</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start science here!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Congratulations, you executed your first python code.</strong></p>
+<p>The next part about the python shell can easily be skipped. Head over to the <a class="reference external" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F?filepath=python_tutorial%2Fbasic_python%2Fbasics_00_intro.ipynb">basics_00_datatypes.ipynb</a> notebook to continue.</p>
+</div>
+<div class="section" id="The-python-shell">
+<h2>The python shell<a class="headerlink" href="#The-python-shell" title="Permalink to this headline"></a></h2>
+<p>Besides jupyter notebooks there’s the more basic python shell, which can also come in useful, for when jupyter notebooks are not working. To get to a python shell there are a few things you could do:</p>
+<p>The easiest way is to head over to binder:</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F?filepath=python_tutorial"><img alt="Binder" src="https://binder.pangeo.io/badge_logo.svg" /></a></p>
+<p>and open a terminal by clicking on <strong>New</strong> and then <strong>Terminal</strong>:</p>
+<p><img alt="alt text" src="../_images/open_terminal1.png" /></p>
+<p>There are also other possibilities:</p>
+<ol class="arabic simple">
+<li><p>If you are currenlty using a linux operating system, you are good to go. Just open a terminal and continue.</p></li>
+<li><p>If you are on a Windows PC you can either install the <a class="reference external" href="https://kevinsawade.github.io/start-science-here/windows_susbsystem_for_linux.html">Windows subsystem for linux</a></p></li>
+<li><p>or download a <a class="reference external" href="https://www.python.org/downloads/windows/">python installer</a>, install it and open a python shell by searching for “python” in your start menu.</p></li>
+</ol>
+<p>For all cases (except 2) we also want to enter <code class="docutils literal notranslate"><span class="pre">python</span></code> into our current shell to start the python shell. After that we are greeted by <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, the python prompt. Which tells us, we can start to write python code. Try typing the following code line-by-line hitting return after every line and omitting the three chevrons <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> at the start. The lines without chevrons are the output of the previous line, so you can check whether the expected output is correct.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="n">a</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="go">Hello World!</span>
+</pre></div>
+</div>
+<p>To leave the python shell type <code class="docutils literal notranslate"><span class="pre">quit()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now it’s time to start the python tutorial with <a class="reference external" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F?filepath=python_tutorial%2Fbasic_python%2Fbasics_00_intro.ipynb">basics_00_datatypes.ipynb</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="python_tutorial.html" class="btn btn-neutral float-left" title="Python Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="basics_00_datatypes.html" class="btn btn-neutral float-right" title="00_datatypes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Kevin Sawade.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
