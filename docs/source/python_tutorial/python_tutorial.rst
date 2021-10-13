@@ -33,11 +33,11 @@ An offline, non-interactive version of the notebooks can be found via this menu:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Basics
+   :caption: Offline notebooks
 
-   basics_00_intro.nblink
-   basics_01_dataypes.nblink
-   basics_02_comprehensions_functions_classes.nblink
+   basics_00_datatypes.nblink
+   basics_01_functions_classes.nblink
+   intermediate_02_OOP.nblink
 
 Quick Reference
 ===============
@@ -996,8 +996,8 @@ Again, the ``list()`` is because ``map`` returns a ``iterator`` which can not di
    # equivalent list comprehension
    [num for num in nums if num % 2 == 0]
 
-Static Notebooks
-================
+Static quick reference notebooks
+================================
 
 .. toctree::
    :maxdepth: 1
