@@ -1631,8 +1631,8 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Comparing-__eq__-and-__lt__-and-so-on.">
 <h4>Comparing __eq__ and __lt__ and so on.<a class="headerlink" href="#Comparing-__eq__-and-__lt__-and-so-on." title="Permalink to this headline"></a></h4>
 <p>With these dunder methods you can use the comparison operators with your custom classes.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1678,10 +1678,50 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+True
+False
+True
+True
+True
+</pre></div></div>
+</div>
 </div>
 <div class="section" id="Merging-__add__">
 <h4>Merging __add__<a class="headerlink" href="#Merging-__add__" title="Permalink to this headline"></a></h4>
-<p>With this dunder method, you can combine two custom classes:</p>
+<p>With this dunder method, you can choose what happens, if the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator is called with your class. Here, you are free to choose what happens. You don’t need to add similar instances:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">NewAnimal</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">other</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+<span class="n">animal</span> <span class="o">=</span> <span class="n">NewAnimal</span><span class="p">(</span><span class="s1">&#39;polar bear&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+<span class="n">animal</span> <span class="o">+=</span> <span class="mi">50</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+475
+525
+</pre></div></div>
+</div>
+<p>But most often, it is advised, that <code class="docutils literal notranslate"><span class="pre">__add__</span></code> takes the same class as self. But the returned class doesn’t need to be the same.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1706,15 +1746,11 @@ div.rendered_html tbody tr:hover {
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Herd</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span>
 
-<span class="n">stag</span> <span class="o">=</span> <span class="n">HerdAnimal</span><span class="p">(</span><span class="s1">&#39;red deer&#39;</span><span class="p">)</span>
-<span class="n">stag</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mi">220</span>
-<span class="n">hind</span> <span class="o">=</span> <span class="n">HerdAnimal</span><span class="p">(</span><span class="s1">&#39;red deer&#39;</span><span class="p">)</span>
-<span class="n">hind</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">animal1</span> <span class="o">=</span> <span class="n">HerdAnimal</span><span class="p">(</span><span class="s1">&#39;blue whale&#39;</span><span class="p">)</span>
+<span class="n">animal2</span> <span class="o">=</span> <span class="n">HerdAnimal</span><span class="p">(</span><span class="s1">&#39;polar bear&#39;</span><span class="p">)</span>
+<span class="n">animal3</span> <span class="o">=</span> <span class="n">HerdAnimal</span><span class="p">(</span><span class="s1">&#39;nutria&#39;</span><span class="p">)</span>
 
-<span class="n">herd</span> <span class="o">=</span> <span class="n">stag</span> <span class="o">+</span> <span class="n">hind</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">herd</span><span class="p">)</span>
-
-<span class="n">herd</span> <span class="o">+=</span> <span class="n">Herd</span><span class="p">([</span><span class="n">HerdAnimal</span><span class="p">(</span><span class="s1">&#39;red deer&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="n">herd</span> <span class="o">=</span> <span class="n">animal1</span> <span class="o">+</span> <span class="n">animal2</span> <span class="o">+</span> <span class="n">animal3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">herd</span><span class="p">)</span>
 </pre></div>
 </div>
