@@ -25,7 +25,7 @@ The .rst file is again rendered nicely, but we want to edit it and fix the punct
    :target: _static/pics/raising_and_merging/propose_changes_2.PNG
    :alt: Image showing where the Pen button is located.
 
-Let's make some changes and use the "Propose Changes" button at ther very bottom, combined with some descriptive text, to propose these changes to the developers.
+Let's make some changes and use the "Propose Changes" button at the very bottom, combined with some descriptive text, to propose these changes to the developers.
 
 .. image:: _static/pics/raising_and_merging/propose_changes_3.PNG
    :target: _static/pics/raising_and_merging/propose_changes_3.PNG

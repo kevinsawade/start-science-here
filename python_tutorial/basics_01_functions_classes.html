@@ -394,7 +394,7 @@ div.rendered_html tbody tr:hover {
 <h1>01_functions_classes<a class="headerlink" href="#01_functions_classes" title="Permalink to this headline"></a></h1>
 <p>Open on binder:</p>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F?filepath=python_tutorial%2Fbasic_python%2Fbasics_01_functions_classes.ipynb"><img alt="Binder" src="https://binder.pangeo.io/badge_logo.svg" /></a></p>
-<p>This notebook is based on the tutorial series by <strong>Rajath Kumar M P</strong>. Visit his github to find out more: <a class="reference external" href="https://github.com/rajathkmp">https://github.com/rajathkmp</a></p>
+<p>This notebook is based on the tutorial series by <strong>Rajath Kumar M P</strong>. Visit his GitHub to find out more: <a class="reference external" href="https://github.com/rajathkmp">https://github.com/rajathkmp</a></p>
 <div class="section" id="Comprehensions">
 <h2>Comprehensions<a class="headerlink" href="#Comprehensions" title="Permalink to this headline"></a></h2>
 <p>Oftentimes you will use <code class="docutils literal notranslate"><span class="pre">for</span></code>-lopps to fill lists with some data. Let’s say we want all square numbers up to and including 20 (that means we have to use <code class="docutils literal notranslate"><span class="pre">range(21)</span></code>, because python is right exclusive) in a list.</p>
@@ -544,7 +544,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 </div>
 <div class="section" id="Functions">
 <h2>Functions<a class="headerlink" href="#Functions" title="Permalink to this headline"></a></h2>
-<p>In 01_python_basics we talked about built-in functions. For example, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is a built-in function, meaning it is always included. A function groups a set of statements so they can be run more than once. <em>Functions are an alternative for copying and pasting code segments you might call often</em>. Functions are the most basic program structure python provides to maximize <em>code reuse</em>.</p>
+<p>In 01_python_basics we talked about built-in functions. For example, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is a built-in function, meaning it is always included. A function groups a set of statements, so they can be run more than once. <em>Functions are an alternative for copying and pasting code segments you might often call</em>. Functions are the most basic program structure python provides to maximize <em>code reuse</em>.</p>
 <p>Functions are called by their name and parentheses (). Functions are defined by the <code class="docutils literal notranslate"><span class="pre">def</span></code> or the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> statement.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argN</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This is the documentation to that func.&quot;&quot;&quot;</span>
@@ -880,12 +880,12 @@ cases the number itself should be printed. Here’s what the code looks like wit
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Instead of assigning a result to a useless variable return it direclty&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Instead of assigning a result to a useless variable return it directly&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 </pre></div>
 </div>
 </div>
-<p>Sometimes you want your function to return multiple values. However the return statement breaks the execution of the function. Instead of two separate return statements, you should separate the return values with a cpmma.</p>
+<p>Sometimes you want your function to return multiple values. However ,the return statement breaks the execution of the function. Instead of two separate return statements, you should separate the return values with a comma.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1011,7 +1011,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 </pre></div>
 </div>
 </div>
-<p>In the same fashion you can set the defaults for a functions arguments, when defining the function. In that case you only need to provide as many arguments as there are non-keyworded arguments.</p>
+<p>In the same fashion you can set the defaults for a functions arguments, when defining the function. In that case you only need to provide as many arguments as there are non-keyword arguments.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1064,7 +1064,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 </pre></div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function was directly supplied without writing a function with <code class="docutils literal notranslate"><span class="pre">def</span></code>. You have no way of using that function again, because it wasn’t assigned to a variable. This makes the code easily to read. However, if you use this function (check whether greater than 9 and smaller than 26) often consider putting it into it’s own function.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function was directly supplied without writing a function with <code class="docutils literal notranslate"><span class="pre">def</span></code>. You have no way of using that function again, because it wasn’t assigned to a variable. This makes the code easily to read. However, if you use this function (check whether greater than 9 and smaller than 26) often consider putting it into it own function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">in_range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">25</span>
 </pre></div>
@@ -1115,7 +1115,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 </pre></div>
 </div>
 </div>
-<p>After running this cell the <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">MyClass</span></code> now is available to us and we do stuff with it.</p>
+<p>After running this cell the <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">MyClass</span></code> now is available to us, and we do stuff with it.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1183,7 +1183,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 </pre></div>
 </div>
 </div>
-<p>We have two instances of one class, both doing something similar, but with differet variables. Overwriting the variables if an instance like this:</p>
+<p>We have two instances of one class, both doing something similar, but with different variables. Overwriting the variables if an instance like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jane</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Goodbye&#39;</span>
 <span class="n">jane</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
 </pre></div>
