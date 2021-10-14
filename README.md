@@ -6,7 +6,7 @@
 
 ## Going to the documentation page
 
-If you are currently viewing this document on github.com it is highly advised, that you move over to the documentation page at https://kevinsawade.github.io/start-science-here/. This page is much more user friendly and can contain more content, that can not be rendered at github.com
+If you are currently viewing this document on GitHub.com it is highly advised, that you move over to the documentation page at https://kevinsawade.github.io/start-science-here/. This page is much more user-friendly and can contain more content, that can not be rendered at GitHub.com
 
 ## An introduction to scientific programming, python, molecular dynamics and more
 
@@ -23,7 +23,7 @@ Welcome to start science here! This project is meant to introduce you to the wor
 3. Gromacs
     * Run a molecular dynamics simulation from the comfort of your own home
 4. Installing the Windows subsystem for Linux (Windows users only)
-    * Learn how to run all of the above locally on your Windows PC.
+    * Learn how to run all the above locally on your Windows PC.
 5. Installing Docker
     * platform independent runtimes
 6. Setting up your own python
