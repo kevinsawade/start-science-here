@@ -57,9 +57,12 @@
 <li class="toctree-l3"><a class="reference internal" href="basics_00_datatypes.html">00_datatypes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_01_functions_classes.html">01_functions_classes</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">02_intermediate_python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#What-you-will-learn">What you will learn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Advanced-iteration">Advanced iteration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Advanced-functions-*args-and-**kwargs">Advanced functions *args and **kwargs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Advanced-Classes-OOP">Advanced Classes OOP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Custom-decorators">Custom decorators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Decorator-classes">Decorator classes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Further-keywords">Further keywords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Lambda-expressions">Lambda expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Global-and-Nonlocal--&gt;-Scope-and-Namespace">Global and Nonlocal -&gt; Scope and Namespace</a></li>
@@ -67,7 +70,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#Exceptions">Exceptions</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Closure-and-decorators">Closure and decorators</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="python_tutorial.html#quick-reference">Quick Reference</a></li>
@@ -407,6 +409,20 @@ div.rendered_html tbody tr:hover {
 <p><strong>Call out to Corey Schafer</strong></p>
 <p>Lots of the code here is taken from Corey Schafer and his excellent python tutorials. When you are more the video-learning type of person, definitely check out his youtube channel:</p>
 <p><a class="reference external" href="https://www.youtube.com/user/schafer5">https://www.youtube.com/user/schafer5</a></p>
+<div class="section" id="What-you-will-learn">
+<h2>What you will learn<a class="headerlink" href="#What-you-will-learn" title="Permalink to this headline"></a></h2>
+<p>In this tutorial you will learn:</p>
+<ul class="simple">
+<li><p>How to add functionality to your iterations and make theam more readable.</p></li>
+<li><p>How to make your classes awesome.</p>
+<ul>
+<li><p>How to inherit from parent classes.</p></li>
+<li><p>How to make your classes work with builtin operators (operator overloading).</p></li>
+<li><p>How to write decorators in classes and on functions.</p></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="Advanced-iteration">
 <h2>Advanced iteration<a class="headerlink" href="#Advanced-iteration" title="Permalink to this headline"></a></h2>
 <p>There are multiple objects than can be iterated. <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, and <code class="docutils literal notranslate"><span class="pre">tuple</span></code> are the most common. We will later look at how to make our own object iterable. But first let’s go back to the iteration over a list:</p>
@@ -1067,167 +1083,6 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Classmethods-and-static-methods">
-<h3>Classmethods and static methods<a class="headerlink" href="#Classmethods-and-static-methods" title="Permalink to this headline"></a></h3>
-<p>Regular methods (also the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method) take the instance of the class as first argument. By convention, we call the instance of the class inside the class itself <code class="docutils literal notranslate"><span class="pre">self</span></code>, but other variables are possible. There are, however some special decorators (more on decorators later) that you can use to circumvent this.</p>
-<p>Class methods take the class as first argument (per convention <code class="docutils literal notranslate"><span class="pre">cls</span></code>) and return a new instance of the class, with something altered. For example, the raise_amount:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
-
-    <span class="n">raise_amount</span> <span class="o">=</span> <span class="mf">1.04</span>
-    <span class="n">num_of_emps</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="n">pay</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">@company.com&quot;</span>
-
-        <span class="c1"># change the class variable of the Employee class everytime __init__ is called</span>
-        <span class="n">Employee</span><span class="o">.</span><span class="n">num_of_emps</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s2">&quot;</span>
-
-    <span class="k">def</span> <span class="nf">apply_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">raise_amount</span><span class="p">)</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">set_raise_amount</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">cls</span><span class="o">.</span><span class="n">raise_amount</span> <span class="o">=</span> <span class="n">amount</span>
-
-
-<span class="n">emp1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Clark&#39;</span><span class="p">,</span> <span class="s1">&#39;Kent&#39;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">)</span>
-<span class="n">emp2</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="mi">60000</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">pay</span><span class="p">)</span>
-<span class="n">emp1</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">();</span> <span class="n">emp2</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="c1"># Apply changes class-wide</span>
-<span class="n">Employee</span><span class="o">.</span><span class="n">set_raise_amount</span><span class="p">(</span><span class="mf">1.1</span><span class="p">)</span>
-<span class="n">emp1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Clark&#39;</span><span class="p">,</span> <span class="s1">&#39;Kent&#39;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">)</span>
-<span class="n">emp2</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="mi">60000</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">pay</span><span class="p">)</span>
-<span class="n">emp1</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">();</span> <span class="n">emp2</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">pay</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Classes with different constructors</strong></p>
-<p>Let’s say, we want to create new employees from a string of the type: firstname-lastname-pay. We use the split() method of the string object to split it based on the hyphens.</p>
-<p>We use a class method for this alternate constructor. Per convention, these methods start with <em>from</em></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;Clark-Kent-50000&#39;</span>
-<span class="n">str2</span> <span class="o">=</span> <span class="s1">&#39;Bruce-Wayne-60000&#39;</span>
-
-<span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
-
-    <span class="n">raise_amount</span> <span class="o">=</span> <span class="mf">1.04</span>
-    <span class="n">num_of_emps</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="n">pay</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">@company.com&quot;</span>
-
-        <span class="c1"># change the class variable of the Employee class everytime __init__ is called</span>
-        <span class="n">Employee</span><span class="o">.</span><span class="n">num_of_emps</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s2">&quot;</span>
-
-    <span class="k">def</span> <span class="nf">apply_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">raise_amount</span><span class="p">)</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">set_raise_amount</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">cls</span><span class="o">.</span><span class="n">raise_amount</span> <span class="o">=</span> <span class="n">amount</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">employee_string</span><span class="p">):</span>
-        <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span> <span class="o">=</span> <span class="n">employee_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">)</span>
-
-<span class="n">emp1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Clark&#39;</span><span class="p">,</span> <span class="s1">&#39;Kent&#39;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">)</span>
-<span class="n">emp2</span> <span class="o">=</span> <span class="n">Employee</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="s1">&#39;Bruce-Wayne-60000&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Static method decorator</strong></p>
-<p>If there’s a method inside a class, that would also make sense outside the scope of the class, you can make it a static method. This static method can now be called directly from the class without having to create an instance. Note, how there is no <code class="docutils literal notranslate"><span class="pre">self</span></code> or <code class="docutils literal notranslate"><span class="pre">cls</span></code> in the <code class="docutils literal notranslate"><span class="pre">is_workday()</span></code> static method.</p>
-<p>A good giveaway, whether a method should be a staticmethod is, when you don’t access the class, or the instance.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
-
-    <span class="n">raise_amount</span> <span class="o">=</span> <span class="mf">1.04</span>
-    <span class="n">num_of_emps</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="n">pay</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">@company.com&quot;</span>
-
-        <span class="c1"># change the class variable of the Employee class everytime __init__ is called</span>
-        <span class="n">Employee</span><span class="o">.</span><span class="n">num_of_emps</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s2">&quot;</span>
-
-    <span class="k">def</span> <span class="nf">apply_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">raise_amount</span><span class="p">)</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">set_raise_amount</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">cls</span><span class="o">.</span><span class="n">raise_amount</span> <span class="o">=</span> <span class="n">amount</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">employee_string</span><span class="p">):</span>
-        <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span> <span class="o">=</span> <span class="n">employee_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">)</span>
-
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">is_workday</span><span class="p">(</span><span class="n">day</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">day</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">or</span> <span class="n">day</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="kc">True</span>
-
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="n">my_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Employee</span><span class="o">.</span><span class="n">is_workday</span><span class="p">(</span><span class="n">my_date</span><span class="p">))</span>
-
-<span class="n">emp1</span> <span class="o">=</span> <span class="n">Employee</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="s1">&#39;Clark-Kent-50000&#39;</span><span class="p">)</span>
-<span class="n">my_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">is_workday</span><span class="p">(</span><span class="n">my_date</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="Inheritance">
 <h3>Inheritance<a class="headerlink" href="#Inheritance" title="Permalink to this headline"></a></h3>
 <p>Inheritance allows us to inherit attribnutes and method of parent classes into child classes and overwrite attributes and methods as we like. Let’s say we want to create different type of employees: developers and managers. Both have names and emails. So we can reuse the code from the <code class="docutils literal notranslate"><span class="pre">Employee</span></code> class. With parentheses after the <code class="docutils literal notranslate"><span class="pre">class</span></code> statement we can inherit from other classes.</p>
@@ -1884,6 +1739,689 @@ To create a context manager for your class you need to add some magic, dunder me
 </div>
 </div>
 </div>
+<div class="section" id="Built-in-decorators">
+<h3>Built-in decorators<a class="headerlink" href="#Built-in-decorators" title="Permalink to this headline"></a></h3>
+<p>Before going on some lengthy tangent about what a decorator is and how to write one on your own, let’s just one of the three built-in decorators:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;property</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;setter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code></p></li>
+</ul>
+<div class="section" id="The-property-decorator">
+<h4>The property decorator<a class="headerlink" href="#The-property-decorator" title="Permalink to this headline"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> decorator is often used and adds a nice way of dynamically defining instance variables (also called attributes). Let’s reuse our <code class="docutils literal notranslate"><span class="pre">Employee</span></code> function and say don’t want to set the <code class="docutils literal notranslate"><span class="pre">self.email</span></code> attribute inside the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method. What if the name of a employee changes? The email would still be the same. So let’s create a method called <code class="docutils literal notranslate"><span class="pre">email()</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
+
+    <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">@company.com&#39;</span>
+
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">emp_1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Doe&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp_1</span><span class="o">.</span><span class="n">email</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>This is good and all, but now we need to call the <code class="docutils literal notranslate"><span class="pre">email()</span></code> method every time, we need the email. Some of the above code only uses the <code class="docutils literal notranslate"><span class="pre">self.email</span></code> attribute. Changing the class this way might break some of our old code. So let’s use the <code class="docutils literal notranslate"><span class="pre">&#64;propert</span></code> decorator:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">@company.com&#39;</span>
+
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">emp_1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Doe&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp_1</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>And now <code class="docutils literal notranslate"><span class="pre">self.email</span></code> behaves just like an attribute. That’s the purpose of the <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> decorator. The same could be done for the <code class="docutils literal notranslate"><span class="pre">fullname()</span></code> method. But let’s not stop there. With a <code class="docutils literal notranslate"><span class="pre">&#64;setter</span></code> decorator we could achieve a piece of code that returns fullname as an attribute (without parentheses):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emp_1</span><span class="o">.</span><span class="n">fullname</span><span class="p">)</span>
+<span class="go">Jane Doe</span>
+</pre></div>
+</div>
+<p>but also allows us to change the instance’s <code class="docutils literal notranslate"><span class="pre">first</span></code> and <code class="docutils literal notranslate"><span class="pre">last</span></code> arttributes by doing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emp_1</span><span class="o">.</span><span class="n">fullname</span> <span class="o">=</span> <span class="s1">&#39;Jane Smith&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emp_1</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+<span class="go">jane.smith@company.com</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="The-setter-decorator">
+<h4>The setter decorator<a class="headerlink" href="#The-setter-decorator" title="Permalink to this headline"></a></h4>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">@company.com&#39;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="nd">@fullname</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_fullname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">new_fullname</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">emp_1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Doe&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp_1</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+<span class="n">emp_1</span><span class="o">.</span><span class="n">fullname</span> <span class="o">=</span> <span class="s1">&#39;Jane Smith&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp_1</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="The-deleter-decorator">
+<h4>The deleter decorator<a class="headerlink" href="#The-deleter-decorator" title="Permalink to this headline"></a></h4>
+<p>The code inside the deleter decorator is executed once the variable is accessed.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">@company.com&#39;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="nd">@fullname</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_fullname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">new_fullname</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="nd">@fullname</span><span class="o">.</span><span class="n">deleter</span>
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deleting Name!&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">emp_1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Doe&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp_1</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">emp_1</span><span class="o">.</span><span class="n">fullname</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp_1</span><span class="o">.</span><span class="n">first</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="The-classmethod-decorator">
+<h4>The classmethod decorator<a class="headerlink" href="#The-classmethod-decorator" title="Permalink to this headline"></a></h4>
+<p>Regular methods (also the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method) take the instance of the class as first argument. By convention, we call the instance of the class inside the class itself <code class="docutils literal notranslate"><span class="pre">self</span></code>, but other variables are possible. There are, however some special decorators (more on decorators later) that you can use to circumvent this.</p>
+<p>Class methods take the class as first argument (per convention <code class="docutils literal notranslate"><span class="pre">cls</span></code>) and return a new instance of the class, with something altered. For example, the raise_amount:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+    <span class="n">raise_amount</span> <span class="o">=</span> <span class="mf">1.04</span>
+    <span class="n">num_of_emps</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="n">pay</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">@company.com&quot;</span>
+
+        <span class="c1"># change the class variable of the Employee class everytime __init__ is called</span>
+        <span class="n">Employee</span><span class="o">.</span><span class="n">num_of_emps</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">apply_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">raise_amount</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_raise_amount</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">raise_amount</span> <span class="o">=</span> <span class="n">amount</span>
+
+
+<span class="n">emp1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Clark&#39;</span><span class="p">,</span> <span class="s1">&#39;Kent&#39;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">)</span>
+<span class="n">emp2</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="mi">60000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">pay</span><span class="p">)</span>
+<span class="n">emp1</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">();</span> <span class="n">emp2</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Apply changes class-wide</span>
+<span class="n">Employee</span><span class="o">.</span><span class="n">set_raise_amount</span><span class="p">(</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="n">emp1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Clark&#39;</span><span class="p">,</span> <span class="s1">&#39;Kent&#39;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">)</span>
+<span class="n">emp2</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="mi">60000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">pay</span><span class="p">)</span>
+<span class="n">emp1</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">();</span> <span class="n">emp2</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">pay</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">pay</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Classes with different constructors</strong></p>
+<p>Let’s say, we want to create new employees from a string of the type: firstname-lastname-pay. We use the split() method of the string object to split it based on the hyphens.</p>
+<p>We use a class method for this alternate constructor. Per convention, these methods start with <em>from</em></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;Clark-Kent-50000&#39;</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s1">&#39;Bruce-Wayne-60000&#39;</span>
+
+<span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+    <span class="n">raise_amount</span> <span class="o">=</span> <span class="mf">1.04</span>
+    <span class="n">num_of_emps</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="n">pay</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">@company.com&quot;</span>
+
+        <span class="c1"># change the class variable of the Employee class everytime __init__ is called</span>
+        <span class="n">Employee</span><span class="o">.</span><span class="n">num_of_emps</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">apply_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">raise_amount</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_raise_amount</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">raise_amount</span> <span class="o">=</span> <span class="n">amount</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">employee_string</span><span class="p">):</span>
+        <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span> <span class="o">=</span> <span class="n">employee_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">)</span>
+
+<span class="n">emp1</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Clark&#39;</span><span class="p">,</span> <span class="s1">&#39;Kent&#39;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">)</span>
+<span class="n">emp2</span> <span class="o">=</span> <span class="n">Employee</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="s1">&#39;Bruce-Wayne-60000&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Static method decorator</strong></p>
+<p>If there’s a method inside a class, that would also make sense outside the scope of the class, you can make it a static method. This static method can now be called directly from the class without having to create an instance. Note, how there is no <code class="docutils literal notranslate"><span class="pre">self</span></code> or <code class="docutils literal notranslate"><span class="pre">cls</span></code> in the <code class="docutils literal notranslate"><span class="pre">is_workday()</span></code> static method.</p>
+<p>A good giveaway, whether a method should be a staticmethod is, when you don’t access the class, or the instance.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+
+    <span class="n">raise_amount</span> <span class="o">=</span> <span class="mf">1.04</span>
+    <span class="n">num_of_emps</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="n">pay</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">@company.com&quot;</span>
+
+        <span class="c1"># change the class variable of the Employee class everytime __init__ is called</span>
+        <span class="n">Employee</span><span class="o">.</span><span class="n">num_of_emps</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">apply_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pay</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">raise_amount</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_raise_amount</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">raise_amount</span> <span class="o">=</span> <span class="n">amount</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">employee_string</span><span class="p">):</span>
+        <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span> <span class="o">=</span> <span class="n">employee_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">pay</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">is_workday</span><span class="p">(</span><span class="n">day</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">day</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">or</span> <span class="n">day</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">my_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Employee</span><span class="o">.</span><span class="n">is_workday</span><span class="p">(</span><span class="n">my_date</span><span class="p">))</span>
+
+<span class="n">emp1</span> <span class="o">=</span> <span class="n">Employee</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="s1">&#39;Clark-Kent-50000&#39;</span><span class="p">)</span>
+<span class="n">my_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">is_workday</span><span class="p">(</span><span class="n">my_date</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Custom-decorators">
+<h2>Custom decorators<a class="headerlink" href="#Custom-decorators" title="Permalink to this headline"></a></h2>
+<p>Now that we have learned about the built-in decorators let’s write our own. For that we need to write a <em>closure</em>. A closure is a function that returns a function. The general style is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">outer</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">args</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">arithmetic</span><span class="p">(</span><span class="n">operation</span><span class="o">=</span><span class="s1">&#39;addition&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">addition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="nf">subtraction</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="nb">locals</span><span class="p">()[</span><span class="n">operation</span><span class="p">]</span>
+
+<span class="n">arithmetic</span><span class="p">(</span><span class="s1">&#39;addition&#39;</span><span class="p">)(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">arithmetic</span><span class="p">(</span><span class="s1">&#39;subtraction&#39;</span><span class="p">)(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-1
+</pre></div></div>
+</div>
+<p>But not only that, we need our outer function to accept a function as argument. Like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Do something before function call&quot;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Do something after the function call&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+</div>
+<p>Let’s write a decorator that sorts the <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> alphabetically:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">sorted_kwargs</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">())}</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">def</span> <span class="nf">increase_price</span><span class="p">(</span><span class="n">increase</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="o">*</span> <span class="n">increase</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="n">items</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;potatoes&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">}</span>
+
+<span class="c1"># first without decorator</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">increase_price</span><span class="p">(</span><span class="o">**</span><span class="n">items</span><span class="p">))</span>
+
+<span class="c1"># now with decorator so let&#39;s decorate our function</span>
+<span class="n">increase_price</span> <span class="o">=</span> <span class="n">sorted_kwargs</span><span class="p">(</span><span class="n">increase_price</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">increase_price</span><span class="p">(</span><span class="o">**</span><span class="n">items</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;apple&#39;: 1.5, &#39;milk&#39;: 2.25, &#39;banana&#39;: 0.75, &#39;potatoes&#39;: 3.75}
+{&#39;apple&#39;: 1.5, &#39;banana&#39;: 0.75, &#39;milk&#39;: 2.25, &#39;potatoes&#39;: 3.75}
+</pre></div></div>
+</div>
+<p>Instead of defining our <code class="docutils literal notranslate"><span class="pre">increase_price()</span></code> function twice (once for creating the function and once for adding the decorator), we could add the decorator as a syntactic sugar with the known <code class="docutils literal notranslate"><span class="pre">&#64;decorator</span></code> function:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nd">@sorted_kwargs</span>
+<span class="k">def</span> <span class="nf">increase_price</span><span class="p">(</span><span class="n">increase</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="o">*</span> <span class="n">increase</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">increase_price</span><span class="p">(</span><span class="o">**</span><span class="n">items</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;apple&#39;: 1.5, &#39;banana&#39;: 0.75, &#39;milk&#39;: 2.25, &#39;potatoes&#39;: 3.75}
+</pre></div></div>
+</div>
+<div class="section" id="Useful-use-cases">
+<h3>Useful use-cases<a class="headerlink" href="#Useful-use-cases" title="Permalink to this headline"></a></h3>
+<p>Do something more often.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">do_three_times</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="n">func</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@do_three_times</span>
+<span class="k">def</span> <span class="nf">print_hello_world</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+
+<span class="n">print_hello_world</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hello world
+Hello world
+Hello world
+</pre></div></div>
+</div>
+<p>Debug a function py printing <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">args_repr</span> <span class="o">=</span> <span class="p">[</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>                      <span class="c1"># 1</span>
+        <span class="n">kwargs_repr</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">v</span><span class="si">!r}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>  <span class="c1"># 2</span>
+        <span class="n">signature</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args_repr</span> <span class="o">+</span> <span class="n">kwargs_repr</span><span class="p">)</span>           <span class="c1"># 3</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calling </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">signature</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">!r}</span><span class="s2"> returned </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>           <span class="c1"># 4</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@debug</span>
+<span class="k">def</span> <span class="nf">make_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Howdy </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Whoa </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">! </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> already, you are growing up!&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">make_greeting</span><span class="p">(</span><span class="s2">&quot;Benjamin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Calling make_greeting(&#39;Benjamin&#39;)
+&#39;make_greeting&#39; returned &#39;Howdy Benjamin!&#39;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Howdy Benjamin!&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">make_greeting</span><span class="p">(</span><span class="s2">&quot;Richard&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">112</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Calling make_greeting(&#39;Richard&#39;, age=112)
+&#39;make_greeting&#39; returned &#39;Whoa Richard! 112 already, you are growing up!&#39;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Whoa Richard! 112 already, you are growing up!&#39;
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Preserve-identity-with-functools.wraps">
+<h3>Preserve identity with functools.wraps<a class="headerlink" href="#Preserve-identity-with-functools.wraps" title="Permalink to this headline"></a></h3>
+<p>We have a small problem, when using decorators this way:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">make_greeting</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">make_greeting</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;function debug.&lt;locals&gt;.wrapper at 0x000002311EF3B310&gt;
+wrapper
+</pre></div></div>
+</div>
+<p>Our function now has the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> attribute <code class="docutils literal notranslate"><span class="pre">wrapper</span></code>. Ugh. That’s not good and can lead to some problems later down the line. That’s why it is recommended to use <code class="docutils literal notranslate"><span class="pre">&#64;functools.wraps(func)</span></code> in decorator definitions:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">def</span> <span class="nf">do_three_times</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="n">func</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@do_three_times</span>
+<span class="k">def</span> <span class="nf">print_hello_world</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">print_hello_world</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">print_hello_world</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;function print_hello_world at 0x000002311EF3B700&gt;
+print_hello_world
+</pre></div></div>
+</div>
+<p>All good.</p>
+</div>
+</div>
+<div class="section" id="Decorator-classes">
+<h2>Decorator classes<a class="headerlink" href="#Decorator-classes" title="Permalink to this headline"></a></h2>
+<p>We could use a decorator class to count how often a function that has this decorator has been called. For that we need the previously introduced <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method of python classes.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">class</span> <span class="nc">CountCalls</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="n">functools</span><span class="o">.</span><span class="n">update_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_calls</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_calls</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Call </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_calls</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nd">@CountCalls</span>
+<span class="k">def</span> <span class="nf">say_whee</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Whee!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">say_whee</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Call 1 of &#39;say_whee&#39;
+Whee!
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">say_whee</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Call 2 of &#39;say_whee&#39;
+Whee!
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">say_whee</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Call 3 of &#39;say_whee&#39;
+Whee!
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">say_whee</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Call 4 of &#39;say_whee&#39;
+Whee!
+</pre></div></div>
+</div>
 </div>
 <div class="section" id="Further-keywords">
 <h2>Further keywords<a class="headerlink" href="#Further-keywords" title="Permalink to this headline"></a></h2>
@@ -1961,8 +2499,8 @@ To create a context manager for your class you need to add some magic, dunder me
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1971,17 +2509,8 @@ To create a context manager for your class you need to add some magic, dunder me
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-False
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1993,14 +2522,6 @@ False
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[&#39;Ellipsis&#39;, &#39;False&#39;, &#39;GeneratorExit&#39;, &#39;KeyboardInterrupt&#39;, &#39;None&#39;, &#39;NotImplemented&#39;, &#39;StopAsyncIteration&#39;, &#39;StopIteration&#39;, &#39;SystemExit&#39;, &#39;True&#39;, &#39;__IPYTHON__&#39;, &#39;__build_class__&#39;, &#39;__debug__&#39;, &#39;__doc__&#39;, &#39;__import__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;, &#39;abs&#39;, &#39;all&#39;, &#39;any&#39;, &#39;ascii&#39;, &#39;bin&#39;, &#39;bool&#39;, &#39;bytearray&#39;, &#39;bytes&#39;, &#39;callable&#39;, &#39;chr&#39;, &#39;classmethod&#39;, &#39;compile&#39;, &#39;complex&#39;, &#39;copyright&#39;, &#39;credits&#39;, &#39;delattr&#39;, &#39;dict&#39;, &#39;dir&#39;, &#39;display&#39;, &#39;divmod&#39;, &#39;enumerate&#39;, &#39;eval&#39;, &#39;exec&#39;, &#39;filter&#39;, &#39;float&#39;, &#39;format&#39;, &#39;frozenset&#39;, &#39;get_ipython&#39;, &#39;getattr&#39;, &#39;globals&#39;, &#39;hasattr&#39;, &#39;hash&#39;, &#39;help&#39;, &#39;hex&#39;, &#39;id&#39;, &#39;input&#39;, &#39;int&#39;, &#39;isinstance&#39;, &#39;issubclass&#39;, &#39;iter&#39;, &#39;len&#39;, &#39;license&#39;, &#39;list&#39;, &#39;locals&#39;, &#39;map&#39;, &#39;max&#39;, &#39;memoryview&#39;, &#39;min&#39;, &#39;next&#39;, &#39;object&#39;, &#39;oct&#39;, &#39;open&#39;, &#39;ord&#39;, &#39;pow&#39;, &#39;print&#39;, &#39;property&#39;, &#39;range&#39;, &#39;repr&#39;, &#39;reversed&#39;, &#39;round&#39;, &#39;set&#39;, &#39;setattr&#39;, &#39;slice&#39;, &#39;sorted&#39;, &#39;staticmethod&#39;, &#39;str&#39;, &#39;sum&#39;, &#39;super&#39;, &#39;tuple&#39;, &#39;type&#39;, &#39;vars&#39;, &#39;zip&#39;]
-</pre></div></div>
-</div>
 </div>
 <div class="section" id="Global-and-Nonlocal--&gt;-Scope-and-Namespace">
 <h2>Global and Nonlocal -&gt; Scope and Namespace<a class="headerlink" href="#Global-and-Nonlocal-->-Scope-and-Namespace" title="Permalink to this headline"></a></h2>
@@ -2009,7 +2530,7 @@ False
 </pre></div>
 </div>
 <p>we map an object (remember: everything in python is an object) called <code class="docutils literal notranslate"><span class="pre">int</span></code>, or integer to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>. This creates a name, that is accessible in the global namespace. The namespaces are sorted hierarchically and you can remember them with the abbreviation LEGB for Local - Enclosing - Global - Built-in.</p>
-<p><img alt="Drawing" src="python_tutorial/nested-namespaces-python.jpg" /></p>
+<p><img alt="Drawing" src="basic_python/nested-namespaces-python.jpg" /></p>
 <p><em>Scope</em> is a term which describes which namespace a call looks into. A function call can for example look into the Built-in namespace (you can call <code class="docutils literal notranslate"><span class="pre">list()</span></code> from within a function, without declaring it. Top-level calls (like code in jupyter cells) can’t look into a function’s namespace. Their scope is limited to the Global and Built-in namespace.</p>
 <p>Let’s get into some examples… We declare a global variable called x and assign it a string object.</p>
 <div class="nbinput nblast docutils container">
@@ -2600,8 +3121,8 @@ Executing Finally...
 </pre></div></div>
 </div>
 <p><strong>Turn consecutive warnings into Exceptions</strong></p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2625,42 +3146,6 @@ Executing Finally...
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">UserWarning</span>                               Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-13-5aba8c75baaa&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span>         <span class="ansi-green-fg">return</span> x <span class="ansi-blue-fg">/</span> y
-<span class="ansi-green-intense-fg ansi-bold">     13</span>
-<span class="ansi-green-fg">---&gt; 14</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>protected_division<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> print<span class="ansi-blue-fg">(</span>protected_division<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     16</span> print<span class="ansi-blue-fg">(</span>protected_division<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-13-5aba8c75baaa&gt;</span> in <span class="ansi-cyan-fg">protected_division</span><span class="ansi-blue-fg">(x, y)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-green-fg">def</span> protected_division<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span>     <span class="ansi-green-fg">if</span> y <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 9</span><span class="ansi-red-fg">         </span>warnings<span class="ansi-blue-fg">.</span>warn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Protected division. Returning 0.&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>         <span class="ansi-green-fg">return</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">UserWarning</span>: Protected division. Returning 0.
-</pre></div></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="Closure-and-decorators">
-<h1>Closure and decorators<a class="headerlink" href="#Closure-and-decorators" title="Permalink to this headline"></a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
 </div>
 </div>
 </div>
