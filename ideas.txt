@@ -1,6 +1,5 @@
 Python topics:
 
-
 ##############################################################
 #
 ##############################################################
@@ -116,6 +115,8 @@ large file storage
 workflows
 
 
-Linting and Code Smells
+Linting and Code Smells and Gotchas
 https://towardsdatascience.com/5-python-code-smells-you-should-be-wary-of-c48cc0eb9d8b
 https://rules.sonarsource.com/python/type/Code%20Smell/RSPEC-3516
+https://docs.python-guide.org/writing/gotchas/
+https://www.youtube.com/watch?v=qUeud6DvOWI
