@@ -23,8 +23,8 @@
         <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -329,7 +329,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -413,8 +413,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">):</span>
     <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
@@ -428,8 +427,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -451,8 +449,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">squares_only_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;2&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares_only_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;2&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares_only_2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -465,8 +462,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
     <span class="n">response</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">response</span> <span class="o">+=</span> <span class="s2">&quot;Fizz&quot;</span>
@@ -482,8 +478,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="p">[(</span><span class="s2">&quot;Fizz&quot;</span><span class="o">*</span><span class="p">(</span><span class="ow">not</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span>) + &quot;Buzz&quot;*(not i%5) or i) for i in range(1, 101)]
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[(</span><span class="s2">&quot;Fizz&quot;</span><span class="o">*</span><span class="p">(</span><span class="ow">not</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span>) + &quot;Buzz&quot;*(not i%5) or i) for i in range(1, 101)]
 </pre></div>
 </div>
 </div>
@@ -500,8 +495,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="p">[</span><span class="mi">27</span><span class="o">*</span><span class="n">z</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">27</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">27</span><span class="o">*</span><span class="n">z</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">27</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -513,8 +507,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">base_prices</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;potatoes&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_prices</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;potatoes&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">}</span>
 
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">base_prices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> costs </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.02f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
@@ -525,8 +518,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">new_prices</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">base_prices</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_prices</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">base_prices</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">new_prices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> costs </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.02f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
@@ -541,8 +533,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">base_prices</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;potatoes&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_prices</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;potatoes&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">}</span>
 <span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">]</span>
 
 <span class="n">new_prices</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">fruits</span> <span class="k">else</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">base_prices</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
@@ -572,8 +563,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
     <span class="k">return</span> <span class="s1">&#39;awesome&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This function is&#39;</span><span class="p">,</span> <span class="n">some_func</span><span class="p">())</span>
@@ -588,8 +578,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">add_two_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_two_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Adds a number to the argument.&quot;&quot;&quot;</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">y</span>
@@ -603,8 +592,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;old&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;old&#39;</span>
 <span class="k">def</span> <span class="nf">change_x</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;new&#39;</span>
@@ -628,8 +616,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;old&#39;</span>
     <span class="k">def</span> <span class="nf">changer</span><span class="p">():</span>
         <span class="k">nonlocal</span> <span class="n">x</span>
@@ -651,8 +638,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">a_func</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a_func</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">arg1</span> <span class="o">+</span> <span class="p">(</span><span class="n">arg2</span> <span class="o">*</span> <span class="n">arg3</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">a_func</span><span class="p">(</span><span class="n">arg1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
@@ -666,8 +652,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">a_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -680,8 +665,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">powers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">powers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculates powers to an argument.</span>
 <span class="sd">    If not specified otherwise the power</span>
 <span class="sd">    of 2 will be calculated.</span>
@@ -700,8 +684,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
         <span class="k">return</span> <span class="s2">&quot;The test is true. I am a function.&quot;</span>
@@ -720,8 +703,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">help</span><span class="p">(</span><span class="n">powers</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">powers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -734,8 +716,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">print_hello_world</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_hello_world</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -757,8 +738,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">help</span><span class="p">(</span><span class="n">print_hello_world</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">print_hello_world</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -769,8 +749,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">out</span> <span class="o">=</span> <span class="n">print_hello_world</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="n">print_hello_world</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -778,8 +757,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -788,8 +766,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">print_hello_world</span><span class="p">():</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_hello_world</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Prints &quot;Hello World!&quot;</span>
 <span class="sd">    and returns a string.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -804,8 +781,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">out</span> <span class="o">=</span> <span class="n">print_hello_world</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="n">print_hello_world</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -818,8 +794,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">print_hello_user</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_hello_user</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 <span class="n">print_hello_user</span><span class="p">(</span><span class="s2">&quot;Keith&quot;</span><span class="p">)</span>
 </pre></div>
@@ -830,8 +805,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter your name: &quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter your name: &quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -839,8 +813,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">print_hello_user</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_hello_user</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -849,8 +822,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">print_hello_user</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_hello_user</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 <span class="n">print_hello_user</span><span class="p">(</span><span class="s2">&quot;Nice to see you,&quot;</span><span class="p">,</span> <span class="s2">&quot;Keith&quot;</span><span class="p">)</span>
 </pre></div>
@@ -864,8 +836,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Kurt&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Kurt&#39;</span>
 <span class="n">greet</span> <span class="o">=</span> <span class="s1">&#39;Good afternoon,&#39;</span>
 <span class="n">print_hello_user</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greet</span><span class="p">)</span>
 </pre></div>
@@ -876,8 +847,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">print_hello_user</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="n">greet</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_hello_user</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="n">greet</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -889,8 +859,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Instead of assigning a result to a useless variable return it directly&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 </pre></div>
@@ -901,8 +870,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">examplelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">examplelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">):</span>
     <span class="n">highest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
     <span class="n">lowest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
@@ -921,8 +889,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">examplelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">examplelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">):</span>
     <span class="n">highest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
     <span class="n">lowest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
@@ -938,8 +905,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -948,8 +914,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">rval_one</span><span class="p">,</span> <span class="n">rval_two</span><span class="p">,</span> <span class="n">rval_three</span><span class="p">,</span> <span class="n">rval_four</span> <span class="o">=</span> <span class="n">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rval_one</span><span class="p">,</span> <span class="n">rval_two</span><span class="p">,</span> <span class="n">rval_three</span><span class="p">,</span> <span class="n">rval_four</span> <span class="o">=</span> <span class="n">exfunc</span><span class="p">(</span><span class="n">examplelist</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rval_two</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -963,8 +928,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">convert_12_h_to_24_h</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_12_h_to_24_h</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
     <span class="n">timevalue</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># split the string into a list, use 0th element and make it an integer</span>
     <span class="k">if</span> <span class="s1">&#39;pm&#39;</span> <span class="ow">in</span> <span class="n">time</span><span class="p">:</span>
         <span class="n">timevalue</span> <span class="o">=</span> <span class="n">timevalue</span> <span class="o">+</span> <span class="mi">12</span>
@@ -998,8 +962,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">print_hello_user_time</span><span class="p">(</span><span class="s2">&quot;Sandra&quot;</span><span class="p">,</span> <span class="s2">&quot;12 am&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_hello_user_time</span><span class="p">(</span><span class="s2">&quot;Sandra&quot;</span><span class="p">,</span> <span class="s2">&quot;12 am&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1011,8 +974,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Subtracts y from x.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
 
@@ -1027,8 +989,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Subtracts y from x.</span>
 <span class="sd">    If not specified otherwise 5 will be subtracted from x.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
@@ -1054,8 +1015,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">myfunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myfunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
 <span class="n">myfunc</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1067,8 +1027,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]</span>
 
 <span class="n">filtered</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">mylist</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
@@ -1095,8 +1054,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">apply_arithmetic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_arithmetic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">operation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">apply_arithmetic</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -1107,8 +1065,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">apply_arithmetic</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">apply_arithmetic</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1120,8 +1077,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -1131,8 +1087,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">MyClass</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">MyClass</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1141,8 +1096,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
     <span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
 
@@ -1155,8 +1109,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
     <span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
 
@@ -1172,8 +1125,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
 <span class="n">instance</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1183,8 +1135,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">john</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
 <span class="n">jane</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
 <span class="n">jane</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Goodbye&#39;</span>
 <span class="n">jane</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
@@ -1205,8 +1156,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="n">greeting</span>
@@ -1227,8 +1177,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">john</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
 <span class="n">jane</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Goodbye&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1237,8 +1186,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">jane</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -1251,8 +1199,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">jane</span><span class="o">.</span><span class="n">change_greeting</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jane</span><span class="o">.</span><span class="n">change_greeting</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1260,8 +1207,7 @@ cases the number itself should be printed. Here’s what the code looks like wit
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">jane</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>
 </pre></div>
 </div>
