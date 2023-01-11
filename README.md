@@ -21,9 +21,7 @@ Welcome to start science here! This project is meant to introduce you to the wor
     * Packages: NumPy, MDTraj, matplotlib, MDAnalysis, pandas
     * Advanced: metaclasses, function factories, multithreading, async, C extensions
 3. Gromacs
-    * Run a molecular dynamics simulation from the comfort of your own home
-4. Installing the Windows subsystem for Linux (Windows users only)
-    * Learn how to run all the above locally on your Windows PC.
+    * Run a molecular dynamics simulation from the comfort of your own homes
 5. Installing Docker
     * platform independent runtimes
 6. Setting up your own python
