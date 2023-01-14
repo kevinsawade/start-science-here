@@ -103,7 +103,7 @@ For example, to remove read write and execute permissions on the file biglist fo
 
 This will leave the other permissions unaffected.
 
-To give read and write permissions on the file biglist to all,
+To give read and write permissions on the file biglist to all, type
 
 .. code-block:: bash
 
