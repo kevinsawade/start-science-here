@@ -179,7 +179,7 @@ Searching the contents of a file
 Simple searching using less
 ---------------------------
 
-Using ``less``, you can search though a text file for a keyword (pattern). For example, to search through science.txt for the word 'science', type
+Using ``less``, you can search through a text file for a keyword (pattern). For example, to search through science.txt for the word 'science', type
 
 .. code-block:: bash
 
