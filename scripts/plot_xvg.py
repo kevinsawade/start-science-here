@@ -125,4 +125,3 @@ if __name__ == '__main__':
     if args.columns == 'all':
         args.columns = {}
     main(args.xvg_file, args.columns, args.running_average, args.grid, args.labels)
-

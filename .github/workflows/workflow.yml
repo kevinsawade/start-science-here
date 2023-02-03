@@ -2,7 +2,7 @@
 
 name: Start-Science-Here-Workflow
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -35,7 +35,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-          
+
       - name: Run Sphinx 📚
         run: |
           sudo apt-get install -y pandoc
@@ -44,7 +44,7 @@ jobs:
           if [ -f docs/requirements.txt ]; then pip install -r docs/requirements.txt; fi
           cd docs
           make html
-          
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

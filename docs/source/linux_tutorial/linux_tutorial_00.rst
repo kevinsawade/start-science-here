@@ -212,7 +212,7 @@ will list the contents of your unixstuff directory, no matter where you currentl
 
 .. sshsolution::
    :class: dropdown
-   
+
    **Your** home directory. So if your username is ``jovyan``, ``ls ~`` would list the contents of the ``/home/jovyan/`` directory.
 
 .. sshexercise:: Exercise 0c

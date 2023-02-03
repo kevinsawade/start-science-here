@@ -13,4 +13,3 @@ if not test:
     print("\nTry again!")
 else:
     print("Success. You successfully carried out a 3-way merge and added more cilantro to the ingredients.txt")
-

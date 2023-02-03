@@ -6,7 +6,7 @@ sphinxcontrib-bibtex
 nbsphinx-link
 m2r2
 sphinx_rtd_theme
-sphinx-lesson 
+sphinx-lesson
 sphinx_minipres
 sphinx_tabs
 sphinx_togglebutton>=0.2.0

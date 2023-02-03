@@ -154,3 +154,9 @@ fabric.properties
 gromacs_tutorial_answers/
 !scripts/clear_ipynb_cells.sh
 !scripts/plot_xvg.py
+.DS_Store
+
+# files from linux tutorial
+linux_tutorial/tutorial_01/*list*
+linux_tutorial/tutorial_01/unixstuff/*science*
+linux_tutorial/tutorial_01/*names*

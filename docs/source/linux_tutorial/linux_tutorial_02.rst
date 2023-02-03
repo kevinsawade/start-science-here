@@ -39,7 +39,7 @@ In UNIX, we can redirect both the input and the output of commands.
 Redirecting the Output
 ======================
 
-We use the ``>`` symbol to redirect the output of a command. For example, to create a file called **list1** containing a list of fruit, type  
+We use the ``>`` symbol to redirect the output of a command. For example, to create a file called **list1** containing a list of fruit, type
 
 .. code-block:: bash
 

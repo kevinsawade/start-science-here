@@ -16,4 +16,3 @@ Git Tutorial
 .. note::
 
    This site is under construction. The tutorial on this site will be based on this tutorial: https://coderefinery.github.io/git-intro/
-
