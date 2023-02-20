@@ -13,4 +13,5 @@ sphinx_togglebutton>=0.2.0
 sphinx-autobuild
 #myst_parser[sphinx]
 myst_nb>0.8.3
+jinja2<3.1
 sphinx_rtd_theme_ext_color_contrast
