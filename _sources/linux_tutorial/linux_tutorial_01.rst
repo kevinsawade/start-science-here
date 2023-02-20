@@ -179,7 +179,7 @@ Searching the contents of a file
 Simple searching using less
 ---------------------------
 
-Using ``less``, you can search though a text file for a keyword (pattern). For example, to search through science.txt for the word 'science', type
+Using ``less``, you can search through a text file for a keyword (pattern). For example, to search through science.txt for the word 'science', type
 
 .. code-block:: bash
 
@@ -231,14 +231,14 @@ Some of the other options of grep are:
 
 ``-v`` display those lines that do NOT match
 ``-n`` precede each maching line with the line number
-``-c`` print only the total count of matched lines
+``-c`` print only the total count of matched lines.
 Try some of them and see the different results. Don't forget, you can use more than one option at a time, for example, the number of lines without the words science or Science is
 
 .. code-block:: bash
 
    $ grep -ivc science science.txt
 
-There is also the option to print the following or preceding lines of a line matching the grep pattern. That can come in handy, when you search for some code or other text you wrote long ago and want to have the context of the matching line and not just the line itself. ``-A`` will print lines **A**fter the match, ``-B`` will print lines **B**efore the match.
+There is also the option to print the following or preceding lines of a line matching the grep pattern. That can come in hand, when you search for some code or other text you wrote long ago and want to have the context of the matching line and not just the line itself. ``-A`` will print lines **A**fter the match, ``-B`` will print lines **B**efore the match.
 
 .. code-block:: bash
 

@@ -73,5 +73,5 @@ Let's take a look at density as well, this time using energy and entering "24 0"
 As with the pressure, the running average of the density is also plotted in red. The average value over the course of 100 ps is 1019 ± 3 kg m\ :sup:`-3`, close to the experimental value of 1000 kg m-3 and the expected density of the SPC/E model of 1008 kg m\ :sup:`-3`. The parameters for the SPC/E water model closely replicate experimental values for water. The density values are very stable over time, indicating that the system is well-equilibrated now with respect to pressure and density.
 
 .. note::
-   
+
    I frequently get questions about why density values obtained do not match my results. Pressure-related terms are slow to converge, and thus you may have to run *NPT* equilibration slightly longer than is specified here.

@@ -19,7 +19,7 @@ Wildcards
 :boldcode:`* and ?`
 ---------------------
 
-The character ``*`` is called a wildcard, and will match against none or more character(s) in a file (or directory) name. For example, in your unixstuff directory, type
+The character ``*`` is called a wildcard, and will match against one or more character(s) in a file (or directory) name. For example, in your unixstuff directory, type
 
 .. code-block:: bash
 

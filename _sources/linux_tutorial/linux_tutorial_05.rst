@@ -24,7 +24,7 @@ The df command reports on the space left on the file system. For example, to fin
    $ df .
 
 :boldcode:`du`
-The du command outputs the number of kilobyes used by each subdirectory. Useful if you have gone over quota and you want to find out which directory has the most files. In your home-directory, type
+The du command outputs the number of kilobytes used by each subdirectory. Useful if you have gone over quota and you want to find out which directory has the most files. In your home-directory, type
 
 .. code-block:: bash
 

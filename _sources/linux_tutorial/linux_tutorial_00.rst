@@ -27,7 +27,7 @@ Listing files and directories
 :boldcode:`ls (list)`
 ---------------------
 
-When you first login, your current working directory is your home directory. Your home directory has the same name as your user-name (for us, that username is ``jovyan`` and the home directory is ``/home/jovyan``). Normally your personal files can be found here, but for us, the content of the whole "start science here" project is here. To find out, what exactly can be found here, tye:
+When you first login, your current working directory is your home directory. Your home directory has the same name as your user-name (for us, that username is ``jovyan`` and the home directory is ``/home/jovyan``). Normally your personal files can be found here, but for us, the content of the whole "start science here" project is here. To find out, what exactly can be found here, type:
 
 .. code-block:: bash
 
@@ -212,7 +212,7 @@ will list the contents of your unixstuff directory, no matter where you currentl
 
 .. sshsolution::
    :class: dropdown
-   
+
    **Your** home directory. So if your username is ``jovyan``, ``ls ~`` would list the contents of the ``/home/jovyan/`` directory.
 
 .. sshexercise:: Exercise 0c
