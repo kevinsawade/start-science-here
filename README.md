@@ -6,7 +6,7 @@
 
 ## Going to the documentation page
 
-If you are currently viewing this document on GitHub.com it is highly advised, that you move over to the documentation page at https://kevinsawade.github.io/start-science-here/. This page is much more user-friendly and can contain more content, that can not be rendered at GitHub.com
+If you are currently viewing this document on GitHub.com it is highly advised, that you move over to the documentation page at https://kevinsawade.github.io/start-science-here/. This page is much more user-friendly and contains content that cannot be rendered at GitHub.com
 
 ## An introduction to scientific programming, python, molecular dynamics and more
 
@@ -31,8 +31,8 @@ Welcome to start science here! This project is meant to introduce you to the wor
 8. Your first project
     * Build your own python library that other people can install and use.
 
-There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the python tutorial is very long, but can be put on hold after the beginner tutorials).
+There is no set up required to follow along with this tutorial. It can take three to four days to work through everything (the python tutorial is very long but can be put on hold after the beginner tutorials).
 
 ## Linux Tutorial
 
-The linux tutorial will guide you through your first experiences with a command line interface. Please use the page from the documentation under https://kevinsawade.github.io/start-science-here/linux_tutorial.html
+The linux tutorial will guide you through your first experiences with a command-line interface. Please use the page from the documentation under https://kevinsawade.github.io/start-science-here/linux_tutorial.html
