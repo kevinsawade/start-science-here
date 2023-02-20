@@ -1,6 +1,6 @@
  .. _troubleshooting-label:
 
- .. role:: bolditalic
+.. role:: bolditalic
   :class: bolditalic
 
 .. role:: boldcode
@@ -15,6 +15,10 @@ Troubleshooting
 
 If mybinder.org does not start your session for whatever reason, there is also a docker container with this repo available. For that you need to follow the steps to install docker and then execute:
 
+
+.. todo::
+
+  Set this up.
 
 
 =======

@@ -44,8 +44,8 @@ There is no set up required to follow along with this tutorial. It can take thre
 
 .. prereq::
 
-   * A working internet connection
-   * An up-to-date browser (Chrome, Firefox, Safari, Opera, Edge)
+    * A working internet connection
+    * An up-to-date browser (Chrome, Firefox, Safari, Opera, Edge)
 
 0. Proposing Changes and Issues with start science here
 =======================================================
@@ -103,7 +103,6 @@ I adjusted the first tutorial "Lysozyme in water" to work with binder. So follow
    setting_up_python
    install_docker
    gromacs_tutorial/gromacs_tutorial
-   setting_up_python
    git_tutorial
    first_project
 
