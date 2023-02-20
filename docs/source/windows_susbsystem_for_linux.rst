@@ -1,6 +1,6 @@
  .. _wsl-label:
 
- .. role:: bolditalic
+.. role:: bolditalic
   :class: bolditalic
 
 .. role:: boldcode

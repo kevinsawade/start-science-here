@@ -160,3 +160,4 @@ gromacs_tutorial_answers/
 linux_tutorial/tutorial_01/*list*
 linux_tutorial/tutorial_01/unixstuff/*science*
 linux_tutorial/tutorial_01/*names*
+.vscode
