@@ -36,3 +36,17 @@ There is no set up required to follow along with this tutorial. It can take thre
 ## Linux Tutorial
 
 The linux tutorial will guide you through your first experiences with a command-line interface. Please use the page from the documentation under https://kevinsawade.github.io/start-science-here/linux_tutorial.html
+
+## Python Tutorial
+
+The python tutorial is a very comprehensive non-linear tutorial of the core python language and important packages used for data science, maths, molecular dynamics and visualization thereof. It consists of these parts:
+
+- Core Python:
+ - [Datatypes](https://kevinsawade.github.io/start-science-here/python_tutorial/basics_00_datatypes.html}
+ - [Functions and Classes](https://kevinsawade.github.io/start-science-here/python_tutorial/basics_01_functions_classes.html)
+ - [Decorators](https://kevinsawade.github.io/start-science-here/python_tutorial/basics_01_functions_classes.html)
+- Python Packages
+ - NumPy
+ - Pandas
+ - MDTraj
+ - Matplotlib
