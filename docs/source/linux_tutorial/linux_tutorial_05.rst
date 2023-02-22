@@ -47,11 +47,11 @@ This will compress the file and place it in a file called science.txt.Z
 
 To see the change in size, type ls -l again.
 
-To uncomress the file, use the uncompress command.
+To decompress the file, use the decompress command.
 
 .. code-block:: bash
 
-   $ uncompress science.txt.Z
+   $ decompress science.txt.Z
 
 :boldcode:`gzip`
 This also compresses a file, and is more efficient than compress. For example, to zip science.txt, type

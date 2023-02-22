@@ -140,7 +140,7 @@ This somewhat unusual prompt comes from using a terminal on a webpage (there are
 
    username@hostname:~$
 
-The *prompt* contains useful information, such as your username, the name of the computer (\ ``hostname``\ ) and your current directory. The tilde symbol (~) shows you, that you are in your home directory and the dollar symbol ($) shows you what shell you are currenlty using. Oftentimes commands are prepended with these symbols to let you know where to enter this command. In this tutorial the bash commands are prepended with the dollar sign ($). Please do not enter that sign into your shell, when copying commands. Here are other possible shell symbols:
+The *prompt* contains useful information, such as your username, the name of the computer (\ ``hostname``\ ) and your current directory. The tilde symbol (~) shows you, that you are in your home directory and the dollar symbol ($) shows you what shell you are currently using. Oftentimes commands are prepended with these symbols to let you know where to enter this command. In this tutorial the bash commands are prepended with the dollar sign ($). Please do not enter that sign into your shell, when copying commands. Here are other possible shell symbols:
 
 * ``$``\ : Linux shells in general, ``bash`` in particular.
 * ``>>>``\ : Python

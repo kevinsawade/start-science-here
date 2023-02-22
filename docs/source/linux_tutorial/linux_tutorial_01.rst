@@ -203,7 +203,7 @@ grep (don't ask why it is called grep)
 
    $ grep science science.txt
 
-As you can see, grep has printed out each line containg the word science.
+As you can see, grep has printed out each line containing the word science.
 
 Or has it????
 
@@ -230,7 +230,7 @@ To search for a phrase or pattern, you must enclose it in single quotes (the apo
 Some of the other options of grep are:
 
 ``-v`` display those lines that do NOT match
-``-n`` precede each maching line with the line number
+``-n`` precede each matching line with the line number
 ``-c`` print only the total count of matched lines.
 Try some of them and see the different results. Don't forget, you can use more than one option at a time, for example, the number of lines without the words science or Science is
 

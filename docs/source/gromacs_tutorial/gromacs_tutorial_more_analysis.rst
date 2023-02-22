@@ -27,7 +27,7 @@ Choose group 1 (Protein) for analysis.
 
    .. image:: ../_static/pics/gromacs_tutorial/plotted_gyration.png
       :target: ../_static/pics/gromacs_tutorial/plotted_gyration.png
-      :alt: The radius of gyration stays soemwhat stable.
+      :alt: The radius of gyration stays somewhat stable.
 
 We can see from the reasonably invariant R\ :sub:`g` values that the protein remains very stable, in its compact (folded) form over the course of 1 ns at 300 K. This result is not unexpected, but illustrates an advanced capacity of GROMACS analysis that comes built-in.
 

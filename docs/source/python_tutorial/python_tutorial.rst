@@ -165,7 +165,7 @@ Arithmetic operations
    10 % 4        # modulo
    divmod(10, 4) # returns tuple of floor division and modulo
 
-Comparsions and boolean operations
+Comparisons and boolean operations
 ----------------------------------
 
 Assigning objects to variables:
@@ -640,7 +640,7 @@ Convert two lists into a dict:
 
    family = dict(zip(keys, values))
 
-Examing a dict:
+Examining a dict:
 
 .. code-block:: python
 
@@ -700,7 +700,7 @@ Sets
 
 **properties: unordered, iterable, mutable, can contain multiple data types**
 
-Sets are like dictionaries with just keys. They also use the curly braces in their definition. That's why you can't create an empty set with ``{}``, which would return an emtpy dict.
+Sets are like dictionaries with just keys. They also use the curly braces in their definition. That's why you can't create an empty set with ``{}``, which would return an empty dict.
 
 .. code-block:: python
 
@@ -749,7 +749,7 @@ Get a sorted list of unique elements from a set:
 
    sorted(set([9, 0, 2, 1, 0]))    # returns [0, 1, 2, 9]
 
-**Beware**: Sometimes the ``list(set(list(...)))`` construction is used to remove duplcate entries from lists. However, because sets are inherently unordered the resulting list might have the wrong order of elements.
+**Beware**: Sometimes the ``list(set(list(...)))`` construction is used to remove duplicate entries from lists. However, because sets are inherently unordered the resulting list might have the wrong order of elements.
 
 
 Defining functions
@@ -791,7 +791,7 @@ Return statements are written like this:
    def square_this(x):
        return x**2
 
-Adding documentation to your function. Some people might want to use your function but don't want to read the whole code of the function. You can help them with a so-called docstring (three consecutive doulbe quotes or single quotes ``"""`` or ``'''``) and give a summray of a functions code. That way it's easier to reuse the function.
+Adding documentation to your function. Some people might want to use your function but don't want to read the whole code of the function. You can help them with a so-called docstring (three consecutive double quotes or single quotes ``"""`` or ``'''``) and give a summary of a functions code. That way it's easier to reuse the function.
 
 .. code-block:: python
 
@@ -874,7 +874,7 @@ Instead of fixing the numbers of arguments to a function, you can let the functi
       return sum(args)
 
   addition(1, 5, 10, 20)
-  additon(1, -1)
+  addition(1, -1)
 
 That's it for unnamed (positional) arguments. But what about named arguments? For that we have ``**``:
 
@@ -885,7 +885,7 @@ That's it for unnamed (positional) arguments. But what about named arguments? Fo
 
    mydict = {'minuend': 10, 'subtrahend': 5}
 
-   subrtaction(**mydict)
+   subtraction(**mydict)
 
 Of course, when ``mydict`` has more or different keys, the function ceases to work:
 

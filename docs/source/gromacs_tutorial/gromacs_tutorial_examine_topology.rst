@@ -39,7 +39,7 @@ The next section defines the ``[ atoms ]`` in the protein. The information is pr
         2   opls_290      1   LYS      H1      1       0.33      1.008   ; qtot 0.03
         3   opls_290      1   LYS      H2      1       0.33      1.008   ; qtot 0.36
         4   opls_290      1   LYS      H3      1       0.33      1.008   ; qtot 0.69
-        5  opls_293B      1   LYS      CA      1       0.25     12.011   ; qtot 0.94
+        5   opls_293B     1   LYS      CA      1       0.25     12.011   ; qtot 0.94
         6   opls_140      1   LYS      HA      1       0.06      1.008   ; qtot 1
 
 The interpretation of this information is as follows:

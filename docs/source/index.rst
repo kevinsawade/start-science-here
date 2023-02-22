@@ -17,7 +17,9 @@ Start Science Here!
 
 **An introduction to scientific programming, Python, molecular dynamics, and more**
 
-Welcome to start science here! This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the Python tutorial by visiting: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F. If you want to take the full course, take the recommended route:
+Welcome to start science here! 
+This project is meant to introduce you to the world of scientific programming and teach you the most important concepts. This project is subdivided into different main topics. You can dive right into the Python tutorial by visiting: https://mybinder.org/v2/gh/kevinsawade/start-science-here/HEAD?urlpath=%2Ftree%2F. 
+If you want to take the full course, take the recommended route:
 
 1. Working with Linux from the command line
     * Introduction to the Unix operating systems, the shell, commands, programs.
@@ -32,7 +34,7 @@ Welcome to start science here! This project is meant to introduce you to the wor
 4. Installing the Windows subsystem for Linux (Windows users only)
     * Learn how to run all of the above locally on your Windows PC.
 5. Installing Docker
-    * platform independent runtimes
+    * platform independent runtime
 6. Setting up your own python
     * The next step towards independence
 7. Git
@@ -99,7 +101,7 @@ I adjusted the first tutorial "Lysozyme in water" to work with binder. So follow
 
    linux_tutorial/linux_tutorial
    python_tutorial/python_tutorial
-   windows_susbsystem_for_linux
+   windows_subsystem_for_linux
    setting_up_python
    install_docker
    gromacs_tutorial/gromacs_tutorial

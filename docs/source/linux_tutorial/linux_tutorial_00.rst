@@ -46,7 +46,7 @@ To list all files in your home directory including those whose names begin with 
 
 Now you can see the hidden ``.git`` directory and the ``.gitignore`` file. This command also lists two files, ``.`` and ``..``. ``.`` is the file of the current working directory and ``..`` is the file of the parent directory (in our case that would be ``/home``).
 
-The ``-a`` part of the ``ls -a`` command is reffered to as an option (sometimes also called flag). Options change the behaviour of the command. There are online manuals that tell you which options a particular command accepts and how each option modifies the behavior of the command. This will be treated later in the tutorial.
+The ``-a`` part of the ``ls -a`` command is referred to as an option (sometimes also called flag). Options change the behavior of the command. There are online manuals that tell you which options a particular command accepts and how each option modifies the behavior of the command. This will be treated later in the tutorial.
 
 Changing into a different directory
 ===================================
@@ -104,7 +104,7 @@ Autocomplete
 :boldcode:`[Tab]`
 -----------------
 
-While typing you can peridocally try to press :boldcode:`[Tab]` (the tabulator key of your keyboard) to use the autocomplete feature of the shell. For example: Go to your home directory
+While typing you can periodically try to press :boldcode:`[Tab]` (the tabulator key of your keyboard) to use the autocomplete feature of the shell. For example: Go to your home directory
 
 .. code-block:: bash
 

@@ -22,7 +22,7 @@ Upon completion of the two equilibration phases, the system is now well-equilibr
 Intermission
 ============
 
-The production MD will probably not run in binder. We have to find a way to run the productioon MD on an actual computer and not on the cloud via binder. Here are the steps to achieve this:
+The production MD will probably not run in binder. We have to find a way to run the production MD on an actual computer and not on the cloud via binder. Here are the steps to achieve this:
 
 1. Download a .zip archive with our current simulation.
 2. Get to a linux terminal via using a computer with linux, or the Windows subsystem for linux: :ref:`wsl-label`.
@@ -93,7 +93,7 @@ A window of the Windows explorer will open and you can put your .zip archive the
 
 .. code-block:: bash
 
-   $ unzip gromacs_turorial.zip
+   $ unzip gromacs_tutorial.zip
 
 
 Continuation
@@ -122,7 +122,7 @@ In GROMACS 2018, the PME calculations can be offloaded to graphical processing u
 Running GROMACS on GPU
 ======================
 
-As of version 4.6, GROMACS supports the use of GPU accelerators for running MD simulations. With the release of version 2018, the nonbonded interactions and PME are calculated on the GPU, with only bonded forces calculated on the CPU cores. When building GROMACS (see www.gromacs.org for installation instructions), GPU hardware will automatically be detected, if present. The minimum requirements for using GPU acceleration are the CUDA libraries and SDK, and a GPU with a compute capability of >= 2.0. A nice list of some of the more common GPUs and their specifications can be found `here <https://developer.nvidia.com/cuda-gpus>`_.
+As of version 4.6, GROMACS supports the use of GPU accelerators for running MD simulations. With the release of version 2018, the non-bonded interactions and PME are calculated on the GPU, with only bonded forces calculated on the CPU cores. When building GROMACS (see www.gromacs.org for installation instructions), GPU hardware will automatically be detected, if present. The minimum requirements for using GPU acceleration are the CUDA libraries and SDK, and a GPU with a compute capability of >= 2.0. A nice list of some of the more common GPUs and their specifications can be found `here <https://developer.nvidia.com/cuda-gpus>`_.
 
 Assuming you have one GPU available, the mdrun command to make use of it is as simple as:
 

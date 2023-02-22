@@ -33,7 +33,7 @@ In reality, the .mdp file used at this step can contain any legitimate combinati
 
 .. note::
 
-   The files provided with this tutorial are intended **only** for use with the OPLS-AA force field. Settings, particularly nonbonded interaction settings, will be different for other force fields.
+   The files provided with this tutorial are intended **only** for use with the OPLS-AA force field. Settings, particularly non-bonded interaction settings, will be different for other force fields.
 
 Assemble your .tpr file with the following:
 

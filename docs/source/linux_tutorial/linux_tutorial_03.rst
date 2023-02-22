@@ -64,7 +64,7 @@ Getting help
 Online manuals
 --------------
 
-There are on-line manuals which gives information about most commands. The manual pages tell you which options a particular command can take, and how each option modifies the behaviour of the command. Type man command to read the manual page for a particular command.
+There are on-line manuals which gives information about most commands. The manual pages tell you which options a particular command can take, and how each option modifies the behavior of the command. Type man command to read the manual page for a particular command.
 
 For example, to find out more about the ``wc`` (word count) command, type
 

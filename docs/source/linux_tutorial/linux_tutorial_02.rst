@@ -20,7 +20,7 @@ Most processes initiated by UNIX commands write to the standard output (that is,
 
 We have already seen one use of the ``cat`` command to write the contents of a file to the screen.
 
-Now type ``cat`` without specifing a file to read
+Now type ``cat`` without specifying a file to read
 
 .. code-block:: bash
 
@@ -32,7 +32,7 @@ Finally hold the :boldcode:`[Ctrl]` key down and press :boldcode:`[d]` (written 
 
 What has happened?
 
-If you run the ``cat`` command without specifing a file to read, it reads the standard input (the keyboard), and on receiving the'end of file' (^D), copies it to the standard output (the screen).
+If you run the ``cat`` command without specifying a file to read, it reads the standard input (the keyboard), and on receiving the'end of file' (^D), copies it to the standard output (the screen).
 
 In UNIX, we can redirect both the input and the output of commands.
 

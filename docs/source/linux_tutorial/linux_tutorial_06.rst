@@ -90,7 +90,7 @@ PATH and path specify directories to search for commands and programs. Both vari
 Using and setting variables
 ===========================
 
-Each time you login to a UNIX host, the system looks in your home directory for initialisation files. Information in these files is used to set up your working environment. The bash shell (``$``)  uses a file called ``.bashrc`` (note that this file's name begins with a dot).
+Each time you login to a UNIX host, the system looks in your home directory for initialization files. Information in these files is used to set up your working environment. The bash shell (``$``)  uses a file called ``.bashrc`` (note that this file's name begins with a dot).
 
 At login the bash shell reads the ``bashrc``. This file is used to prepare the user environment and set environment variables that other programs might access.
 
