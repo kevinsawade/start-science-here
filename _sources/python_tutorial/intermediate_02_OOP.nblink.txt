@@ -1,0 +1,6 @@
+{
+    "path": "../../../python_tutorial/intermediate_python/intermediate_02_OOP.ipynb",
+    "extra-media": [
+        "../../../python_tutorial/intermediate_python/nested-namespaces-python.jpg"
+    ]
+}

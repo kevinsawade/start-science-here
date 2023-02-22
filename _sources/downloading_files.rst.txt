@@ -1,6 +1,6 @@
  .. _downloading-files-label:
 
- .. role:: bolditalic
+.. role:: bolditalic
   :class: bolditalic
 
 .. role:: boldcode
